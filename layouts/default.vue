@@ -14,18 +14,23 @@
 
 <style lang="scss">
 
+  @import "~/node_modules/vazir-font/dist/font-face.css";
+
   root {
     font-size: 14px;
   }
 
   html {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Vazir', 'IRANSans';
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
+  }
+
+  body, button, input, select, textarea {
+    font-family: 'Vazir', 'IRANSans';
   }
 
   *,

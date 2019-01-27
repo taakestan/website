@@ -2,7 +2,7 @@
   <section class="container">
     <div>
       <h1 class="title">
-        Taak
+        تـــاکــــــــ
       </h1>
       <h2 class="subtitle">
         پروژه دانش آزاد تاک
