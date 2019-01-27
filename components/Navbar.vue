@@ -34,15 +34,9 @@
 
       <div id="navMenuDocumentation" class="navbar-menu">
         <div class="navbar-start">
-          <nuxt-link class="navbar-item bd-navbar-item-documentation  is-active" to="/documentation">
-            <span class="icon has-text-primary">
-              <svg class="svg-inline--fa fa-book fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="book" role="img"
-                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor"
-                                                                                                   d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path></svg>
-              <!-- <i class="fas fa-book"></i> -->
-            </span>
+          <nuxt-link class="navbar-item bd-navbar-item-documentation is-active" to="/webinars">
             <span class="is-hidden-touch is-hidden-widescreen">
-              وبینار
+              وبینار ها
             </span>
             <span class="is-hidden-desktop-only">
               وبینار های قبلی
@@ -50,30 +44,15 @@
           </nuxt-link>
 
 
-          <a class="navbar-item bd-navbar-item-videos " href="https://bulma.io/videos/">
-          <span class="icon has-text-success">
-            <svg class="svg-inline--fa fa-play-circle fa-w-16" aria-hidden="true" data-prefix="fas"
-                 data-icon="play-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                 data-fa-i2svg=""><path fill="currentColor"
-                                        d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path></svg>
-            <!-- <i class="fas fa-play-circle"></i> -->
-          </span>
-
+          <nuxt-link class="navbar-item" to="/contact-us">
             <span>تماس با ما</span>
-          </a>
+          </nuxt-link>
 
-          <a class="navbar-item bd-navbar-item-blog " href="https://bulma.io/blog/">
-          <span class="icon bd-has-text-rss">
-            <svg class="svg-inline--fa fa-rss fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="rss" role="img"
-                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor"
-                                                                                                 d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"></path></svg>
-            <!-- <i class="fas fa-rss"></i> -->
-          </span>
-
+          <nuxt-link class="navbar-item" to="/about-taak">
             <span>درباره پروژه تاک</span>
-          </a>
+          </nuxt-link>
 
-          <nuxt-link class="navbar-item bd-navbar-item-expo " to="/provider">
+          <nuxt-link class="navbar-item" to="/provider">
             <span>ارائه کنندگان</span>
           </nuxt-link>
 
