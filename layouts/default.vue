@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div dir="rtl">
+    <navbar/>
     <nuxt />
   </div>
 </template>
@@ -53,3 +54,9 @@ html {
   background-color: #35495e;
 }
 </style>
+<script>
+  import Navbar from "../components/Navbar";
+  export default {
+    components: {Navbar}
+  }
+</script>
