@@ -10,7 +10,7 @@ export const state = () => ([
   {
     id: 2,
     provider: 'امیر رضا قادری',
-    slug: 'introduction-devops',
+    slug: 'introduction-golang',
     title: 'وبینار آشنایی با زبان Go',
     image: '/img/async-data-with-nuxtjs.png',
     content: 'در این وبینار قصد داریم نگاهی داشته باشیم به زبان برنامه‌نویسی Go. از آنجایی که تعریف و تمجدید از تکنولوژی های تازه و هیجان برانگیز کار آسانی است، در این ارائه سعی خواهیم داشت که موضوع را با رویکردی منتقدانه بررسی کنیم تا سوای از امکانات جالب و مفید این زبان، با نقاط ضعف و کمبودهای آن نیز آشنا شویم!'
@@ -18,7 +18,7 @@ export const state = () => ([
   {
     id: 3,
     provider: 'امیر رضا قادری',
-    slug: 'introduction-devops',
+    slug: 'what-is-the-cqrs',
     title: 'مروری بر CQRS',
     image: '/img/nuxt-fundamentals.png',
     content: 'در این وبینار قصد داریم علت نیاز به الگوی CQRS در پروژه های مبتنی بر DDD را بررسی کنیم، خواستگاه CQRS را از دیدگاه پدید آورنده ی آن (Grek Young) معرفی کرده و ملزومات استفاده از Event Sourcing به عنوان مکانیزم ذخیره سازی را بیان کنیم.'
