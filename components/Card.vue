@@ -1,9 +1,7 @@
 <template>
   <nuxt-link class="card" tag="div" to="/webinars/1">
     <div class="card-image">
-      <figure class="image is-4by3">
-        <img :src="imagePath" alt="Placeholder image">
-      </figure>
+      <img :src="imagePath" alt="Placeholder image">
     </div>
     <div class="card-content">
       <div class="media">
@@ -27,11 +25,22 @@
   }
 </script>
 
+
 <style lang="scss" scoped>
   p {
+    color: #766b93;
+    font-size: .9rem;
     text-align: justify;
   }
   .card {
     cursor: pointer;
+    border-radius: .5rem;
+    box-shadow: 2px 2px 15px 0 rgba(36,37,38,.08);
+    .title {
+      color: #5f5676;
+    }
+    img {
+      border-radius: .5rem .5rem 0 0;
+    }
   }
 </style>

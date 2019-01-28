@@ -46,7 +46,7 @@
     margin-top: 1rem;
   }
 
-  .media-content {
-    text-align: right;
+  .column > .card {
+    height: 100%;
   }
 </style>
