@@ -29,10 +29,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 6rem);
   display: flex;
   justify-content: center;
   align-items: center;
