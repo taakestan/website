@@ -4,7 +4,9 @@
       <div class="column" v-for="webinar in webinars">
         <card
           :title="webinar.title" :provider="webinar.provider"
-          :image-path="webinar.image" :href="webinar.slug">{{ webinar.content }}</card>
+          :image-path="webinar.image" :href="'webinars/' + webinar.slug">
+            {{ webinar.content }}
+        </card>
       </div>
     </div>
   </div>
