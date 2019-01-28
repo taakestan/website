@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <nuxt-link class="card" tag="div" to="/webinars/1">
     <div class="card-image">
       <figure class="image is-4by3">
         <img :src="imagePath" alt="Placeholder image">
@@ -13,11 +13,11 @@
         </div>
       </div>
 
-      <div class="content">
+      <p class="content">
         <slot></slot>
-      </div>
+      </p>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -27,6 +27,11 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  p {
+    text-align: justify;
+  }
+  .card {
+    cursor: pointer;
+  }
 </style>
