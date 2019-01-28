@@ -1,4 +1,7 @@
-const pkg = require('./package')
+const pkg = {
+  name: 'پروژه دانش آزاد تاک',
+  description: ''
+};
 
 
 module.exports = {
@@ -8,7 +11,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'پروژه دانش آزاد تاک',
+    title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
