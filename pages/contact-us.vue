@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="content">
     <p>
       برای هر یک از موارد زیر خوشحال خواهیم شد که با ما تماس بگیرید
     </p>

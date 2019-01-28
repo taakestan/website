@@ -34,7 +34,7 @@
 
       <div id="navMenuDocumentation" class="navbar-menu">
         <div class="navbar-start">
-          <nuxt-link class="navbar-item bd-navbar-item-documentation is-active" to="/webinars">
+          <nuxt-link class="navbar-item bd-navbar-item-documentation" to="/webinars">
             <span class="is-hidden-touch is-hidden-widescreen">
               وبینار ها
             </span>
@@ -44,7 +44,7 @@
           </nuxt-link>
 
 
-          <nuxt-link class="navbar-item" to="/contact-us">
+          <nuxt-link class="navbar-item" active-class="" to="/contact-us">
             <span>تماس با ما</span>
           </nuxt-link>
 
@@ -73,5 +73,9 @@
     .navbar-item {
       font-size: 2rem;
     }
+  }
+  .nuxt-link-exact-active {
+    color: #0a0a0a;
+    font-weight: 700;
   }
 </style>
