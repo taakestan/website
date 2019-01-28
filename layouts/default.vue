@@ -1,7 +1,9 @@
 <template>
   <div dir="rtl">
     <navbar/>
-    <nuxt />
+    <div id="container" class="container">
+      <nuxt />
+    </div>
   </div>
 </template>
 
@@ -67,5 +69,9 @@
   .button--grey:hover {
     color: #fff;
     background-color: #35495e;
+  }
+
+  #container {
+    margin-top: 2rem;
   }
 </style>
