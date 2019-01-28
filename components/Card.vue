@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="card" tag="div" to="/webinars/1">
+  <nuxt-link class="card" tag="div" :to="href">
     <div class="card-image">
       <img :src="imagePath" alt="Placeholder image">
     </div>
@@ -21,7 +21,7 @@
 <script>
   export default {
     name: "Card",
-    props: ['title', 'provider', 'imagePath']
+    props: ['title', 'provider', 'imagePath', 'href']
   }
 </script>
 
