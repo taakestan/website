@@ -5,7 +5,7 @@
         <card
           :title="webinar.title" :provider="webinar.provider"
           :image-path="webinar.image" :href="'webinars/' + webinar.slug">
-            {{ webinar.content }}
+            {{ webinar.description }}
         </card>
       </div>
     </div>
