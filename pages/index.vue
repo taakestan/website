@@ -2,7 +2,7 @@
   <section class="container">
     <div>
       <h1 class="title">
-        Taak
+        تـــاکــــــــ
       </h1>
       <h2 class="subtitle">
         پروژه دانش آزاد تاک
@@ -14,7 +14,7 @@
           class="button--green"
         >Documentation</a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="https://github.com/taakestan"
           target="_blank"
           class="button--grey"
         >GitHub</a>
@@ -29,10 +29,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 6rem);
   display: flex;
   justify-content: center;
   align-items: center;

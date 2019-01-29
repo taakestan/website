@@ -1,4 +1,7 @@
-const pkg = require('./package')
+const pkg = {
+  name: 'پروژه دانش آزاد تاک',
+  description: ''
+};
 
 
 module.exports = {
@@ -68,7 +71,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }
