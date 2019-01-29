@@ -1,31 +1,39 @@
 <template>
   <div class="columns is-multiline">
-    <div class="column is-one-third-desktop provider-card">
-      <img src="https://media.licdn.com/dms/image/C5603AQHei-zk5_GcZA/profile-displayphoto-shrink_800_800/0?e=1554336000&v=beta&t=CzA4yePkQ_AkBnTj9mXxx9GghNsNP375ztA12WK6G1Q">
-      <h3 class="title">امیر مقیمی</h3>
-      <p>
-        I am an experienced Software Engineer, and team builder, passionate about design, development and operations of highly scalable software systems based on microservices in the cloud. Although I'm deeply technical, I'm a lot more passionate about the results of our work and its impact on our customer's lives.
-      </p>
-      <ul class="socials">
-        <li><a href="https://stackoverflow.com/users/3634398/alex-kyriakidis" target="_blank"
-               title="Alex Kyriakidis on Stack Overflow"><i class="fab fa-stack-overflow"></i></a></li>
-        <li><a href="https://twitter.com/hootlex" target="_blank" title="Alex Kyriakidis on Twitter"><i
-          class="fab fa-twitter"></i></a></li>
-        <li><a href="https://github.com/hootlex" target="_blank" title="Alex Kyriakidis on Github"><i
-          class="fab fa-github"></i></a></li>
-      </ul>
+    <div class="column is-one-third-desktop" v-for="provider in providers">
+      <div class="provider-card">
+        <img :src="provider.image" alt="">
+        <h3 class="title" v-text="provider.name"></h3>
+        <p v-text="provider.description">
+          I am an experienced Software Engineer, and team builder, passionate about design, development and operations of highly scalable software systems based on microservices in the cloud. Although I'm deeply technical, I'm a lot more passionate about the results of our work and its impact on our customer's lives.
+        </p>
+        <ul class="socials">
+          <li><a href="https://stackoverflow.com/users/3634398/alex-kyriakidis" target="_blank"
+                 title="Alex Kyriakidis on Stack Overflow"><i class="fab fa-stack-overflow"></i></a></li>
+          <li><a href="https://twitter.com/hootlex" target="_blank" title="Alex Kyriakidis on Twitter"><i
+            class="fab fa-twitter"></i></a></li>
+          <li><a href="https://github.com/hootlex" target="_blank" title="Alex Kyriakidis on Github"><i
+            class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import {mapState} from 'vuex';
+
   export default {
-    name: "provider"
+    name: "provider",
+    computed: {
+      ...mapState(['providers'])
+    }
   }
 </script>
 
 <style scoped lang="scss">
   .provider-card {
+    padding: 1rem;
     display: flex;
     border-radius: .5rem;
     margin-top: 11rem;
