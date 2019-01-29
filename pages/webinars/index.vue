@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="columns is-mobile">
-      <div class="column" v-for="webinar in webinars">
+    <div class="columns is-multiline">
+      <div class="column is-full-mobile is-half-tablet is-one-third-desktop" v-for="webinar in webinars">
         <card
           :title="webinar.title" :provider="webinar.provider"
           :image-path="webinar.image" :href="'webinars/' + webinar.slug">
