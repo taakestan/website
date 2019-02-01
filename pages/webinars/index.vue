@@ -13,15 +13,19 @@
 </template>
 
 <script>
+  import axios from 'axios';
   import Card from "../../components/Card";
   import {mapState} from 'vuex';
 
   export default {
     name: "index",
     components: {Card},
+    fetch ({ store, params }) {
+      return store.commit('webinars/loadWebinars')
+    },
     computed: {
       ...mapState(['webinars'])
-    }
+    },
   }
 </script>
 
