@@ -53,6 +53,17 @@
         </div>
       </div>
     </section>
+    <section id="section4">
+      <div class="container">
+        <div class="header-icon">
+          <div class="image">
+            <img src="/img/icons/icon-visualize.svg" alt="">
+          </div>
+          <div class="title">همکاری با تاک</div>
+        </div>
+      </div>
+    </section>
+    <section id="section5" class="background"></section>
   </div>
 </template>
 
@@ -230,7 +241,7 @@
     min-height: 38rem;
     position: relative;
     .columns {
-      padding: 5rem 0 10rem;
+      padding: 5rem 0 18rem;
     }
     .column .image {
       width: 30rem;
