@@ -16,6 +16,20 @@
         </div>
       </div>
     </section>
+    <section id="section2">
+      <div class="container">
+        <h3>آخرین وبینار های برگزار شده</h3>
+        <div class="columns is-multiline">
+          <div class="column is-full-mobile is-half-tablet is-one-third-desktop" v-for="webinar in webinars.all.slice(3)">
+            <card
+              :title="webinar.title" :provider="webinar.provider"
+              :image-path="webinar.image" :href="'webinars/' + webinar.slug">
+              {{ webinar.description }}
+            </card>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -23,9 +37,16 @@
 
   import Card from "../components/Card";
   import Navbar from "../components/Navbar";
+  import {mapState} from 'vuex';
 
   export default {
     components: {Navbar, Card},
+    fetch ({ store, params }) {
+      return store.dispatch('webinars/loadWebinars')
+    },
+    computed: {
+      ...mapState(['webinars'])
+    },
   }
 </script>
 
@@ -137,6 +158,24 @@
 
     &:before {
       background-image: url(/img/waves.svg), linear-gradient(326deg, #9864ff 20%, #1a1c82 92%);
+    }
+  }
+
+  #section2 {
+    padding-bottom: 20rem;
+    .container {
+      flex-direction: column;
+    }
+    h3 {
+      color: #6c718b;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    .items {
+      display: flex;
+      max-width: 60rem;
+      margin: 3rem auto 0;
+      justify-content: space-between;
     }
   }
 </style>
