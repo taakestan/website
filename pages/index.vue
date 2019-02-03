@@ -30,6 +30,27 @@
         </div>
       </div>
     </section>
+    <section id="section3" class="background">
+      <div class="container">
+        <div class="header-icon">
+          <div class="image">
+            <img src="/img/icons/icon-success.svg" alt="">
+          </div>
+          <div class="title">برنامه زمانی</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Lorem ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dignissimos earum ipsam iste, nostrum
+              officia sint? A consectetur consequatur debitis eligendi, esse fugiat in, nobis, odio quae quidem sit
+              voluptatum.</p>
+          </div>
+          <div class="col">
+            <div class="image"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -175,6 +196,38 @@
     }
     .card {
       height: 100%;
+    }
+  }
+
+  #section3 {
+    min-height: 50rem;
+    position: relative;
+    .row {
+      display: flex;
+      padding: 8rem 0 26rem;
+      > .col {
+        flex: 1;
+        + .col {
+          margin-right: 2rem;
+        }
+        h3 {
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+        }
+        p {
+          /*<!--color: $light-color;-->*/
+          font-size: 1.1rem;
+          line-height: 2.3rem;
+        }
+        .image {
+          height: 100%;
+          border-radius: .5rem;
+          background-color: #d5def1;
+        }
+      }
+    }
+    &:before {
+      background-color: #f6f8fc;
     }
   }
 </style>
