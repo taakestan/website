@@ -1,5 +1,5 @@
 <template>
-  <nav id="navbar" class="navbar has-shadow is-spaced">
+  <nav id="navbar" class="navbar is-spaced">
     <div class="container">
       <div class="navbar-brand">
         <nuxt-link to="/" class="navbar-item">
@@ -69,13 +69,19 @@
 </script>
 
 <style scoped lang="scss">
+  .navbar {
+    background: none;
+  }
+  .navbar-item, .navbar-link {
+    color: #ddd;
+  }
   .navbar-brand {
     .navbar-item {
       font-size: 2rem;
     }
   }
   .nuxt-link-exact-active {
-    color: #0a0a0a;
+    color: #fff;
     font-weight: 700;
   }
 </style>
