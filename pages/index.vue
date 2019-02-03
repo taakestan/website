@@ -34,7 +34,7 @@
       <div class="container">
         <div class="header-icon">
           <div class="image">
-            <img src="/img/icons/icon-success.svg" alt="">
+            <img src="/img/icons/icon-plan.svg" alt="">
           </div>
           <div class="title">برنامه زمانی</div>
         </div>
@@ -94,6 +94,31 @@
 
   .links {
     padding-top: 15px;
+  }
+
+  .header-icon {
+    top: -11rem;
+    width: 100%;
+    position: absolute;
+    > .image {
+      width: 5rem;
+      height: 5rem;
+      padding: 1rem;
+      margin: 0 auto 1rem;
+      border-radius: .5rem;
+      background-color: white;
+      box-shadow: 0 5px 18px 2px rgba(94, 96, 186, 0.2);
+    }
+    > .title {
+      color: #6c718b;
+      font-weight: 500;
+      font-size: 1.7rem;
+      text-align: center;
+    }
+    > .description {
+      color: #6c718b;
+      text-align: center;
+    }
   }
 
   section {
