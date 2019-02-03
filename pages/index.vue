@@ -18,7 +18,7 @@
     </section>
     <section id="section2">
       <div class="container">
-        <h3>آخرین وبینار های برگزار شده</h3>
+        <h2>آخرین وبینار های برگزار شده</h2>
         <div class="columns is-multiline">
           <div class="column is-full-mobile is-half-tablet is-one-third-desktop" v-for="webinar in webinars.all.slice(3)">
             <card
@@ -166,16 +166,15 @@
     .container {
       flex-direction: column;
     }
-    h3 {
+    h2 {
       color: #6c718b;
-      font-size: 1.3rem;
+      font-size: 1.7rem;
+      font-weight: 500;
       text-align: center;
+      margin-bottom: 3rem;
     }
-    .items {
-      display: flex;
-      max-width: 60rem;
-      margin: 3rem auto 0;
-      justify-content: space-between;
+    .card {
+      height: 100%;
     }
   }
 </style>
