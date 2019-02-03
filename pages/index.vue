@@ -1,6 +1,7 @@
 <template>
   <div>
     <section id="section1" class="background">
+      <navbar/>
       <div class="container">
         <div class="content">
           <h1>تاک</h1>
@@ -8,13 +9,15 @@
             mollitia natus officiis perspiciatis quidem tempora, ullam vel. A consectetur dignissimos doloribus eligendi
             minima, non provident!</p>
           <div>
-            <a class="btn btn--md btn--purple"
+            <a class="button btn--md btn--purple"
                href="">درخواست نسخه دمو</a>
-            <div class="btn btn--md btn--secondary">شروع استفاده</div>
+            <div class="button is-primary btn btn--md btn--secondary">شروع استفاده</div>
           </div>
           <span>جهت بهره مندی از <b>7 روز مهلت تست</b> بر روی گزینه در خواست نسخه دمو کلیک کنید.</span>
         </div>
-
+        <div class="image">
+          <img src="https://vueschool.s3.amazonaws.com/a742b7be73aca55734372e13785b603b/vuex-for-everyone.png" alt="">
+        </div>
       </div>
     </section>
   </div>
@@ -23,9 +26,10 @@
 <script>
 
   import Card from "../components/Card";
+  import Navbar from "../components/Navbar";
 
   export default {
-    components: {Card},
+    components: {Navbar, Card},
   }
 </script>
 
@@ -86,27 +90,34 @@
   #section1 {
     color: #fff;
     padding: 0 2rem 16rem;
+
     .content {
       width: 50%;
       margin: 10rem 0 4rem;
+
       > h1 {
+        color: #fff;
         font-size: 3rem;
         font-weight: 500;
       }
+
       > p {
         font-weight: 300;
         font-size: 1.3rem;
         color: hsla(0, 0%, 100%, 0.8);
       }
+
       > div {
         display: flex;
         margin: 0 auto;
         max-width: 44rem;
         padding-top: 2rem;
+
         > .btn + .btn {
           margin-right: 1rem;
         }
       }
+
       > span {
         display: inline-block;
         padding: .25rem 1rem;
@@ -117,12 +128,14 @@
         margin-top: 1rem;
         font-weight: 300;
         color: hsla(0, 0%, 100%, 0.7);
+
         > b {
           color: white;
           font-weight: 500;
         }
       }
     }
+
     &:before {
       background-image: url(/img/waves.svg), linear-gradient(326deg, #9864ff 20%, #1a1c82 92%);
     }
