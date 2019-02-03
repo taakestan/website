@@ -39,11 +39,17 @@
           <div class="title">برنامه زمانی</div>
         </div>
         <div class="columns">
-          <div class="column">
+          <div class="column content">
             <h3>برنامه زمانی بهمن ماه</h3>
             <p>
-              در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با آقای ناصری داریم.
+              در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با آقای ناصری داریم:
             </p>
+            <ul class="">
+              <li>۲۱ بهمن : وبینار آشنایی با Docker</li>
+              <li>۲۴ بهمن : وبینار آشنایی با Docker</li>
+              <li>۲۱ بهمن : وبینار آشنایی با Docker</li>
+              <li>۲۱ بهمن : وبینار آشنایی با Docker</li>
+            </ul>
           </div>
           <div class="column">
             <div class="image">
@@ -60,6 +66,8 @@
             <img src="/img/icons/icon-visualize.svg" alt="">
           </div>
           <div class="title">همکاری با تاک</div>
+          <div class="columns">
+          </div>
         </div>
       </div>
     </section>
