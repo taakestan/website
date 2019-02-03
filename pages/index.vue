@@ -38,15 +38,17 @@
           </div>
           <div class="title">برنامه زمانی</div>
         </div>
-        <div class="row">
-          <div class="col">
-            <h3>Lorem ipsum dolor.</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dignissimos earum ipsam iste, nostrum
-              officia sint? A consectetur consequatur debitis eligendi, esse fugiat in, nobis, odio quae quidem sit
-              voluptatum.</p>
+        <div class="columns">
+          <div class="column">
+            <h3>برنامه زمانی بهمن ماه</h3>
+            <p>
+              در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با آقای ناصری داریم.
+            </p>
           </div>
-          <div class="col">
-            <div class="image"></div>
+          <div class="column">
+            <div class="image">
+              <img src="/img/calender.png" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -225,31 +227,14 @@
   }
 
   #section3 {
-    min-height: 50rem;
+    min-height: 38rem;
     position: relative;
-    .row {
-      display: flex;
-      padding: 8rem 0 26rem;
-      > .col {
-        flex: 1;
-        + .col {
-          margin-right: 2rem;
-        }
-        h3 {
-          font-size: 1.3rem;
-          margin-bottom: 1rem;
-        }
-        p {
-          /*<!--color: $light-color;-->*/
-          font-size: 1.1rem;
-          line-height: 2.3rem;
-        }
-        .image {
-          height: 100%;
-          border-radius: .5rem;
-          background-color: #d5def1;
-        }
-      }
+    .columns {
+      padding: 5rem 0 10rem;
+    }
+    .column .image {
+      width: 30rem;
+      border-radius: .5rem;
     }
     &:before {
       background-color: #f6f8fc;
