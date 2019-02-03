@@ -4,16 +4,12 @@
       <navbar/>
       <div class="container">
         <div class="content">
-          <h1>تاک</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius esse facilis inventore, ipsam, magni
-            mollitia natus officiis perspiciatis quidem tempora, ullam vel. A consectetur dignissimos doloribus eligendi
-            minima, non provident!</p>
-          <div>
-            <a class="button btn--md btn--purple"
-               href="">درخواست نسخه دمو</a>
-            <div class="button is-primary btn btn--md btn--secondary">شروع استفاده</div>
-          </div>
-          <span>جهت بهره مندی از <b>7 روز مهلت تست</b> بر روی گزینه در خواست نسخه دمو کلیک کنید.</span>
+          <h1>تـــاکــــــــ</h1>
+          <h2>پروژه دانــش آزاد</h2>
+          <p>
+            پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته است. این پروژه قصد دارد تا پلی میان
+            متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.
+          </p>
         </div>
         <div class="image">
           <img src="https://vueschool.s3.amazonaws.com/a742b7be73aca55734372e13785b603b/vuex-for-everyone.png" alt="">
@@ -35,12 +31,8 @@
 
 <style lang="scss" scoped>
   .container {
-    margin: 0 auto;
-    min-height: calc(100vh - 6rem);
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
   }
 
   .title {
@@ -96,9 +88,16 @@
       margin: 10rem 0 4rem;
 
       > h1 {
+        margin: 0;
         color: #fff;
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: 500;
+      }
+      > h2 {
+        color: #ffffff;
+        font-weight: 300;
+        margin: 0 0 3rem;
+        font-size: 2.2rem;
       }
 
       > p {
