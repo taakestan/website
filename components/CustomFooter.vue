@@ -81,6 +81,53 @@
 	}
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  footer {
+    padding: 3rem 2rem 2rem;
+    .row {
+      display: flex;
+      > .col {
+        flex: 1;
+        > .title {
+          font-weight: 500;
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+        }
+        > .item {
+          color: #6c718b;
+          line-height: 2rem;
+          font-size: 1.1rem;
+        }
+        + .col {
+          margin-right: .5rem;
+        }
+      }
+      > .description {
+        color: #a4a7c5;
+        max-width: 40rem;
+        span {
+          font-family: Calibri;
+        }
+        a {
+          color: #a4a7c5;
+          margin-right: 1rem;
+          text-decoration: none;
+        }
+      }
+      > .socials {
+        display: flex;
+        > .social {
+          width: 2.2rem;
+          + .social {
+            margin-right: 2rem;
+          }
+        }
+      }
+      &:nth-child(1) {}
+      &:nth-child(2) {
+        margin-top: 3rem;
+        justify-content: space-between;
+      }
+    }
+  }
 </style>
