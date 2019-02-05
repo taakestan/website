@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const state = () => ({
   all: []
 });
@@ -13,7 +11,7 @@ export const mutations = {
 export const actions = {
   async loadWebinars({ commit, state }) {
     if (!Object.keys(state.all).length) {
-      const { data } = await axios.get('https://taak-website.firebaseio.com/webinars.json');
+      const { data } = await this.$axios.get('webinars.json');
       const array = [];
       for (let index in data) {
         array.push({
