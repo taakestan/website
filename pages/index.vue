@@ -60,18 +60,38 @@
       </div>
     </section>
     <section id="section4">
-      <div class="container">
+      <div class="container has-text-centered">
         <div class="header-icon">
           <div class="image">
             <img src="/img/icons/icon-visualize.svg" alt="">
           </div>
           <div class="title">همکاری با تاک</div>
+          <p>برای همکاری با می توانید از طریق راه ارتباطی زیر با ما در تماس باشید.</p>
           <div class="columns">
           </div>
         </div>
       </div>
     </section>
-    <section id="section5" class="background"></section>
+    <section id="section5" class="background">
+      <div class="container">
+        <div class="content">
+          <h3 class="has-text-white">
+            اطلاع از جدید ترین اطلاعیه ها
+          </h3>
+          <div class="field is-grouped">
+            <div class="control is-expanded">
+              <input type="email" class="input is-medium is-flat" placeholder="آدرس ایمیل">
+            </div>
+            <div class="control">
+              <button class="button is-medium is-link">
+                <strong>ثبت</strong>
+              </button>
+            </div>
+          </div>
+          <p class="has-text-white">جهت اطلاع رسانی از آخرین وبینار ها و مصاحیه ایمیل خود را ثبت کنید</p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -259,4 +279,23 @@
       background-color: #f6f8fc;
     }
   }
+
+  #section5 {
+    .button {
+      background: #231e6d;
+    }
+    .container {
+      text-align: center;
+      justify-content: center;
+      height: 100%;
+      min-height: 20rem;
+      align-items: baseline;
+      padding-top: 4rem;
+      justify-content: center;
+    }
+    &:before {
+      background-image: url(/img/index/waves.svg), linear-gradient(36deg, #9864ff 20%, #1e1f65 92%);
+    }
+  }
+
 </style>

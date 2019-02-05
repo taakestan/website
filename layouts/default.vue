@@ -1,13 +1,15 @@
 <template>
   <div dir="rtl">
     <nuxt />
+    <custom-footer/>
   </div>
 </template>
 
 <script>
   import Navbar from "../components/Navbar";
+  import CustomFooter from "../components/CustomFooter";
   export default {
-    components: {Navbar}
+    components: {CustomFooter, Navbar}
   }
 </script>
 
@@ -41,5 +43,10 @@
 
   #container {
     margin-top: 2rem;
+  }
+
+  .field.is-grouped > .control:not(:last-child) {
+    margin-left: 0.75rem;
+    margin-right: 0;
   }
 </style>
