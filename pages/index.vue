@@ -66,12 +66,22 @@
             <img src="/img/icons/icon-visualize.svg" alt="">
           </div>
           <div class="title">همکاری با تاک</div>
+          <p>برای همکاری با می توانید از طریق راه ارتباطی زیر با ما در تماس باشید.</p>
           <div class="columns">
           </div>
         </div>
       </div>
     </section>
-    <section id="section5" class="background"></section>
+    <section id="section5" class="background">
+      <div class="container">
+        <div class="content">
+          <h3 class="has-text-white">برای اطلاع از آخرین وبینار ها مصاحبه ها ایمیل خود را ثبت کنید</h3>
+          <div class="columns">
+            <input class="input" type="text" placeholder="Text input">
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -259,4 +269,19 @@
       background-color: #f6f8fc;
     }
   }
+
+  #section5 {
+    .container {
+      justify-content: center;
+      height: 100%;
+      min-height: 20rem;
+      align-items: baseline;
+      padding-top: 4rem;
+      justify-content: center;
+    }
+    &:before {
+      background-image: url(/img/index/waves.svg), linear-gradient(36deg, #9864ff 20%, #1e1f65 92%);
+    }
+  }
+
 </style>
