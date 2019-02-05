@@ -42,4 +42,9 @@
   #container {
     margin-top: 2rem;
   }
+
+  .field.is-grouped > .control:not(:last-child) {
+    margin-left: 0.75rem;
+    margin-right: 0;
+  }
 </style>

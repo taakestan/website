@@ -75,10 +75,20 @@
     <section id="section5" class="background">
       <div class="container">
         <div class="content">
-          <h3 class="has-text-white">برای اطلاع از آخرین وبینار ها مصاحبه ها ایمیل خود را ثبت کنید</h3>
-          <div class="columns">
-            <input class="input" type="text" placeholder="Text input">
+          <h3 class="has-text-white">
+            اطلاع از جدید ترین اطلاعیه ها
+          </h3>
+          <div class="field is-grouped">
+            <div class="control is-expanded">
+              <input type="email" class="input is-medium is-flat" placeholder="آدرس ایمیل">
+            </div>
+            <div class="control">
+              <button class="button is-medium is-link">
+                <strong>ثبت</strong>
+              </button>
+            </div>
           </div>
+          <p class="has-text-white">جهت اطلاع رسانی از آخرین وبینار ها و مصاحیه ایمیل خود را ثبت کنید</p>
         </div>
       </div>
     </section>
@@ -271,7 +281,11 @@
   }
 
   #section5 {
+    .button {
+      background: #231e6d;
+    }
     .container {
+      text-align: center;
       justify-content: center;
       height: 100%;
       min-height: 20rem;
