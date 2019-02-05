@@ -24,7 +24,7 @@
     computed: {
       ...mapState(['webinars']),
       webinar() {
-        return this.webinars.find(item => item.slug === this.slug);
+        return this.webinars.all.find(item => item.slug === this.slug);
       }
     },
     head() {

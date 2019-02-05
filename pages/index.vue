@@ -30,6 +30,48 @@
         </div>
       </div>
     </section>
+    <section id="section3" class="background">
+      <div class="container">
+        <div class="header-icon">
+          <div class="image">
+            <img src="/img/icons/icon-plan.svg" alt="">
+          </div>
+          <div class="title">برنامه زمانی</div>
+        </div>
+        <div class="columns">
+          <div class="column content">
+            <h3>برنامه زمانی بهمن ماه</h3>
+            <p>
+              در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با آقای ناصری داریم:
+            </p>
+            <ul class="">
+              <li>۲۱ بهمن : وبینار آشنایی با Docker</li>
+              <li>۲۴ بهمن : وبینار آشنایی با Docker</li>
+              <li>۲۱ بهمن : وبینار آشنایی با Docker</li>
+              <li>۲۱ بهمن : وبینار آشنایی با Docker</li>
+            </ul>
+          </div>
+          <div class="column">
+            <div class="image">
+              <img src="/img/calender.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section4">
+      <div class="container">
+        <div class="header-icon">
+          <div class="image">
+            <img src="/img/icons/icon-visualize.svg" alt="">
+          </div>
+          <div class="title">همکاری با تاک</div>
+          <div class="columns">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section5" class="background"></section>
   </div>
 </template>
 
@@ -73,6 +115,31 @@
 
   .links {
     padding-top: 15px;
+  }
+
+  .header-icon {
+    top: -11rem;
+    width: 100%;
+    position: absolute;
+    > .image {
+      width: 5rem;
+      height: 5rem;
+      padding: 1rem;
+      margin: 0 auto 1rem;
+      border-radius: .5rem;
+      background-color: white;
+      box-shadow: 0 5px 18px 2px rgba(94, 96, 186, 0.2);
+    }
+    > .title {
+      color: #6c718b;
+      font-weight: 500;
+      font-size: 1.7rem;
+      text-align: center;
+    }
+    > .description {
+      color: #6c718b;
+      text-align: center;
+    }
   }
 
   section {
@@ -175,6 +242,21 @@
     }
     .card {
       height: 100%;
+    }
+  }
+
+  #section3 {
+    min-height: 38rem;
+    position: relative;
+    .columns {
+      padding: 5rem 0 18rem;
+    }
+    .column .image {
+      width: 30rem;
+      border-radius: .5rem;
+    }
+    &:before {
+      background-color: #f6f8fc;
     }
   }
 </style>
