@@ -60,7 +60,7 @@
       </div>
     </section>
     <section id="section4">
-      <div class="container">
+      <div class="container has-text-centered">
         <div class="header-icon">
           <div class="image">
             <img src="/img/icons/icon-visualize.svg" alt="">

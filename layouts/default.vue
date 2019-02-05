@@ -1,13 +1,15 @@
 <template>
   <div dir="rtl">
     <nuxt />
+    <custom-footer/>
   </div>
 </template>
 
 <script>
   import Navbar from "../components/Navbar";
+  import CustomFooter from "../components/CustomFooter";
   export default {
-    components: {Navbar}
+    components: {CustomFooter, Navbar}
   }
 </script>
 
