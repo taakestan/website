@@ -1,5 +1,6 @@
 <template>
-  <div dir="rtl">
+  <div>
+    <navbar></navbar>
     <nuxt />
     <custom-footer/>
   </div>
