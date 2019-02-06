@@ -165,31 +165,6 @@
     }
   }
 
-  section {
-    padding: 0 2rem;
-
-    &:nth-child(2n) {
-      padding: 0 2rem 14rem;
-    }
-  }
-
-  section.background {
-    position: relative;
-
-    &:before {
-      left: 0;
-      top: -17%;
-      width: 100%;
-      content: "";
-      z-index: -1;
-      height: 100%;
-      position: absolute;
-      background: no-repeat 0 50%;
-      background-size: cover;
-      transform: skewY(-2.5deg);
-    }
-  }
-
   #section1 {
     color: #fff;
     padding: 0 2rem 16rem;

@@ -29,7 +29,7 @@
 <style lang="scss" scoped>
   p {
     color: #766b93;
-    font-size: .9rem;
+    font-size: 1rem;
     text-align: justify;
   }
   .card {
