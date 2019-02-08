@@ -20,23 +20,6 @@
 
   @import "~/node_modules/vazir-font/dist/font-face.css";
 
-  html {
-    font-size: 14px;
-    box-sizing: border-box;
-    font-family: 'Vazir', 'IRANSans', Tahoma, serif;
-  }
-
-  body, button, input, select, textarea {
-    font-family: 'Vazir', 'IRANSans';
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-    margin: 0;
-  }
-
   #container {
     margin-top: 2rem;
   }

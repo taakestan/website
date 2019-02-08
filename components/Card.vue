@@ -1,17 +1,10 @@
 <template>
   <nuxt-link class="card" tag="div" :to="href">
-    <div class="card-image">
-      <img class="img-fluid" :src="imagePath" alt="Placeholder image">
-    </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-4" v-text="title"></p>
-          <p class="subtitle is-6" v-text="provider"></p>
-        </div>
-      </div>
-
-      <p class="content">
+    <img :src="imagePath" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title" v-text="title"></h4>
+      <h5 class="subtitle is-6" v-text="provider"></h5>
+      <p class="card-text">
         <slot></slot>
       </p>
     </div>
@@ -33,6 +26,7 @@
     text-align: justify;
   }
   .card {
+    border: none;
     cursor: pointer;
     border-radius: .5rem;
     box-shadow: 2px 2px 15px 0 rgba(36,37,38,.08);
