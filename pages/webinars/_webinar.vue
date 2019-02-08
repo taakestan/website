@@ -19,8 +19,24 @@
       <span>ارئه دهنده : </span><strong v-text="webinar.provider"></strong>
     </div>
     <section id="section3" class="background">
-      <div class="container">
-        sadsd
+      <div class="container flex-column">
+        <div class="header-icon">
+          <div class="image">
+            <img src="/img/icons/icon-plan.svg" alt="">
+          </div>
+          <div class="title">دانلود فایل ها</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="btn btn-primary">دانلود فایل ۱</div>
+          </div>
+          <div class="col">
+            <div class="btn btn-primary">دانلود فایل ۱</div>
+          </div>
+          <div class="col">
+            <div class="btn btn-primary">دانلود فایل ۱</div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -76,13 +92,17 @@
 
   #section3 {
     &:before {
-      background: #e4e5ec;
+      background: #f6f8fc;
     }
 
     .container {
       padding: 7rem 0;
       margin-top: 8rem;
     }
+  }
+
+  .header-icon {
+    top: -5rem;
   }
 
   .contents {
