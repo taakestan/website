@@ -37,8 +37,8 @@
           </div>
           <div class="title">برنامه زمانی</div>
         </div>
-        <div class="columns">
-          <div class="column content">
+        <div class="row">
+          <div class="col-md-6">
             <h3>برنامه زمانی بهمن ماه</h3>
             <p>
               در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با آقای ناصری داریم:
@@ -50,9 +50,9 @@
               <li>۲۱ بهمن : وبینار آشنایی با Docker</li>
             </ul>
           </div>
-          <div class="column">
+          <div class="col-md-6">
             <div class="image">
-              <img src="/img/calender.png" alt="">
+              <img class="img-fluid" src="/img/calender.png" alt="">
             </div>
           </div>
         </div>
@@ -73,21 +73,17 @@
     </section>
     <section id="section5" class="background">
       <div class="container">
-        <div class="content">
-          <h3 class="has-text-white">
+        <div class="content text-white">
+          <h3>
             اطلاع از جدید ترین اطلاعیه ها
           </h3>
-          <div class="field is-grouped">
-            <div class="control is-expanded">
-              <input type="email" class="input is-medium is-flat" placeholder="آدرس ایمیل">
+          <div class="form-inline mb-3 mt-3">
+            <div class="form-group mr-sm-3 flex-fill">
+              <input type="email" class="form-control form-control-lg flex-fill" placeholder="آدرس ایمیل">
             </div>
-            <div class="control">
-              <button class="button is-medium is-link">
-                <strong>ثبت</strong>
-              </button>
-            </div>
+            <button type="submit" class="btn btn-lg btn-primary">ثبت</button>
           </div>
-          <p class="has-text-white">جهت اطلاع رسانی از آخرین وبینار ها و مصاحیه ایمیل خود را ثبت کنید</p>
+          <p>جهت اطلاع رسانی از آخرین وبینار ها و مصاحیه ایمیل خود را ثبت کنید</p>
         </div>
       </div>
     </section>
@@ -119,6 +115,7 @@
   .container {
     display: flex;
     align-items: center;
+    position: relative;
   }
 
   .title {
@@ -244,8 +241,8 @@
   }
 
   #section3 {
-    min-height: 38rem;
     position: relative;
+    padding-bottom: 15rem;
     .columns {
       padding: 5rem 0 18rem;
     }

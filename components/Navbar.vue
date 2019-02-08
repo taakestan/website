@@ -20,33 +20,6 @@
           </li>
         </ul>
       </div>
-
-      <!--<div id="navMenuDocumentation" class="navbar-menu">-->
-        <!--<div class="navbar-start">-->
-          <!--<nuxt-link class="navbar-item bd-navbar-item-documentation" to="/webinars">-->
-            <!--<span class="is-hidden-touch is-hidden-widescreen">-->
-              <!--وبینار ها-->
-            <!--</span>-->
-            <!--<span class="is-hidden-desktop-only">-->
-              <!--وبینار های قبلی-->
-            <!--</span>-->
-          <!--</nuxt-link>-->
-
-
-          <!--<nuxt-link class="navbar-item" active-class="" to="/contact-us">-->
-            <!--<span>تماس با ما</span>-->
-          <!--</nuxt-link>-->
-
-          <!--<nuxt-link class="navbar-item" to="/about-taak">-->
-            <!--<span>درباره پروژه تاک</span>-->
-          <!--</nuxt-link>-->
-
-          <!--<nuxt-link class="navbar-item" to="/provider">-->
-            <!--<span>ارائه کنندگان</span>-->
-          <!--</nuxt-link>-->
-
-        <!--</div>-->
-      <!--</div>-->
     </div>
   </nav>
 </template>
@@ -61,14 +34,17 @@
   .navbar {
     background: none;
   }
+
   .nav-link {
     color: #fffc;
     font-size: 1.1rem;
   }
+
   .navbar-brand {
     color: #fff;
     font-size: 2rem;
   }
+
   .nuxt-link-exact-active {
     color: #fff;
     font-weight: 700;
