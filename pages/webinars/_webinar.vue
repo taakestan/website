@@ -18,6 +18,11 @@
       <div class="mt-5" v-html="webinar.content"></div>
       <span>ارئه دهنده : </span><strong v-text="webinar.provider"></strong>
     </div>
+    <section id="section3" class="background">
+      <div class="container">
+        sadsd
+      </div>
+    </section>
   </div>
 </template>
 
@@ -66,6 +71,17 @@
 
     &:before {
       background-image: url(/img/waves-2.svg), linear-gradient(326deg, #007396 20%, #201a82 92%)
+    }
+  }
+
+  #section3 {
+    &:before {
+      background: #e4e5ec;
+    }
+
+    .container {
+      padding: 7rem 0;
+      margin-top: 8rem;
     }
   }
 

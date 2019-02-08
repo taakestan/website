@@ -16,7 +16,6 @@ section {
 }
 
 section.background {
-  color: #fff;
   position: relative;
 
   .container {
@@ -36,4 +35,8 @@ section.background {
     background-size: cover;
     transform: skewY(-2.5deg);
   }
+}
+
+#section1 {
+  color: #fff;
 }
