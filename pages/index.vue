@@ -199,23 +199,6 @@
           margin-right: 1rem;
         }
       }
-
-      > span {
-        display: inline-block;
-        padding: .25rem 1rem;
-        background-color: rgba(20, 22, 106, .35);
-        border-radius: 3rem;
-        margin-left: -1rem;
-        font-size: 1rem;
-        margin-top: 1rem;
-        font-weight: 300;
-        color: hsla(0, 0%, 100%, 0.7);
-
-        > b {
-          color: white;
-          font-weight: 500;
-        }
-      }
     }
 
     &:before {

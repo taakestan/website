@@ -14,7 +14,20 @@
 <script>
   export default {
     name: "Card",
-    props: ['title', 'provider', 'imagePath', 'href']
+    props: {
+      title: {
+        type: String
+      },
+      provider: {
+        type: String
+      },
+      imagePath: {
+        type: String
+      },
+      href: {
+        type: String
+      }
+    }
   }
 </script>
 
@@ -27,6 +40,7 @@
   }
   .card {
     border: none;
+    height: 100%;
     cursor: pointer;
     border-radius: .5rem;
     box-shadow: 2px 2px 15px 0 rgba(36,37,38,.08);
