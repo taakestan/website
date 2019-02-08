@@ -18,8 +18,8 @@
     <section id="section2">
       <div class="container">
         <h2>آخرین وبینار های برگزار شده</h2>
-        <div class="columns is-multiline">
-          <div class="column is-full-mobile is-half-tablet is-one-third-desktop" v-for="webinar in webinars.all.slice(3)">
+        <div class="row">
+          <div class="col-md-4" v-for="webinar in webinars.all.slice(3)">
             <card
               :title="webinar.title" :provider="webinar.provider"
               :image-path="webinar.image" :href="'webinars/' + webinar.slug">
