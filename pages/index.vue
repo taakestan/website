@@ -102,11 +102,6 @@
     },
     computed: {
       ...mapState(['webinars'])
-    },
-    created() {
-      this.$axios.get('webinars.json').then(res => {
-        console.log(res);
-      })
     }
   }
 </script>
