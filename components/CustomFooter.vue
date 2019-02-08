@@ -76,9 +76,9 @@
 </template>
 
 <script>
-	export default {
-		name: "CustomFooter"
-	}
+  export default {
+    name: "CustomFooter"
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -90,13 +90,12 @@
         flex: 1;
         > .title {
           font-weight: 500;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           margin-bottom: 1rem;
         }
         > .item {
           color: #6c718b;
           line-height: 2rem;
-          font-size: 1.1rem;
         }
         + .col {
           margin-right: .5rem;
@@ -105,9 +104,6 @@
       > .description {
         color: #a4a7c5;
         max-width: 40rem;
-        span {
-          font-family: Calibri;
-        }
         a {
           color: #a4a7c5;
           margin-right: 1rem;

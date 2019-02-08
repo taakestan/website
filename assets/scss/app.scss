@@ -1,0 +1,16 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import "rtl";
+
+
+.background {
+  color: #fff;
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}

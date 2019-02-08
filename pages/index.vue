@@ -1,7 +1,6 @@
 <template>
   <div>
     <section id="section1" class="background">
-      <navbar/>
       <div class="container">
         <div class="content">
           <h1>تـــاکــــــــ</h1>
@@ -19,8 +18,8 @@
     <section id="section2">
       <div class="container">
         <h2>آخرین وبینار های برگزار شده</h2>
-        <div class="columns is-multiline">
-          <div class="column is-full-mobile is-half-tablet is-one-third-desktop" v-for="webinar in webinars.all.slice(3)">
+        <div class="row">
+          <div class="col-md-4" v-for="webinar in webinars.all.slice(3)">
             <card
               :title="webinar.title" :provider="webinar.provider"
               :image-path="webinar.image" :href="'webinars/' + webinar.slug">
@@ -38,8 +37,8 @@
           </div>
           <div class="title">برنامه زمانی</div>
         </div>
-        <div class="columns">
-          <div class="column content">
+        <div class="row">
+          <div class="col-md-6">
             <h3>برنامه زمانی بهمن ماه</h3>
             <p>
               در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با آقای ناصری داریم:
@@ -51,9 +50,9 @@
               <li>۲۱ بهمن : وبینار آشنایی با Docker</li>
             </ul>
           </div>
-          <div class="column">
+          <div class="col-md-6">
             <div class="image">
-              <img src="/img/calender.png" alt="">
+              <img class="img-fluid" src="/img/calender.png" alt="">
             </div>
           </div>
         </div>
@@ -74,21 +73,17 @@
     </section>
     <section id="section5" class="background">
       <div class="container">
-        <div class="content">
-          <h3 class="has-text-white">
+        <div class="content text-white">
+          <h3>
             اطلاع از جدید ترین اطلاعیه ها
           </h3>
-          <div class="field is-grouped">
-            <div class="control is-expanded">
-              <input type="email" class="input is-medium is-flat" placeholder="آدرس ایمیل">
+          <div class="form-inline mb-3 mt-3">
+            <div class="form-group mr-sm-3 flex-fill">
+              <input type="email" class="form-control form-control-lg flex-fill" placeholder="آدرس ایمیل">
             </div>
-            <div class="control">
-              <button class="button is-medium is-link">
-                <strong>ثبت</strong>
-              </button>
-            </div>
+            <button type="submit" class="btn btn-lg btn-primary">ثبت</button>
           </div>
-          <p class="has-text-white">جهت اطلاع رسانی از آخرین وبینار ها و مصاحیه ایمیل خود را ثبت کنید</p>
+          <p>جهت اطلاع رسانی از آخرین وبینار ها و مصاحیه ایمیل خود را ثبت کنید</p>
         </div>
       </div>
     </section>
@@ -98,17 +93,21 @@
 <script>
 
   import Card from "../components/Card";
-  import Navbar from "../components/Navbar";
   import {mapState} from 'vuex';
 
   export default {
-    components: {Navbar, Card},
+    components: {Card},
     fetch ({ store, params }) {
       return store.dispatch('webinars/loadWebinars')
     },
     computed: {
       ...mapState(['webinars'])
     },
+    created() {
+      this.$axios.get('webinars.json').then(res => {
+        console.log(res);
+      })
+    }
   }
 </script>
 
@@ -116,6 +115,7 @@
   .container {
     display: flex;
     align-items: center;
+    position: relative;
   }
 
   .title {
@@ -162,31 +162,6 @@
     }
   }
 
-  section {
-    padding: 0 2rem;
-
-    &:nth-child(2n) {
-      padding: 0 2rem 14rem;
-    }
-  }
-
-  section.background {
-    position: relative;
-
-    &:before {
-      left: 0;
-      top: -17%;
-      width: 100%;
-      content: "";
-      z-index: -1;
-      height: 100%;
-      position: absolute;
-      background: no-repeat 0 50%;
-      background-size: cover;
-      transform: skewY(-2.5deg);
-    }
-  }
-
   #section1 {
     color: #fff;
     padding: 0 2rem 16rem;
@@ -224,23 +199,6 @@
           margin-right: 1rem;
         }
       }
-
-      > span {
-        display: inline-block;
-        padding: .25rem 1rem;
-        background-color: rgba(20, 22, 106, .35);
-        border-radius: 3rem;
-        margin-left: -1rem;
-        font-size: 1rem;
-        margin-top: 1rem;
-        font-weight: 300;
-        color: hsla(0, 0%, 100%, 0.7);
-
-        > b {
-          color: white;
-          font-weight: 500;
-        }
-      }
     }
 
     &:before {
@@ -266,8 +224,8 @@
   }
 
   #section3 {
-    min-height: 38rem;
     position: relative;
+    padding-bottom: 15rem;
     .columns {
       padding: 5rem 0 18rem;
     }
@@ -277,6 +235,79 @@
     }
     &:before {
       background-color: #f6f8fc;
+    }
+  }
+
+  #section4 {
+    padding: 0 0 10rem;
+    h2 {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .plans {
+      display: flex;
+      > .plan {
+        flex: 1;
+        opacity: .5;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        transform: scale(.8);
+        border-radius: .5rem;
+        box-shadow: 0 5px 18px 2px rgba(94, 96, 186, 0.2);
+        &:nth-child(1) {
+          margin-left: -2rem;
+        }
+        &:nth-child(2) {
+          opacity: 1;
+          z-index: 1;
+          color: white;
+          margin: 0 -1.5rem;
+          transform: scale(1);
+          background-color: #6e70a0;
+        }
+        &:nth-child(3) {
+          margin-right: -2rem;
+        }
+        > .price {
+          padding: 1rem 0;
+          font-size: 2rem;
+        }
+        > span {
+          top: 50%;
+          right: -30%;
+          width: 150%;
+          color: white;
+          display: block;
+          font-size: 2rem;
+          position: absolute;
+          transform: rotate(-45deg);
+          background-color: hsla(238, 21%, 87%, 1);
+        }
+        > h3 {
+          margin: 1rem;
+          background-color: white;
+          border-radius: 4px;
+          color: #6e70a0;
+          padding: 1rem 0;
+          font-weight: 500;
+          font-size: 1.5rem;
+        }
+        > h4 {
+          font-weight: 500;
+          font-size: 1.2rem;
+          margin: 2rem 0 1rem;
+        }
+      }
+      .items {
+        .item {
+          padding: .5rem 0;
+          font-weight: 300;
+          &:nth-child(2n + 1) {
+            background: rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
     }
   }
 

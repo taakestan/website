@@ -1,17 +1,10 @@
 <template>
   <nuxt-link class="card" tag="div" :to="href">
-    <div class="card-image">
-      <img :src="imagePath" alt="Placeholder image">
-    </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-4" v-text="title"></p>
-          <p class="subtitle is-6" v-text="provider"></p>
-        </div>
-      </div>
-
-      <p class="content">
+    <img :src="imagePath" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title" v-text="title"></h4>
+      <h6 class="subtitle is-6" v-text="provider"></h6>
+      <p class="card-text">
         <slot></slot>
       </p>
     </div>
@@ -21,7 +14,20 @@
 <script>
   export default {
     name: "Card",
-    props: ['title', 'provider', 'imagePath', 'href']
+    props: {
+      title: {
+        type: String
+      },
+      provider: {
+        type: String
+      },
+      imagePath: {
+        type: String
+      },
+      href: {
+        type: String
+      }
+    }
   }
 </script>
 
@@ -29,10 +35,12 @@
 <style lang="scss" scoped>
   p {
     color: #766b93;
-    font-size: .9rem;
+    font-size: 1rem;
     text-align: justify;
   }
   .card {
+    border: none;
+    height: 100%;
     cursor: pointer;
     border-radius: .5rem;
     box-shadow: 2px 2px 15px 0 rgba(36,37,38,.08);
