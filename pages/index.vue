@@ -158,7 +158,6 @@
   }
 
   #section1 {
-    color: #fff;
     padding: 0 2rem 16rem;
 
     .content {
@@ -219,6 +218,7 @@
   }
 
   #section3 {
+    color: #444;
     position: relative;
     padding-bottom: 15rem;
     .columns {

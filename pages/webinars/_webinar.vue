@@ -13,15 +13,10 @@
         </div>
       </div>
     </section>
-    <div class="container">
-      <h1 v-text="webinar.title"></h1>
+    <div class="container contents">
+      <h2>درباره این وبینار :</h2>
+      <div class="mt-5" v-html="webinar.content"></div>
       <span>ارئه دهنده : </span><strong v-text="webinar.provider"></strong>
-      <div class="image">
-        <figure class="image is-3by1">
-          <img :src="webinar.baner">
-        </figure>
-      </div>
-      <p v-text="webinar.content"></p>
     </div>
   </div>
 </template>
@@ -54,6 +49,7 @@
   }
 </script>
 
+
 <style lang="scss" scoped>
   #section1 {
     padding: 0 2rem 10rem;
@@ -71,5 +67,11 @@
     &:before {
       background-image: url(/img/waves-2.svg), linear-gradient(326deg, #007396 20%, #201a82 92%)
     }
+  }
+
+  .contents {
+    margin-top: -5rem;
+    font-size: 1.1rem;
+    text-align: justify;
   }
 </style>
