@@ -12,8 +12,8 @@
       </div>
     </section>
     <div class="container">
-      <div class="columns is-multiline">
-        <div class="column is-full-mobile is-half-tablet is-one-third-desktop" v-for="webinar in webinars.all">
+      <div class="row">
+        <div class="col-md-4" v-for="webinar in webinars.all">
           <card
             :title="webinar.title" :provider="webinar.provider"
             :image-path="webinar.image" :href="'webinars/' + webinar.slug">

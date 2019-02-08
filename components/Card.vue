@@ -3,7 +3,7 @@
     <img :src="imagePath" class="card-img-top" alt="...">
     <div class="card-body">
       <h4 class="card-title" v-text="title"></h4>
-      <h5 class="subtitle is-6" v-text="provider"></h5>
+      <h6 class="subtitle is-6" v-text="provider"></h6>
       <p class="card-text">
         <slot></slot>
       </p>
