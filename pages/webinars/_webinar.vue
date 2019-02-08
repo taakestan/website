@@ -8,17 +8,17 @@
             <p v-text="webinar.description"></p>
           </div>
           <div class="col-md-6">
-            <img class="img-fluid" src="https://vueschool.s3.amazonaws.com/1c8a290dd664960b5b53c6cf1bfbc972/nuxt-fundamentals.png" alt="">
+            <img class="img-fluid" :src="webinar.image" alt="">
           </div>
         </div>
       </div>
     </section>
-    <div class="content">
+    <div class="container">
       <h1 v-text="webinar.title"></h1>
       <span>ارئه دهنده : </span><strong v-text="webinar.provider"></strong>
       <div class="image">
         <figure class="image is-3by1">
-          <img :src="webinar.image">
+          <img :src="webinar.baner">
         </figure>
       </div>
       <p v-text="webinar.content"></p>
@@ -33,19 +33,23 @@
     name: "webinar",
     data() {
       return {
-        slug: this.$router.history.current.params.webinar
+        webinar: ''
       }
+    },
+    fetch ({ store, params }) {
+      return store.dispatch('webinars/loadWebinars')
     },
     computed: {
       ...mapState(['webinars']),
-      webinar() {
-        return this.webinars.all.find(item => item.slug === this.slug);
-      }
     },
     head() {
       return {
         title: this.webinar.title
       }
+    },
+    created() {
+      const slug = this.$router.history.current.params.webinar;
+      this.webinar = this.webinars.all.find(item => item.slug === slug);
     }
   }
 </script>
