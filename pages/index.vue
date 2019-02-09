@@ -77,12 +77,12 @@
           <h3>
             اطلاع از جدید ترین اطلاعیه ها
           </h3>
-          <div class="form-inline mb-3 mt-3">
+          <form class="form-inline mb-3 mt-3" netlify>
             <div class="form-group mr-sm-3 flex-fill">
               <input type="email" class="form-control form-control-lg flex-fill" placeholder="آدرس ایمیل">
             </div>
-            <button type="submit" class="btn btn-lg btn-primary">ثبت</button>
-          </div>
+            <button class="btn btn-lg btn-primary">ثبت</button>
+          </form>
           <p>جهت اطلاع رسانی از آخرین وبینار ها و مصاحیه ایمیل خود را ثبت کنید</p>
         </div>
       </div>
