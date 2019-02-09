@@ -22,7 +22,7 @@
           <div class="col-md-4" v-for="webinar in webinars.all.slice(3)">
             <card
               :title="webinar.title" :provider="webinar.provider"
-              :image-path="webinar.image" :href="'webinars/' + webinar.slug">
+              :image-path="webinar.baner" :href="'webinars/' + webinar.slug">
               {{ webinar.description }}
             </card>
           </div>
@@ -102,11 +102,6 @@
     },
     computed: {
       ...mapState(['webinars'])
-    },
-    created() {
-      this.$axios.get('webinars.json').then(res => {
-        console.log(res);
-      })
     }
   }
 </script>
@@ -118,52 +113,7 @@
     position: relative;
   }
 
-  .title {
-    display: block;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-  }
-
-  .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-  }
-
-  .links {
-    padding-top: 15px;
-  }
-
-  .header-icon {
-    top: -11rem;
-    width: 100%;
-    position: absolute;
-    > .image {
-      width: 5rem;
-      height: 5rem;
-      padding: 1rem;
-      margin: 0 auto 1rem;
-      border-radius: .5rem;
-      background-color: white;
-      box-shadow: 0 5px 18px 2px rgba(94, 96, 186, 0.2);
-    }
-    > .title {
-      color: #6c718b;
-      font-weight: 500;
-      font-size: 1.7rem;
-      text-align: center;
-    }
-    > .description {
-      color: #6c718b;
-      text-align: center;
-    }
-  }
-
   #section1 {
-    color: #fff;
     padding: 0 2rem 16rem;
 
     .content {
@@ -224,6 +174,7 @@
   }
 
   #section3 {
+    color: #444;
     position: relative;
     padding-bottom: 15rem;
     .columns {

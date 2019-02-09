@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="card" tag="div" :to="href">
-    <img :src="imagePath" class="card-img-top" alt="...">
+    <img :src="imagePath" class="card-img-top" :alt="title">
     <div class="card-body">
       <h4 class="card-title" v-text="title"></h4>
       <h6 class="subtitle is-6" v-text="provider"></h6>
