@@ -615,6 +615,12 @@ $section-hero-ratio: 1600/2880;
   }
 }
 
+.section--pt-3x {
+  .section--header-icon {
+    top: -12rem;
+  }
+}
+
 .section--pt-4x {
   .section--header-icon {
     top: -18rem;

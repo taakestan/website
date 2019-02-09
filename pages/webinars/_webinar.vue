@@ -5,7 +5,10 @@
       <div class="container text-white pt-5">
         <div class="row">
           <div class="col-md-6">
-            <h1 class="mb-5" v-text="webinar.title"></h1>
+            <h1 v-text="webinar.title"></h1>
+            <div class="provider mb-4 d-inline-block">
+              <span>ارئه دهنده : </span><strong v-text="webinar.provider"></strong>
+            </div>
             <p v-text="webinar.description"></p>
           </div>
           <div class="col-md-6">
@@ -17,10 +20,10 @@
     <section class="section section--white pt-0 section--pb-3x">
       <div class="container flex-column align-items-baseline">
         <h2>درباره این وبینار :</h2>
-        <div class="mt-5 contents text-justify" v-html="webinar.content"></div>
+        <div class="mt-3 contents text-justify" v-html="webinar.content"></div>
       </div>
     </section>
-    <section id="section3" class="section section--light section-skew section--pt-4x section--pb-3x">
+    <section id="section3" class="section section--light section-skew section--pt-3x section--pb-xx">
       <div class="container flex-column">
         <div class="section--header-icon">
           <div class="image">
@@ -87,6 +90,16 @@
 
     &:before {
       background-image: url(/img/waves-2.svg), linear-gradient(326deg, #007396 20%, #201a82 92%)
+    }
+  }
+
+  .provider {
+    font-size: 1.1rem;
+    padding: 0.2rem 1rem;
+    border-radius: .5rem;
+    background: #00000040;
+    span {
+      font-weight: 100;
     }
   }
 
