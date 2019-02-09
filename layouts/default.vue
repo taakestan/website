@@ -1,6 +1,5 @@
 <template>
   <div>
-    <navbar />
     <nuxt/>
     <custom-footer/>
   </div>

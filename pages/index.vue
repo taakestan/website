@@ -1,6 +1,7 @@
 <template>
   <div>
     <section class="section section--dark section--gradient section--gradient-one" id="section1">
+      <navbar/>
       <div class="container">
         <div class="content text-white">
           <h1>تـــاکــــــــ</h1>
@@ -93,9 +94,10 @@
 
   import Card from "../components/Card";
   import {mapState} from 'vuex';
+  import Navbar from "../components/Navbar";
 
   export default {
-    components: {Card},
+    components: {Navbar, Card},
     fetch({store, params}) {
       return store.dispatch('webinars/loadWebinars')
     },
