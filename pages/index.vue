@@ -15,7 +15,7 @@
         </div>
       </div>
     </section>
-    <section class="section section--white section--pt-lg section--pb-lg" id="section2">
+    <section class="section section--white pt-0 section--pb-3x" id="section2">
       <div class="container flex-column">
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
@@ -29,9 +29,9 @@
         </div>
       </div>
     </section>
-    <section class="section section--light section-skew section--pt-4x section--pb-4x nudgeUp--2x">
+    <section class="section section--light section-skew section--pt-4x section--pb-3x" id="section3">
       <div class="container">
-        <div class="header-icon">
+        <div class="section--header-icon">
           <div class="image">
             <img src="/img/icons/icon-plan.svg" alt="">
           </div>
@@ -61,7 +61,7 @@
     </section>
     <section class="section section--white section--pt-4x section--pb-4x">
       <div class="container has-text-centered">
-        <div class="header-icon">
+        <div class="section--header-icon">
           <div class="image">
             <img src="/img/icons/icon-visualize.svg" alt="">
           </div>
@@ -134,117 +134,16 @@
     }
   }
 
-  #section3 {
-    color: #444;
-    position: relative;
-    padding-bottom: 15rem;
-
-    .columns {
-      padding: 5rem 0 18rem;
-    }
-
-    .column .image {
-      width: 30rem;
-      border-radius: .5rem;
-    }
-
-    &:before {
-      background-color: #f6f8fc;
-    }
-  }
-
   #section4 {
-    padding: 0 0 10rem;
-
     h2 {
       margin-bottom: 3rem;
       text-align: center;
-    }
-
-    .plans {
-      display: flex;
-
-      > .plan {
-        flex: 1;
-        opacity: .5;
-        position: relative;
-        overflow: hidden;
-        text-align: center;
-        transform: scale(.8);
-        border-radius: .5rem;
-        box-shadow: 0 5px 18px 2px rgba(94, 96, 186, 0.2);
-
-        &:nth-child(1) {
-          margin-left: -2rem;
-        }
-
-        &:nth-child(2) {
-          opacity: 1;
-          z-index: 1;
-          color: white;
-          margin: 0 -1.5rem;
-          transform: scale(1);
-          background-color: #6e70a0;
-        }
-
-        &:nth-child(3) {
-          margin-right: -2rem;
-        }
-
-        > .price {
-          padding: 1rem 0;
-          font-size: 2rem;
-        }
-
-        > span {
-          top: 50%;
-          right: -30%;
-          width: 150%;
-          color: white;
-          display: block;
-          font-size: 2rem;
-          position: absolute;
-          transform: rotate(-45deg);
-          background-color: hsla(238, 21%, 87%, 1);
-        }
-
-        > h3 {
-          margin: 1rem;
-          background-color: white;
-          border-radius: 4px;
-          color: #6e70a0;
-          padding: 1rem 0;
-          font-weight: 500;
-          font-size: 1.5rem;
-        }
-
-        > h4 {
-          font-weight: 500;
-          font-size: 1.2rem;
-          margin: 2rem 0 1rem;
-        }
-      }
-
-      .items {
-        .item {
-          padding: .5rem 0;
-          font-weight: 300;
-
-          &:nth-child(2n + 1) {
-            background: rgba(255, 255, 255, 0.2);
-          }
-        }
-      }
     }
   }
 
   #section5 {
     .button {
       background: #231e6d;
-    }
-
-    &:before {
-      background: linear-gradient(36deg, #9864ff 20%, #1e1f65 92%);
     }
   }
 

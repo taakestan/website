@@ -20,7 +20,7 @@
     </div>
     <section id="section3" class="background">
       <div class="container flex-column">
-        <div class="header-icon">
+        <div class="section--header-icon">
           <div class="image">
             <img src="/img/icons/icon-plan.svg" alt="">
           </div>
