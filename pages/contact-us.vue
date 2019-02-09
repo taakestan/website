@@ -2,8 +2,9 @@
   <div>
     <section id="section1" class="section section--dark section--gradient section--gradient-two">
       <navbar/>
-      <div class="container">
-        <h1 class="text-center text-white">تماس با ما</h1>
+      <div class="container text-center text-white">
+        <h1 class="display-3 pt-5">تماس با ما</h1>
+        <p>در این صفحه میتوانید اطلاعات ارتباطی تاک را مشاهده کنید</p>
       </div>
     </section>
     <section class="section section--white pt-0 section--pb-lg" id="section2">
