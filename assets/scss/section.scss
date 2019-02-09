@@ -1,0 +1,628 @@
+$color-grey-zeta: #f6f8fc;
+$color-grey-epsilon: #fff;
+$color-dark-beta: #293159;
+$color-grey-alpha: #fff;
+$color-brand-main: #5e60ba;
+$gutter-base: 2rem;
+$color-grey-gamma: #fff;
+$font-size-secondary: ("md": 1rem);
+$color-gradient-one: linear-gradient(326deg, #9864ff 20%, #1a1c82 92%);
+$color-gradient-two: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
+$color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
+
+@mixin break($size) {
+  @media screen {
+    @content;
+  }
+}
+
+@mixin breakWidthHeight($w, $h) {
+  @media screen {
+    @content;
+  }
+}
+
+@mixin textBody--sm() {
+
+}
+
+@mixin textBody--lg() {
+
+}
+
+@mixin textTitle--2xs() {
+
+}
+
+.section--rel {
+  position: relative;
+}
+
+.section--white {
+  background-color: #fff;
+}
+
+.section--light {
+}
+
+.section--light {
+}
+
+.section--light {
+  background-color: $color-grey-zeta;
+}
+
+.section--light-alpha {
+  background-color: $color-grey-epsilon;
+}
+
+.section--light-fade {
+  background-image: linear-gradient(-180deg, #FAFBFD 7%, rgba(250, 251, 253, 0.00) 100%);
+}
+
+.section--dark {
+  background-color: $color-dark-beta;
+}
+
+.section--dark-alpha {
+  background-color: $color-grey-alpha;
+}
+
+.section--brand {
+  background-color: $color-brand-main;
+}
+
+.section-skew {
+  position: relative;
+  z-index: 0;
+  background-color: transparent;
+
+  &:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    z-index: -1;
+    transform: skewY(-2.5deg);
+  }
+
+  &.section--fade {
+    &:before {
+      background-image: linear-gradient(-180deg, #FAFBFD 7%, rgba(250, 251, 253, 0.00) 100%);
+    }
+  }
+
+  &.section--fade-webinar {
+    &:before {
+      background-image: linear-gradient(-180deg, #FFF 30%, rgba(250, 251, 253, 0.00) 100%);
+    }
+  }
+
+  &.section--light {
+    &:before {
+      background-color: $color-grey-zeta;
+    }
+  }
+
+  &.section--blue {
+    &:before {
+      background-image: linear-gradient(230deg, #0035FF 0%, #0B24A4 55%, #0B24A4 55%, #141658 100%);
+    }
+  }
+
+  &.section--brand {
+    &:before {
+      background-color: $color-brand-main;
+    }
+  }
+}
+
+.section--gradient {
+  position: relative;
+  padding-bottom: 0;
+  background: transparent;
+  z-index: 0;
+
+  &:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: -17%;
+    content: "";
+    z-index: -1;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: skewY(-2.5deg);
+  }
+}
+
+.section--gradient-one {
+  padding-bottom: $gutter-base*4;
+
+  @include break(lg) {
+    padding-bottom: $gutter-base*8;
+  }
+
+  &:before {
+    background-image: $color-gradient-one;
+
+    @include break(xl) {
+      background-image: url('/img/backgrounds/waves-1.svg'), $color-gradient-one;
+    }
+  }
+}
+
+.section--bg-gradient-one {
+  background-image: $color-gradient-one;
+  height: 100%;
+  background-size: cover;
+}
+
+.section--gradient-one-circle {
+  &:before {
+    top: -52% !important;
+    height: 154%;
+    transform: skewY(-13.5deg);
+    clip-path: ellipse(101% 54% at 76% 46%);
+  }
+}
+
+.section--gradient-one-circle-webinar {
+  &:before {
+    top: -10%;
+    height: 124%;
+  }
+}
+
+.section--gradient-two {
+  padding-bottom: $gutter-base*6;
+
+  @include break(lg) {
+    padding-bottom: $gutter-base*8;
+  }
+
+  &:before {
+    background-image: $color-gradient-two;
+
+    @include break(xl) {
+      background-image: url('/img/backgrounds/waves-2.svg'), $color-gradient-two;
+    }
+  }
+}
+
+.section--gradient-three {
+  padding-bottom: $gutter-base*5;
+
+  &:before {
+    background-image: $color-gradient-three;
+
+    @include break(xl) {
+      background-image: url('/img/backgrounds/waves-2.svg'), $color-gradient-three;
+    }
+  }
+}
+
+/**
+ * section--bg-[type]
+ *
+ * Example HTML:
+ *
+ * <div class="section section--bg-[type]">
+ *   ...
+ * </div>
+ */
+
+.section--bg-waves {
+  background-image: url('/img/background/waves.svg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.section--bg-flow {
+  background-image: url('/img/backgrounds/flow.svg');
+  background-position: 0 4rem;
+  background-repeat: no-repeat;
+  background-size: 110%;
+}
+
+.section--bg-team {
+  background-image: url('/img/about-us/zenhub-team.jpg');
+}
+
+.section--bg-layers {
+  @include break(lg) {
+    background-image: url('/img/backgrounds/layers.svg');
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
+
+/**
+ * section--p[dir]-[size]
+ *
+ * Example HTML:
+ *
+ * <div class="section section--p[dir]-[size]">
+ *   ...
+ * </div>
+ */
+
+/**
+*
+*  Vertical Top paddings
+*
+*/
+
+.section--pt-sm {
+  padding-top: $gutter-base/2;
+}
+
+.section--pt-md {
+  padding-top: $gutter-base;
+}
+
+.section--pt-lg {
+  padding-top: $gutter-base*2;
+
+  @include break(md) {
+    padding-top: $gutter-base*2;
+  }
+}
+
+.section--pt-xl {
+  padding-top: $gutter-base;
+
+  @include break(md) {
+    padding-top: $gutter-base*3;
+  }
+}
+
+.section--pt-xx {
+  padding-top: $gutter-base*2;
+
+  @include break(md) {
+    padding-top: $gutter-base*4;
+  }
+}
+
+.section--pt-3x {
+  padding-top: $gutter-base*2.5;
+
+  @include break(md) {
+    padding-top: $gutter-base*5;
+  }
+}
+
+.section--pt-4x {
+  padding-top: $gutter-base*8;
+}
+
+/**
+*
+*  Vertical Bottom paddings
+*
+*/
+
+.section--pb-sm {
+  padding-bottom: $gutter-base/2;
+}
+
+.section--pb-md {
+  padding-bottom: $gutter-base;
+}
+
+.section--pb-lg {
+  padding-bottom: $gutter-base*2;
+}
+
+.section--pb-xl {
+  padding-bottom: $gutter-base*3;
+}
+
+.section--pb-xx {
+  padding-bottom: $gutter-base*4;
+}
+
+.section--pb-3x {
+  padding-bottom: $gutter-base*5;
+}
+
+.section--pb-4x {
+
+  padding-bottom: $gutter-base*4;
+
+  @include break(md) {
+    padding-bottom: $gutter-base*8;
+  }
+}
+
+.section--pb-4x-webinar {
+  padding-bottom: $gutter-base*11;
+}
+
+.section--pb-7x {
+
+  padding-bottom: $gutter-base*7;
+
+  @include break(md) {
+    padding-bottom: $gutter-base*8;
+  }
+}
+
+/**
+*
+*  Horizontal paddings
+*
+*/
+
+.section--ph-md {
+  padding-left: $gutter-base;
+  padding-right: $gutter-base;
+}
+
+.section--ph-lg {
+  padding-left: $gutter-base;
+  padding-right: $gutter-base;
+
+  @include break(md) {
+    padding-left: $gutter-base*2;
+    padding-right: $gutter-base*2;
+  }
+}
+
+/**
+*
+*  Vertical Top margin
+*
+*/
+
+.section--mt-md {
+  margin-top: $gutter-base*4;
+}
+
+.section--mt-lg {
+  margin-top: $gutter-base*2;
+
+  @include break(md) {
+    margin-top: $gutter-base*8;
+  }
+}
+
+/**
+ * section--hero
+ *
+ * Example HTML:
+ *
+ * <div class="section section--hero">
+ *   ...
+ * </div>
+ */
+
+$section-hero-ratio: 1600/2880;
+
+.section--hero {
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+
+.section--hero-default {
+  background-size: cover;
+  min-height: 24rem;
+
+  @include breakWidthHeight(sm, md) {
+    min-height: 50vh;
+  }
+
+  @include breakWidthHeight(md, sm) {
+    min-height: 75vh;
+  }
+}
+
+.section--hero-customer-story {
+  background-size: contain;
+
+  @include breakWidthHeight(lg, sm) {
+    min-height: 90vh;
+    background-size: cover;
+  }
+}
+
+/**
+ * section--blockquote
+ *
+ * Example HTML:
+ *
+ * <div class="section section--blockquote">
+ *   ...
+ * </div>
+ */
+
+.section--blockquote {
+
+  blockquote {
+    margin: $gutter-base*2 0 0;
+  }
+}
+
+.section-blockquote--light {
+  .Blockquote-text {
+    color: $color-brand-main;
+  }
+}
+
+.section-blockquote--dark {
+  .Blockquote-text {
+    color: #fff;
+  }
+
+  .Blockquote-author {
+    color: #fff;
+  }
+}
+
+.Blockquote-text {
+  @include textBody--sm();
+  position: relative;
+  color: $color-brand-main;
+  font-style: italic;
+  margin-bottom: $gutter-base/2;
+
+  @include break(lg) {
+    min-height: $gutter-base*5;
+  }
+
+  &:before {
+    position: absolute;
+    content: "“";
+    font-size: 300%;
+    color: $color-grey-gamma;
+    left: -$gutter-base*1.25;
+    top: -$gutter-base*1;
+  }
+}
+
+.Blockquote-text--md {
+  @include textBody--sm();
+}
+
+.Blockquote-text--lg {
+  @include textBody--lg();
+}
+
+.Blockquote-avatar {
+  width: $gutter-base*2.5;
+  height: $gutter-base*2.5;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: $color-grey-gamma;
+}
+
+.Blockquote-author-container {
+  margin-left: $gutter-base/2;
+  width: 80%;
+}
+
+.Blockquote-avatar {
+  width: $gutter-base*2;
+  height: $gutter-base*2;
+}
+
+.Blockquote-author {
+  @include textTitle--2xs();
+}
+
+/**
+ * section--testimonial
+ *
+ * Example HTML:
+ *
+ * <div class="section section--testimonials">
+ *   ...
+ * </div>
+ */
+
+.section--testimonials {
+
+}
+
+.section--testimonials-container {
+  text-align: center;
+
+  .Cta-title {
+    font-size: map-get($font-size-secondary, md);
+    margin-top: $gutter-base*2;
+    margin-bottom: $gutter-base;
+  }
+}
+
+.section-skew-webinar {
+  position: relative;
+  z-index: 0;
+  background-color: transparent;
+
+  &:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    z-index: -1;
+  }
+
+  &.section--fade {
+    &:before {
+      background-image: linear-gradient(-180deg, #FAFBFD 7%, rgba(250, 251, 253, 0.00) 100%);
+    }
+  }
+
+  &.section--fade-webinar {
+    &:before {
+      background-image: linear-gradient(-180deg, #FFF 30%, rgba(250, 251, 253, 0.00) 100%);
+    }
+  }
+
+  &.section--light {
+    &:before {
+      background-color: $color-grey-zeta;
+    }
+  }
+
+  &.section--blue {
+    &:before {
+      background-image: linear-gradient(230deg, #0035FF 0%, #0B24A4 55%, #0B24A4 55%, #141658 100%);
+    }
+  }
+
+  &.section--brand {
+    &:before {
+      background-color: $color-brand-main;
+    }
+  }
+}
+
+
+.section--header-icon {
+  width: 100%;
+  position: absolute;
+
+  > .image {
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem;
+    margin: 0 auto 1rem;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0 5px 18px 2px rgba(94, 96, 186, 0.2);
+  }
+
+  > .title {
+    color: #6c718b;
+    font-weight: 500;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  > .description {
+    color: #6c718b;
+    text-align: center;
+  }
+}
+
+.section--pt-3x {
+  .section--header-icon {
+    top: -12rem;
+  }
+}
+
+.section--pt-4x {
+  .section--header-icon {
+    top: -18rem;
+  }
+}

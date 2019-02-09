@@ -1,11 +1,12 @@
 <template>
   <div>
-    <section id="section1" class="background">
+    <section class="section section--dark section--gradient section--gradient-one" id="section1">
+      <navbar/>
       <div class="container">
-        <div class="content">
-          <h1>تـــاکــــــــ</h1>
+        <div class="content text-white">
+          <h1 class="display-2">تـــاکــــــــ</h1>
           <h2>پروژه دانــش آزاد</h2>
-          <p>
+          <p class="mt-4">
             پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته است. این پروژه قصد دارد تا پلی میان
             متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.
           </p>
@@ -15,9 +16,9 @@
         </div>
       </div>
     </section>
-    <section id="section2">
-      <div class="container">
-        <h2>آخرین وبینار های برگزار شده</h2>
+    <section class="section section--white pt-0 section--pb-3x" id="section2">
+      <div class="container flex-column">
+        <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
           <div class="col-md-4" v-for="webinar in webinars.all.slice(3)">
             <card
@@ -29,9 +30,9 @@
         </div>
       </div>
     </section>
-    <section id="section3" class="background">
+    <section class="section section--light section-skew section--pt-4x section--pb-3x" id="section3">
       <div class="container">
-        <div class="header-icon">
+        <div class="section--header-icon">
           <div class="image">
             <img src="/img/icons/icon-plan.svg" alt="">
           </div>
@@ -41,7 +42,8 @@
           <div class="col-md-6">
             <h3>برنامه زمانی بهمن ماه</h3>
             <p>
-              در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با آقای ناصری داریم:
+              در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با
+              آقای ناصری داریم:
             </p>
             <ul class="">
               <li>۲۱ بهمن : وبینار آشنایی با Docker</li>
@@ -58,9 +60,9 @@
         </div>
       </div>
     </section>
-    <section id="section4">
+    <section class="section section--white section--pt-4x section--pb-4x">
       <div class="container has-text-centered">
-        <div class="header-icon">
+        <div class="section--header-icon">
           <div class="image">
             <img src="/img/icons/icon-visualize.svg" alt="">
           </div>
@@ -71,7 +73,7 @@
         </div>
       </div>
     </section>
-    <section id="section5" class="background">
+    <section class="section section--gradient section--gradient-one section--pb-sm">
       <div class="container text-center justify-content-center pb-5">
         <div class="content text-white">
           <h3 class="mt-2">اطلاع از جدید ترین اطلاعیه ها</h3>
@@ -92,10 +94,11 @@
 
   import Card from "../components/Card";
   import {mapState} from 'vuex';
+  import Navbar from "../components/Navbar";
 
   export default {
-    components: {Card},
-    fetch ({ store, params }) {
+    components: {Navbar, Card},
+    fetch({store, params}) {
       return store.dispatch('webinars/loadWebinars')
     },
     computed: {
@@ -112,160 +115,33 @@
   }
 
   #section1 {
-    padding: 0 2rem 16rem;
-
-    .content {
-      width: 50%;
-      margin: 10rem 0 4rem;
-
-      > h1 {
-        margin: 0;
-        color: #fff;
-        font-size: 4rem;
-        font-weight: 500;
-      }
-      > h2 {
-        color: #ffffff;
-        font-weight: 300;
-        margin: 0 0 3rem;
-        font-size: 2.2rem;
-      }
-
-      > p {
-        font-weight: 300;
-        font-size: 1.3rem;
-        color: hsla(0, 0%, 100%, 0.8);
-      }
-
-      > div {
-        display: flex;
-        margin: 0 auto;
-        max-width: 44rem;
-        padding-top: 2rem;
-
-        > .btn + .btn {
-          margin-right: 1rem;
-        }
-      }
+    h2 {
+      font-size: 3rem;
+      font-weight: 300;
     }
 
-    &:before {
-      background-image: url(/img/waves.svg), linear-gradient(326deg, #9864ff 20%, #1a1c82 92%);
+    p {
+      font-size: 1.3rem;
+      color: #fffc;
     }
   }
 
   #section2 {
-    padding-bottom: 20rem;
-    .container {
-      flex-direction: column;
-    }
     h2 {
       color: #6c718b;
-      font-size: 1.7rem;
-      font-weight: 500;
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .card {
-      height: 100%;
-    }
-  }
-
-  #section3 {
-    color: #444;
-    position: relative;
-    padding-bottom: 15rem;
-    .columns {
-      padding: 5rem 0 18rem;
-    }
-    .column .image {
-      width: 30rem;
-      border-radius: .5rem;
-    }
-    &:before {
-      background-color: #f6f8fc;
     }
   }
 
   #section4 {
-    padding: 0 0 10rem;
     h2 {
       margin-bottom: 3rem;
       text-align: center;
-    }
-    .plans {
-      display: flex;
-      > .plan {
-        flex: 1;
-        opacity: .5;
-        position: relative;
-        overflow: hidden;
-        text-align: center;
-        transform: scale(.8);
-        border-radius: .5rem;
-        box-shadow: 0 5px 18px 2px rgba(94, 96, 186, 0.2);
-        &:nth-child(1) {
-          margin-left: -2rem;
-        }
-        &:nth-child(2) {
-          opacity: 1;
-          z-index: 1;
-          color: white;
-          margin: 0 -1.5rem;
-          transform: scale(1);
-          background-color: #6e70a0;
-        }
-        &:nth-child(3) {
-          margin-right: -2rem;
-        }
-        > .price {
-          padding: 1rem 0;
-          font-size: 2rem;
-        }
-        > span {
-          top: 50%;
-          right: -30%;
-          width: 150%;
-          color: white;
-          display: block;
-          font-size: 2rem;
-          position: absolute;
-          transform: rotate(-45deg);
-          background-color: hsla(238, 21%, 87%, 1);
-        }
-        > h3 {
-          margin: 1rem;
-          background-color: white;
-          border-radius: 4px;
-          color: #6e70a0;
-          padding: 1rem 0;
-          font-weight: 500;
-          font-size: 1.5rem;
-        }
-        > h4 {
-          font-weight: 500;
-          font-size: 1.2rem;
-          margin: 2rem 0 1rem;
-        }
-      }
-      .items {
-        .item {
-          padding: .5rem 0;
-          font-weight: 300;
-          &:nth-child(2n + 1) {
-            background: rgba(255, 255, 255, 0.2);
-          }
-        }
-      }
     }
   }
 
   #section5 {
     .button {
       background: #231e6d;
-    }
-    &:before {
-      background: linear-gradient(36deg, #9864ff 20%, #1e1f65 92%);
     }
   }
 
