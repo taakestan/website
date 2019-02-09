@@ -1,7 +1,8 @@
 <template>
   <div>
-    <section id="section1" class="background">
-      <div class="container">
+    <section id="section1" class="section section--dark section--gradient section--gradient-one">
+      <navbar/>
+      <div class="container text-white pt-5">
         <div class="row">
           <div class="col-md-6">
             <h1 class="mb-5" v-text="webinar.title"></h1>
@@ -13,16 +14,17 @@
         </div>
       </div>
     </section>
-    <div class="container contents">
-      <h2>درباره این وبینار :</h2>
-      <div class="mt-5" v-html="webinar.content"></div>
-      <span>ارئه دهنده : </span><strong v-text="webinar.provider"></strong>
-    </div>
-    <section id="section3" class="background">
+    <section class="section section--white pt-0 section--pb-3x">
+      <div class="container flex-column align-items-baseline">
+        <h2>درباره این وبینار :</h2>
+        <div class="mt-5 contents text-justify" v-html="webinar.content"></div>
+      </div>
+    </section>
+    <section id="section3" class="section section--light section-skew section--pt-4x section--pb-3x">
       <div class="container flex-column">
         <div class="section--header-icon">
           <div class="image">
-            <img src="/img/icons/icon-plan.svg" alt="">
+            <img src="/img/icons/icon-download.svg" alt="">
           </div>
           <div class="title">دانلود فایل ها</div>
         </div>
@@ -44,9 +46,11 @@
 
 <script>
   import {mapState} from 'vuex';
+  import Navbar from "../../components/Navbar";
 
   export default {
     name: "webinar",
+    components: {Navbar},
     data() {
       return {
         webinar: ''
@@ -73,16 +77,12 @@
 
 <style lang="scss" scoped>
   #section1 {
-    padding: 0 2rem 10rem;
-    .row {
-      margin: 10rem 0 4rem;
-      h1 {
-        font-size: 4rem;
-      }
-      p {
-        color: #fffc;
-        font-size: 1.3rem;
-      }
+    h1 {
+      font-size: 4rem;
+    }
+    p {
+      color: #fffc;
+      font-size: 1.3rem;
     }
 
     &:before {
@@ -90,24 +90,13 @@
     }
   }
 
-  #section3 {
-    &:before {
-      background: #f6f8fc;
-    }
-
-    .container {
-      padding: 7rem 0;
-      margin-top: 8rem;
-    }
-  }
-
-  .header-icon {
-    top: -5rem;
+  .container {
+    display: flex;
+    align-items: center;
+    position: relative;
   }
 
   .contents {
-    margin-top: -5rem;
-    font-size: 1.1rem;
-    text-align: justify;
+    font-size: 1.2rem;
   }
 </style>
