@@ -15,9 +15,9 @@
         </div>
       </div>
     </section>
-    <section class="section section--white section--pt-lg section--pb-lg">
+    <section class="section section--white section--pt-lg section--pb-lg" id="section2">
       <div class="container flex-column">
-        <h2>آخرین وبینار های برگزار شده</h2>
+        <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
           <div class="col-md-4" v-for="webinar in webinars.all.slice(3)">
             <card
@@ -129,22 +129,8 @@
   }
 
   #section2 {
-    padding-bottom: 20rem;
-
-    .container {
-      flex-direction: column;
-    }
-
     h2 {
       color: #6c718b;
-      font-size: 1.7rem;
-      font-weight: 500;
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .card {
-      height: 100%;
     }
   }
 
