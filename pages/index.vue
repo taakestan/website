@@ -77,10 +77,7 @@
           <h3>
             اطلاع از جدید ترین اطلاعیه ها
           </h3>
-          <form class="form-inline mb-3 mt-3" name="email-marketing" netlify-honeypot="bot-field" data-netlify="true">
-            <p class="hidden">
-              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-            </p>
+          <form class="form-inline mb-3 mt-3" name="email-marketing" data-netlify="true">
             <div class="form-group mr-sm-3 flex-fill">
               <input type="email" name="email" class="form-control form-control-lg flex-fill" placeholder="آدرس ایمیل">
             </div>
