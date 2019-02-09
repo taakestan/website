@@ -32,6 +32,7 @@
 
 <style scoped lang="scss">
   .navbar {
+    z-index: 1;
     background: none;
   }
 
