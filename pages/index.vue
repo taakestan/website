@@ -72,13 +72,11 @@
       </div>
     </section>
     <section id="section5" class="background">
-      <div class="container">
+      <div class="container text-center justify-content-center pb-5">
         <div class="content text-white">
-          <h3>
-            اطلاع از جدید ترین اطلاعیه ها
-          </h3>
-          <form class="form-inline mb-3 mt-3" name="email-marketing" data-netlify="true">
-            <div class="form-group mr-sm-3 flex-fill">
+          <h3 class="mt-2">اطلاع از جدید ترین اطلاعیه ها</h3>
+          <form class="form-inline mb-2 mt-3" name="email-marketing" data-netlify="true">
+            <div class="form-group mr-1 flex-fill">
               <input type="email" name="email" class="form-control form-control-lg flex-fill" placeholder="آدرس ایمیل">
             </div>
             <button class="btn btn-lg btn-primary">ثبت</button>
@@ -266,17 +264,8 @@
     .button {
       background: #231e6d;
     }
-    .container {
-      text-align: center;
-      justify-content: center;
-      height: 100%;
-      min-height: 20rem;
-      align-items: baseline;
-      padding-top: 4rem;
-      justify-content: center;
-    }
     &:before {
-      background-image: url(/img/index/waves.svg), linear-gradient(36deg, #9864ff 20%, #1e1f65 92%);
+      background: linear-gradient(36deg, #9864ff 20%, #1e1f65 92%);
     }
   }
 
