@@ -201,7 +201,7 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
     background-image: $color-gradient-three;
 
     @include break(xl) {
-      background-image: url('/img/backgrounds/waves-2.svg'), $color-gradient-three;
+      background-image: url('/img/backgrounds/waves.svg'), $color-gradient-three;
     }
   }
 }

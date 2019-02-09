@@ -1,30 +1,35 @@
 <template>
-  <div class="columns is-multiline">
-    <div class="column is-one-third-desktop" v-for="provider in providers">
-      <div class="provider-card">
-        <img :src="provider.image" alt="">
-        <h3 class="title" v-text="provider.name"></h3>
-        <p v-text="provider.description">
-          I am an experienced Software Engineer, and team builder, passionate about design, development and operations of highly scalable software systems based on microservices in the cloud. Although I'm deeply technical, I'm a lot more passionate about the results of our work and its impact on our customer's lives.
-        </p>
-        <ul class="socials">
-          <li><a href="https://stackoverflow.com/users/3634398/alex-kyriakidis" target="_blank"
-                 title="Alex Kyriakidis on Stack Overflow"><i class="fab fa-stack-overflow"></i></a></li>
-          <li><a href="https://twitter.com/hootlex" target="_blank" title="Alex Kyriakidis on Twitter"><i
-            class="fab fa-twitter"></i></a></li>
-          <li><a href="https://github.com/hootlex" target="_blank" title="Alex Kyriakidis on Github"><i
-            class="fab fa-github"></i></a></li>
-        </ul>
+  <div>
+    <section class="section section--dark section--gradient section--gradient-one" id="section1">
+      <navbar/>
+      <div class="container text-center text-white pt-5">
+        <h1 class="display-3 mb-3">ارائه کنندگان</h1>
+        <p>شما هم می توانید به افراد ارائه کننده در تاک بپیوندید تنها کافی است با ما تماس بگیرید.</p>
       </div>
-    </div>
+    </section>
+    <section class="section section--white pt-0 section--pb-lg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4" v-for="provider in providers">
+            <div class="provider-card">
+              <img :src="provider.image" alt="">
+              <h3 class="title" v-text="provider.name"></h3>
+              <p class="text-justify" v-text="provider.description"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
   import {mapState} from 'vuex';
+  import Navbar from "../components/Navbar";
 
   export default {
     name: "provider",
+    components: {Navbar},
     computed: {
       ...mapState(['providers'])
     }
@@ -32,6 +37,15 @@
 </script>
 
 <style scoped lang="scss">
+
+  #section1 {
+    p {
+      font-size: 1.2rem;
+    }
+    &:before {
+      background-image: url(/img/backgrounds/waves-1.svg), linear-gradient(326deg, #ffb964 20%, #421a82 92%);
+    }
+  }
   .provider-card {
     padding: 1rem;
     display: flex;
