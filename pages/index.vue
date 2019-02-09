@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section id="section1" class="background">
+    <section class="section section--dark section--gradient section--gradient-one">
       <div class="container">
         <div class="content">
           <h1>تـــاکــــــــ</h1>
@@ -15,8 +15,8 @@
         </div>
       </div>
     </section>
-    <section id="section2">
-      <div class="container">
+    <section class="section section--white section--pt-lg section--pb-lg">
+      <div class="container flex-column">
         <h2>آخرین وبینار های برگزار شده</h2>
         <div class="row">
           <div class="col-md-4" v-for="webinar in webinars.all.slice(3)">
@@ -29,7 +29,7 @@
         </div>
       </div>
     </section>
-    <section id="section3" class="background">
+    <section class="section section--light section-skew section--pt-4x section--pb-4x nudgeUp--2x">
       <div class="container">
         <div class="header-icon">
           <div class="image">
@@ -58,7 +58,7 @@
         </div>
       </div>
     </section>
-    <section id="section4">
+    <section class="section section--gradient section--gradient-one section--pt-lg section--pb-4x">
       <div class="container has-text-centered">
         <div class="header-icon">
           <div class="image">
