@@ -20,12 +20,13 @@ section.background {
 
   .container {
     display: flex;
+    min-height: 20rem;
     align-items: center;
   }
 
   &:before {
     left: 0;
-    top: -17%;
+    top: -12rem;
     width: 100%;
     content: "";
     z-index: -1;
