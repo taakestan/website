@@ -31,9 +31,9 @@
 </template>
 
 <script>
-  import Card from "../../components/Card";
   import {mapState} from 'vuex';
-  import Navbar from "../../components/Navbar";
+  import Card from "~/components/Card";
+  import Navbar from "~/components/Navbar";
 
   export default {
     name: "index",
@@ -44,6 +44,11 @@
     computed: {
       ...mapState(['webinars'])
     },
+    head () {
+      return {
+        title: 'وبینار ها | پروژه تاک',
+      }
+    }
   }
 </script>
 

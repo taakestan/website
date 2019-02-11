@@ -67,7 +67,7 @@
     },
     head() {
       return {
-        title: this.webinar.title
+        title: this.webinar.title + ' | پروژه تاک'
       }
     },
     created() {

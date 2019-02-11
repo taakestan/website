@@ -34,18 +34,8 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
 
 }
 
-.section--rel {
-  position: relative;
-}
-
 .section--white {
   background-color: #fff;
-}
-
-.section--light {
-}
-
-.section--light {
 }
 
 .section--light {
@@ -73,18 +63,18 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
 }
 
 .section-skew {
-  position: relative;
   z-index: 0;
+  position: relative;
   background-color: transparent;
 
   &:before {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
+    width: 100%;
     content: "";
     z-index: -1;
+    height: 100%;
+    position: absolute;
     transform: skewY(-2.5deg);
   }
 
@@ -120,10 +110,10 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
 }
 
 .section--gradient {
-  position: relative;
-  padding-bottom: 0;
-  background: transparent;
   z-index: 0;
+  padding-bottom: 0;
+  position: relative;
+  background: transparent;
 
   &:before {
     width: 100%;
@@ -157,9 +147,9 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
 }
 
 .section--bg-gradient-one {
-  background-image: $color-gradient-one;
   height: 100%;
   background-size: cover;
+  background-image: $color-gradient-one;
 }
 
 .section--gradient-one-circle {
@@ -206,16 +196,6 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
   }
 }
 
-/**
- * section--bg-[type]
- *
- * Example HTML:
- *
- * <div class="section section--bg-[type]">
- *   ...
- * </div>
- */
-
 .section--bg-waves {
   background-image: url('/img/background/waves.svg');
   background-position: bottom center;
@@ -230,10 +210,6 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
   background-size: 110%;
 }
 
-.section--bg-team {
-  background-image: url('/img/about-us/zenhub-team.jpg');
-}
-
 .section--bg-layers {
   @include break(lg) {
     background-image: url('/img/backgrounds/layers.svg');
@@ -242,22 +218,6 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
     background-size: 100%;
   }
 }
-
-/**
- * section--p[dir]-[size]
- *
- * Example HTML:
- *
- * <div class="section section--p[dir]-[size]">
- *   ...
- * </div>
- */
-
-/**
-*
-*  Vertical Top paddings
-*
-*/
 
 .section--pt-sm {
   padding-top: $gutter-base/2;
@@ -302,12 +262,6 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
 .section--pt-4x {
   padding-top: $gutter-base*8;
 }
-
-/**
-*
-*  Vertical Bottom paddings
-*
-*/
 
 .section--pb-sm {
   padding-bottom: $gutter-base/2;
@@ -355,12 +309,6 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
   }
 }
 
-/**
-*
-*  Horizontal paddings
-*
-*/
-
 .section--ph-md {
   padding-left: $gutter-base;
   padding-right: $gutter-base;
@@ -376,12 +324,6 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
   }
 }
 
-/**
-*
-*  Vertical Top margin
-*
-*/
-
 .section--mt-md {
   margin-top: $gutter-base*4;
 }
@@ -393,16 +335,6 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
     margin-top: $gutter-base*8;
   }
 }
-
-/**
- * section--hero
- *
- * Example HTML:
- *
- * <div class="section section--hero">
- *   ...
- * </div>
- */
 
 $section-hero-ratio: 1600/2880;
 
@@ -432,16 +364,6 @@ $section-hero-ratio: 1600/2880;
     background-size: cover;
   }
 }
-
-/**
- * section--blockquote
- *
- * Example HTML:
- *
- * <div class="section section--blockquote">
- *   ...
- * </div>
- */
 
 .section--blockquote {
 
@@ -515,20 +437,6 @@ $section-hero-ratio: 1600/2880;
 
 .Blockquote-author {
   @include textTitle--2xs();
-}
-
-/**
- * section--testimonial
- *
- * Example HTML:
- *
- * <div class="section section--testimonials">
- *   ...
- * </div>
- */
-
-.section--testimonials {
-
 }
 
 .section--testimonials-container {

@@ -30,7 +30,12 @@
 	import Navbar from "../components/Navbar";
   export default {
 		name: "contact-us",
-    components: {Navbar}
+    components: {Navbar},
+    head () {
+      return {
+        title: 'تماس با ما | پروژه تاک',
+      }
+    }
   }
 </script>
 

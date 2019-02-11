@@ -56,7 +56,13 @@
   import Navbar from "../components/Navbar";
   export default {
     name: "about-taak",
-    components: {Navbar}
+    scrollToTop: true,
+    components: {Navbar},
+    head () {
+      return {
+        title: 'درباره ما | پروژه تاک',
+      }
+    }
   }
 </script>
 

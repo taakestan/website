@@ -32,6 +32,11 @@
     components: {Navbar},
     computed: {
       ...mapState(['providers'])
+    },
+    head () {
+      return {
+        title: 'ارائه کنندگان | پروژه تاک',
+      }
     }
   }
 </script>
