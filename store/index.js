@@ -1,5 +1,5 @@
 export const actions = {
-  nuxtServerInit({dispatch}) {
-    dispatch('webinars/prepare')
+  async nuxtServerInit({dispatch}) {
+    await dispatch('webinars/prepare')
   }
 };
