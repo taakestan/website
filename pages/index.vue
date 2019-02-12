@@ -98,12 +98,7 @@
 
   export default {
     components: {Navbar, Card},
-    fetch({store, params}) {
-      return store.dispatch('webinars/loadWebinars')
-    },
-    computed: {
-      ...mapState(['webinars'])
-    }
+    computed: mapState(['webinars'])
   }
 </script>
 

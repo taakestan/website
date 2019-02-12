@@ -38,12 +38,7 @@
   export default {
     name: "index",
     components: {Navbar, Card},
-    fetch ({ store, params }) {
-      return store.dispatch('webinars/loadWebinars')
-    },
-    computed: {
-      ...mapState(['webinars'])
-    },
+    computed: mapState(['webinars']),
     head () {
       return {
         title: 'وبینار ها | پروژه تاک',

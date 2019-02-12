@@ -59,12 +59,7 @@
         webinar: ''
       }
     },
-    fetch ({ store, params }) {
-      return store.dispatch('webinars/loadWebinars')
-    },
-    computed: {
-      ...mapState(['webinars']),
-    },
+    computed: mapState(['webinars']),
     head() {
       return {
         title: this.webinar.title + ' | پروژه تاک'
