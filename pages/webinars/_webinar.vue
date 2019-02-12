@@ -65,6 +65,9 @@
         title: this.webinar.title + ' | پروژه تاک'
       }
     },
+    validate ({ params, store }) {
+      return store.state.webinars.all.some(item => item.slug === params.webinar)
+    },
     created() {
       const slug = this.$router.history.current.params.webinar;
       this.webinar = this.webinars.all.find(item => item.slug === slug);
