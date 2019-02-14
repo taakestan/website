@@ -1,6 +1,10 @@
 <template>
   <div class="container mt-3">
-    <div class="row">
+    <div class="d-flex justify-content-between">
+      <h3>لیست وبینار ها</h3>
+      <div class="btn btn-success">ایجاد وبینار</div>
+    </div>
+    <div class="row mt-3">
       <div class="col-md-4 mb-3" v-for="(item, id) in items">
         <card
           :title="item.title" :provider="item.provider"
