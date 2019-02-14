@@ -18,6 +18,7 @@
         </ul>
       </div>
     </header>
+    <nuxt/>
   </div>
 </template>
 

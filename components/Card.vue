@@ -25,7 +25,8 @@
         type: String
       },
       href: {
-        type: String
+        type: String,
+        required: true
       }
     }
   }
