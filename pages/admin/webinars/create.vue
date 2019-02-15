@@ -49,7 +49,7 @@
           <div class="form-group">
             <label>متن وبینار</label>
             <div class="quill-editor"
-                 :content="webinar.content"
+                 v-model="webinar.content"
                  v-quill:myQuillEditor="editorOption">
             </div>
           </div>
