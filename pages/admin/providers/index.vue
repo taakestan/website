@@ -4,8 +4,8 @@
       <h3>لیست وبینار ها</h3>
       <nuxt-link
         class="btn btn-success"
-        to="/admin/webinars/create">
-        ایجاد وبینار
+        to="/admin/providers/create">
+        اضافه کردن ارائه دهنده
       </nuxt-link>
     </div>
     <div class="row mt-3">
