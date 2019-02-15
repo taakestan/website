@@ -22,11 +22,13 @@ const items = [
   },
 ];
 
-export const state = () => ([]);
+export const state = () => ({
+  all: []
+});
 
 export const mutations = {
   async setItems(state, items) {
-    state = items;
+    state.all = items;
   }
 };
 
