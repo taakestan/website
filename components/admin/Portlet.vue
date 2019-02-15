@@ -9,7 +9,7 @@
     <div class="portlet__body p-3">
       <slot name="body"></slot>
     </div>
-    <div class="portlet__foot" v-if="!!this.$slots['footer']">
+    <div class="portlet__foot border-top py-2 px-3" v-if="!!this.$slots['footer']">
       <slot name="footer"></slot>
     </div>
   </div>

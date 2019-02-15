@@ -1,11 +1,11 @@
 <template>
-  <div class="container mt-3">
+  <div class="container my-3">
     <portlet>
       <template slot="title">
         ایجاد وبینار
       </template>
       <template slot="body">
-        <form class="mt-4">
+        <form class="mt-4" id="form" @submit.prevent="submit">
           <h5>اطلاعات وبینار</h5>
           <div class="form-row">
             <div class="form-group col-md-4">
@@ -71,10 +71,10 @@
               </div>
             </div>
           </div>
-
-          <hr>
-          <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
+      </template>
+      <template slot="footer">
+        <button form="form" class="btn btn-success">ایجاد وبینار</button>
       </template>
     </portlet>
   </div>
@@ -127,6 +127,9 @@
       },
       removeLink(index) {
         this.webinar.links.splice(index, 1);
+      },
+      submit() {
+
       }
     }
 	}
