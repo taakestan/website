@@ -8,10 +8,10 @@
         <div class="navbar-nav-scroll">
           <ul class="navbar-nav bd-navbar-nav flex-row">
             <li class="nav-item">
-              <nuxt-link class="nav-link " to="/admin/webinars">وبینار ها</nuxt-link>
+              <nuxt-link class="nav-link" to="/admin/webinars">وبینار ها</nuxt-link>
             </li>
             <li class="nav-item">
-              <nuxt-link class="nav-link " to="/admin/providers">ارائه دهندگان</nuxt-link>
+              <nuxt-link class="nav-link" to="/admin/providers">ارائه دهندگان</nuxt-link>
             </li>
           </ul>
         </div>
