@@ -58,15 +58,15 @@
             <h5>لینک های وبینار</h5>
             <div class="btn btn-outline-success" @click="addLink">افزودن لینک</div>
           </div>
-          <div class="form-row">
+          <div class="form-row" v-for="(link, index) in webinar.links">
             <div class="form-group col-md-4">
               <label>عنوان لینک</label>
-              <input class="form-control" v-model="webinar.image">
+              <input class="form-control" v-model="link.title">
             </div>
             <div class="form-group col-md-8">
               <label>آدرس لینک</label>
               <div class="d-flex">
-                <input class="form-control ml-1" v-model="webinar.image">
+                <input class="form-control ml-1" v-model="link.value">
                 <div class="btn btn-outline-warning">حذف</div>
               </div>
             </div>
@@ -118,6 +118,14 @@
         }
       }
     },
+    methods: {
+      addLink() {
+        this.webinar.links.push({
+          title: '',
+          value: ''
+        });
+      }
+    }
 	}
 </script>
 
