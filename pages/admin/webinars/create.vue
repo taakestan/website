@@ -67,7 +67,7 @@
               <label>آدرس لینک</label>
               <div class="d-flex">
                 <input class="form-control ml-1" v-model="link.value">
-                <div class="btn btn-outline-warning">حذف</div>
+                <div class="btn btn-outline-warning" @click="removeLink(index)">حذف</div>
               </div>
             </div>
           </div>
@@ -124,6 +124,9 @@
           title: '',
           value: ''
         });
+      },
+      removeLink(index) {
+        this.webinar.links.splice(index, 1);
       }
     }
 	}
