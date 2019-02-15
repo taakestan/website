@@ -8,17 +8,15 @@
         <form class="mt-4">
           <h5>اطلاعات وبینار</h5>
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
               <label>عنوان وبینار</label>
               <input class="form-control">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
               <label>slug</label>
               <input class="form-control">
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
               <label>ارائه دهنده</label>
               <select class="form-control">
                 <option selected disabled>انتخاب کنید ...</option>
@@ -27,9 +25,19 @@
                 </option>
               </select>
             </div>
-            <div class="form-group col-md-6">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
               <label>تاریخ وبینار</label>
               <input type="date" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label>بنر وبینار</label>
+              <input class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label>تصویر وبینار</label>
+              <input class="form-control">
             </div>
           </div>
           <hr>
