@@ -24,6 +24,11 @@ const items = [
 
 export const state = () => ([]);
 
+export const mutations = {
+  async setItems(state, items) {
+    state = items;
+  }
+};
 
 export const actions = {
   async prepare({commit}) {
