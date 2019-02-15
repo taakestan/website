@@ -1,13 +1,9 @@
 <template>
   <div class="portlet rounded" :class="className">
     <div class="portlet__head p-3 border-bottom" v-if="!!this.$slots['title'] || !!this.$slots['tools']">
-      <div class="portlet__head-caption" v-if="!!this.$slots['title']">
-        <div class="portlet__head-title">
-          <h4 class="portlet__head-text m-0">
-            <slot name="title"></slot>
-          </h4>
-        </div>
-      </div>
+      <h4 class="portlet__head-title m-0" v-if="!!this.$slots['title']">
+        <slot name="title"></slot>
+      </h4>
       <slot name="tools"></slot>
     </div>
     <div class="portlet__body p-3">
