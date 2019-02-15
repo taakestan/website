@@ -29,6 +29,9 @@ export const state = () => ({
 export const mutations = {
   async setItems(state, items) {
     state.all = items;
+  },
+  addItem(state, item) {
+    state.all[item.id] = item.item;
   }
 };
 
@@ -36,5 +39,10 @@ export const actions = {
   async prepare({commit}) {
     const {data} = await this.$axios.get('providers.json');
     commit('setItems', data);
-  }
+  },
+  addItem(vuexContext, item) {
+    return this.$axios.post('posts.json', item)
+      .then(data => vuexContext.commit("addItem", { item, id: data.name }))
+      .catch(e => console.log(e));
+  },
 };

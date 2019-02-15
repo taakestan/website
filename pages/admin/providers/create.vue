@@ -89,6 +89,7 @@
         this.$axios.post('providers.json', this.provider)
           .then(response => {
             this.$route.push('/admin/providers');
+            this.$store.dispatch('providers/prepare');
           })
       }
     }
