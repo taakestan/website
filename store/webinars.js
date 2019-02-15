@@ -3,7 +3,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  async setWebinars(state, items) {
+  async setItems(state, items) {
     state.all = items;
   }
 };
@@ -11,6 +11,6 @@ export const mutations = {
 export const actions = {
   async prepare({commit}) {
     const {data} = await this.$axios.get('webinars.json');
-    commit('setWebinars', data);
+    commit('setItems', data);
   }
 };
