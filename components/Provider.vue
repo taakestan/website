@@ -1,8 +1,8 @@
 <template>
 	<div class="provider-card">
 		<img :src="provider.image" alt="">
-		<h3 class="title" v-text="provider.name"></h3>
-		<p class="text-justify" v-text="provider.description"></p>
+		<h3 class="title" v-text="provider.first_name + ' ' + provider.last_name"></h3>
+		<p class="text-justify" v-text="provider.biography"></p>
 	</div>
 </template>
 <script>

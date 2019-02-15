@@ -9,7 +9,7 @@
       </nuxt-link>
     </div>
     <div class="row mt-3">
-      <div class="col-md-4 mb-3" v-for="provider in providers">
+      <div class="col-md-4 mb-3" v-for="provider in providers.all">
         <provider :provider="provider"/>
       </div>
     </div>
