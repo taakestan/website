@@ -7,7 +7,7 @@
           <div class="col-md-6">
             <h1 v-text="webinar.title"></h1>
             <div class="provider mb-4 d-inline-block">
-              <span>ارئه دهنده : </span><strong v-text="webinar.provider"></strong>
+              <span>ارئه دهنده : </span><strong v-text="webinar.provider_id"></strong>
             </div>
             <p v-text="webinar.description"></p>
           </div>
@@ -31,15 +31,9 @@
           </div>
           <div class="title">دانلود فایل ها</div>
         </div>
-        <div class="row">
-          <div class="col">
-            <div class="btn btn-primary">دانلود فایل ۱</div>
-          </div>
-          <div class="col">
-            <div class="btn btn-primary">دانلود فایل ۱</div>
-          </div>
-          <div class="col">
-            <div class="btn btn-primary">دانلود فایل ۱</div>
+        <div class="d-flex">
+          <div class="col" v-for="link in webinar.links">
+            <a :href="link.value" class="btn btn-primary" v-text="link.title"></a>
           </div>
         </div>
       </div>
@@ -56,7 +50,7 @@
     components: {Navbar},
     data() {
       return {
-        webinarIndex: ''
+        webinar: ''
       }
     },
     computed: mapState(['webinars']),
@@ -71,9 +65,13 @@
         if (store.state.webinars.all[index].slug === params.webinar)
           indexItem = index;
       }
-      console.log(indexItem);
-      // this.webinar = Object.values(store.state.webinars.all).find(item => item.slug === params.webinar);
       return !!indexItem;
+    },
+    created() {
+      for (let index in this.webinars.all) {
+        if (this.webinars.all[index].slug === this.$route.params.webinar)
+          this.webinar = this.webinars.all[index];
+      }
     }
   }
 </script>

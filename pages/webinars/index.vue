@@ -17,10 +17,10 @@
     <section class="section section--white pt-0 section--pb-lg">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 mb-4" v-for="webinar in webinars.all">
+          <div class="col-lg-4 col-md-6 mb-4" v-for="webinar in webinars.all">
             <card
-              :title="webinar.title" :provider="webinar.provider"
-              :image-path="webinar.baner" :href="'/webinars/' + webinar.slug">
+              :title="webinar.title" :provider="webinar.provider_id"
+              :image-path="webinar.banner" :href="'/webinars/' + webinar.slug">
               {{ webinar.description }}
             </card>
           </div>

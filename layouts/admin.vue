@@ -27,7 +27,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   body {
     background: #f2f3f8;
   }

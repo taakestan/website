@@ -22,8 +22,8 @@
         <div class="row">
           <div class="col-md-4" v-for="key in Object.keys(webinars.all).slice(3)">
             <card
-              :title="webinars.all[key].title" :provider="webinars.all[key].provider"
-              :image-path="webinars.all[key].baner" :href="'webinars/' + webinars.all[key].slug">
+              :title="webinars.all[key].title" :provider="webinars.all[key].provider_id"
+              :image-path="webinars.all[key].banner" :href="'webinars/' + webinars.all[key].slug">
               {{ webinars.all[key].description }}
             </card>
           </div>
