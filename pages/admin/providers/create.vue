@@ -86,11 +86,9 @@
     },
     methods: {
 		  submit() {
-        this.$axios.post('providers.json', this.provider)
-          .then(response => {
-            this.$route.push('/admin/providers');
-            this.$store.dispatch('providers/prepare');
-          })
+        this.$store.dispatch("providers/addItem", this.provider).then(() => {
+          this.$router.push("/admin/providers");
+        });
       }
     }
 	}
