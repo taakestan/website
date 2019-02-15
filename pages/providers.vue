@@ -10,7 +10,7 @@
     <section class="section section--white pt-0 section--pb-lg">
       <div class="container">
         <div class="row">
-          <div class="col-md-4" v-for="provider in providers">
+          <div class="col-md-4" v-for="provider in providers.all">
             <provider :provider="provider"/>
           </div>
         </div>
