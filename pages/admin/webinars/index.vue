@@ -9,10 +9,10 @@
       </nuxt-link>
     </div>
     <div class="row mt-3">
-      <div class="col-md-4 mb-3" v-for="webinar in webinars.all">
+      <div class="col-lg-4 col-md-6 mb-3" v-for="webinar in webinars.all">
         <card
-          :title="webinar.title" :provider="webinar.provider"
-          :image-path="webinar.baner" :href="'/admin/webinars/' + webinar.id">
+          :title="webinar.title" :provider="providerName(webinar.provider_id)"
+          :image-path="webinar.banner" :href="'/admin/webinars/' + webinar.id">
           {{ webinar.description }}
         </card>
       </div>
@@ -27,7 +27,13 @@
 		name: "index",
     components: {Card},
     layout: 'admin',
-    computed: mapState(['webinars'])
+    computed: mapState(['webinars', 'providers']),
+    methods: {
+      providerName(providerID) {
+        const provider = this.providers.all[providerID];
+        return provider.first_name + ' ' + provider.last_name;
+      }
+    }
 	}
 </script>
 

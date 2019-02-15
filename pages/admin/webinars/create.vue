@@ -129,7 +129,9 @@
         this.webinar.links.splice(index, 1);
       },
       submit() {
-
+        this.$store.dispatch("webinars/addItem", this.webinar).then(() => {
+          this.$router.push("/admin/webinars");
+        });
       }
     }
 	}

@@ -7,7 +7,6 @@ export const mutations = {
     state.all = items;
   },
   addItem(state, item) {
-    console.log(item);
     state.all[item.id] = item.item;
   }
 };
