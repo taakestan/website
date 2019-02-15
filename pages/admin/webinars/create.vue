@@ -40,7 +40,10 @@
           </div>
           <div class="form-group">
             <label>متن وبینار</label>
-            <textarea class="form-control" rows="10" required></textarea>
+            <div class="quill-editor"
+                 :content="content"
+                 v-quill:myQuillEditor="editorOption">
+            </div>
           </div>
           <hr>
           <button type="submit" class="btn btn-primary">Sign in</button>
@@ -57,10 +60,49 @@
 		name: "create",
     components: {Portlet},
     layout: 'admin',
-    computed: mapState(['providers'])
+    computed: mapState(['providers']),
+    data () {
+      return {
+        content: '',
+        editorOption: {
+          // some quill options
+          modules: {
+            toolbar: [
+              ['bold'],
+              ['blockquote'],
+              [{'list': 'ordered'}, {'list': 'bullet'}],
+              [{'indent': '-1'}, {'indent': '+1'}],
+              [{'direction': 'rtl'}],
+              [{'header': [1, 2, 3, 4, 5, 6, false]}],
+              [{'align': []}],
+              ['link', 'image', 'video'],
+            ]
+          }
+        }
+      }
+    },
 	}
 </script>
 
-<style scoped>
+<style>
+  .ql-editor {
+    min-height: 300px;
+    max-height: 400px;
+    overflow: auto;
+    font-family: Vazir;
+  }
+  .ql-picker-label:before {
+    padding-right: 1.2rem;
+  }
+  .form-group > .ql-snow {
+    border-color: #ebedf2;
+  }
 
+  .ql-toolbar {
+    border-radius: .25rem .25rem 0 0;
+  }
+
+  .ql-container {
+    border-radius: 0 0 .25rem .25rem;
+  }
 </style>
