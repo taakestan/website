@@ -6,13 +6,22 @@
     </div>
     <form>
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
           <label for="inputEmail4">عنوان وبینار</label>
           <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
         </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="form-group col-md-4">
+          <label>ارائه دهنده</label>
+          <select class="form-control">
+            <option selected disabled>انتخاب کنید ...</option>
+            <option v-for="(provider, id) in providers.all" :value="id">
+              {{ provider.first_name + ' ' + provider.last_name }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label>تاریخ وبینار</label>
+          <input type="date" class="form-control">
         </div>
       </div>
       <div class="form-group">
@@ -54,9 +63,11 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
 	export default {
 		name: "create",
-    layout: 'admin'
+    layout: 'admin',
+    computed: mapState(['providers'])
 	}
 </script>
 
