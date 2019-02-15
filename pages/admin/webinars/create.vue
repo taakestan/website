@@ -54,6 +54,25 @@
             </div>
           </div>
           <hr>
+          <div class="d-flex justify-content-between">
+            <h5>لینک های وبینار</h5>
+            <div class="btn btn-outline-success" @click="addLink">افزودن لینک</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label>عنوان لینک</label>
+              <input class="form-control" v-model="webinar.image">
+            </div>
+            <div class="form-group col-md-8">
+              <label>آدرس لینک</label>
+              <div class="d-flex">
+                <input class="form-control ml-1" v-model="webinar.image">
+                <div class="btn btn-outline-warning">حذف</div>
+              </div>
+            </div>
+          </div>
+
+          <hr>
           <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
       </template>
@@ -79,7 +98,8 @@
           image: '',
           banner: '',
           description: '',
-          content: ''
+          content: '',
+          links: []
         },
         editorOption: {
           // some quill options
