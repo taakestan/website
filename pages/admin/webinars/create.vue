@@ -10,15 +10,15 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label>عنوان وبینار</label>
-              <input class="form-control">
+              <input class="form-control" v-model="webinar.title">
             </div>
             <div class="form-group col-md-4">
               <label>slug</label>
-              <input class="form-control">
+              <input class="form-control" v-model="webinar.slug">
             </div>
             <div class="form-group col-md-4">
               <label>ارائه دهنده</label>
-              <select class="form-control">
+              <select class="form-control" v-model="webinar.provider_id">
                 <option selected disabled>انتخاب کنید ...</option>
                 <option v-for="(provider, id) in providers.all" :value="id">
                   {{ provider.first_name + ' ' + provider.last_name }}
@@ -28,28 +28,28 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label>تاریخ وبینار</label>
-              <input type="date" class="form-control">
+              <label>تاریخ برگزاری وبینار</label>
+              <input type="date" class="form-control" v-model="webinar.created_at">
             </div>
             <div class="form-group col-md-4">
               <label>بنر وبینار</label>
-              <input class="form-control">
+              <input class="form-control" v-model="webinar.banner">
             </div>
             <div class="form-group col-md-4">
               <label>تصویر وبینار</label>
-              <input class="form-control">
+              <input class="form-control" v-model="webinar.image">
             </div>
           </div>
           <hr>
           <h5>محتوای وبینار</h5>
           <div class="form-group">
             <label>توضیحات</label>
-            <textarea class="form-control" rows="3" required></textarea>
+            <textarea class="form-control" rows="3" v-model="webinar.description"></textarea>
           </div>
           <div class="form-group">
             <label>متن وبینار</label>
             <div class="quill-editor"
-                 :content="content"
+                 :content="webinar.content"
                  v-quill:myQuillEditor="editorOption">
             </div>
           </div>
@@ -71,7 +71,16 @@
     computed: mapState(['providers']),
     data () {
       return {
-        content: '',
+        webinar: {
+          title: '',
+          slug: '',
+          provider_id: '',
+          created_at: '',
+          image: '',
+          banner: '',
+          description: '',
+          content: ''
+        },
         editorOption: {
           // some quill options
           modules: {
