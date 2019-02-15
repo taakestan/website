@@ -56,7 +56,7 @@
     components: {Navbar},
     data() {
       return {
-        webinar: ''
+        webinarIndex: ''
       }
     },
     computed: mapState(['webinars']),
@@ -66,11 +66,14 @@
       }
     },
     validate ({ params, store }) {
-      return store.state.webinars.all.some(item => item.slug === params.webinar)
-    },
-    created() {
-      const slug = this.$router.history.current.params.webinar;
-      this.webinar = this.webinars.all.find(item => item.slug === slug);
+      let indexItem = null;
+      for (let index in store.state.webinars.all) {
+        if (store.state.webinars.all[index].slug === params.webinar)
+          indexItem = index;
+      }
+      console.log(indexItem);
+      // this.webinar = Object.values(store.state.webinars.all).find(item => item.slug === params.webinar);
+      return !!indexItem;
     }
   }
 </script>
