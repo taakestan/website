@@ -31,6 +31,8 @@
   }
 </script>
 
-<style scoped>
-
+<style>
+  body {
+    background: #f2f3f8;
+  }
 </style>

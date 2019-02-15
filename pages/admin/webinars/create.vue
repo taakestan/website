@@ -1,7 +1,8 @@
 <template>
   <div class="container mt-3">
     <h3>ایجاد وبینار</h3>
-    <form>
+    <form class="mt-4">
+      <h5>اطلاعات وبینار</h5>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label>عنوان وبینار</label>
@@ -27,6 +28,8 @@
           <input type="date" class="form-control">
         </div>
       </div>
+      <hr>
+      <h5>محتوای وبینار</h5>
       <div class="form-group">
         <label>توضیحات</label>
         <textarea class="form-control" rows="3" required></textarea>
@@ -35,6 +38,7 @@
         <label>متن وبینار</label>
         <textarea class="form-control" rows="10" required></textarea>
       </div>
+      <hr>
       <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
   </div>
