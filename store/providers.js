@@ -1,4 +1,4 @@
-export const state = () => ([
+const items = [
   {
     name: 'امیر مقیمی',
     image: '/img/providers/amir-moghimi.jpeg',
@@ -20,4 +20,14 @@ export const state = () => ([
     image: '/img/providers/reza-yousefzadeh.jpg',
     description: 'فارغ التحصیل مهندسی نرم افزار. دانشگاه تهران'
   },
-]);
+];
+
+export const state = () => ([]);
+
+
+export const actions = {
+  async prepare({commit}) {
+    const {data} = await this.$axios.get('providers.json');
+    commit('setItems', data);
+  }
+};
