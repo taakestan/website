@@ -9,21 +9,21 @@
       </nuxt-link>
     </div>
     <div class="row mt-3">
-      <div class="col-md-4 mb-3" v-for="webinar in webinars.all">
-        <card
-          :title="webinar.title" :provider="webinar.provider"
-          :image-path="webinar.baner" :href="'/admin/webinars/' + webinar.id">
-          {{ webinar.description }}
-        </card>
+      <div class="col-md-4 mb-3" v-for="provider in providers">
+        <provider :provider="provider"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-	export default {
+  import {mapState} from 'vuex';
+	import Provider from "~/components/Provider";
+  export default {
 		name: "index",
-    layout: 'admin'
+    components: {Provider},
+    layout: 'admin',
+    computed: mapState(['providers'])
 	}
 </script>
 

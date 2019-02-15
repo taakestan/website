@@ -16,7 +16,7 @@
             <nuxt-link class="nav-link " to="/about-taak">درباره پروژه تاک</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link " to="/provider">ارائه کنندگان</nuxt-link>
+            <nuxt-link class="nav-link " to="/providers">ارائه کنندگان</nuxt-link>
           </li>
         </ul>
       </div>
