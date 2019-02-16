@@ -9,8 +9,8 @@
       </nuxt-link>
     </div>
     <div class="row mt-3">
-      <div class="col-lg-4 col-md-6 mb-3" v-for="webinar in webinars.all">
-        <webinar :webinar="webinar" :href="'/admin/webinars/' + webinar.id"/>
+      <div class="col-lg-4 col-md-6 mb-3" v-for="(webinar, id) in webinars.all">
+        <webinar :webinar="webinar" :href="'/admin/webinars/' + id"/>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@
 		name: "index",
     components: {Webinar},
     layout: 'admin',
-    computed: mapState(['webinars', 'providers']),
+    computed: mapState(['webinars']),
 	}
 </script>
 
