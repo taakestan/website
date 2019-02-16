@@ -18,11 +18,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4" v-for="webinar in webinars.all">
-            <card
-              :title="webinar.title" :provider="webinar.provider_id"
-              :image-path="webinar.banner" :href="'/webinars/' + webinar.slug">
-              {{ webinar.description }}
-            </card>
+            <webinar :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
       </div>
@@ -32,12 +28,12 @@
 
 <script>
   import {mapState} from 'vuex';
-  import Card from "~/components/Card";
   import Navbar from "~/components/Navbar";
+  import Webinar from "../../components/webinar";
 
   export default {
     name: "index",
-    components: {Navbar, Card},
+    components: {Webinar, Navbar},
     computed: mapState(['webinars']),
     head () {
       return {
