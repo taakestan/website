@@ -7,7 +7,7 @@
           <div class="col-md-6">
             <h1 v-text="webinar.title"></h1>
             <div class="provider mb-4 d-inline-block">
-              <span>ارئه دهنده : </span><strong v-text="webinar.provider_id"></strong>
+              <span>ارئه دهنده : </span><strong v-text="providerName(webinar.provider_id)"></strong>
             </div>
             <p v-text="webinar.description"></p>
           </div>
@@ -53,7 +53,13 @@
         webinar: ''
       }
     },
-    computed: mapState(['webinars']),
+    computed: mapState(['webinars', 'providers']),
+    methods: {
+      providerName(providerID) {
+        const provider = this.providers.all[providerID];
+        return provider.first_name + ' ' + provider.last_name;
+      }
+    },
     head() {
       return {
         title: this.webinar.title + ' | پروژه تاک'

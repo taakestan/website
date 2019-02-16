@@ -10,11 +10,7 @@
     </div>
     <div class="row mt-3">
       <div class="col-lg-4 col-md-6 mb-3" v-for="webinar in webinars.all">
-        <card
-          :title="webinar.title" :provider="providerName(webinar.provider_id)"
-          :image-path="webinar.banner" :href="'/admin/webinars/' + webinar.id">
-          {{ webinar.description }}
-        </card>
+        <webinar :webinar="webinar" :href="'/admin/webinars/' + webinar.id"/>
       </div>
     </div>
   </div>
@@ -22,18 +18,12 @@
 
 <script>
   import {mapState} from 'vuex';
-	import Card from "../../../components/Card";
+  import Webinar from "~/components/Webinar";
   export default {
 		name: "index",
-    components: {Card},
+    components: {Webinar},
     layout: 'admin',
     computed: mapState(['webinars', 'providers']),
-    methods: {
-      providerName(providerID) {
-        const provider = this.providers.all[providerID];
-        return provider.first_name + ' ' + provider.last_name;
-      }
-    }
 	}
 </script>
 
