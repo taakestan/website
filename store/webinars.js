@@ -3,7 +3,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  async setItems(state, items) {
+  setItems(state, items) {
     state.all = items;
   },
   addItem(state, item) {
@@ -11,7 +11,10 @@ export const mutations = {
   },
   updateItem(state, item) {
     state.all[item.id] = item.item;
-  }
+  },
+  deleteItem(state, id) {
+    state.all = state.all.filter(item => item.id !== id);
+  },
 };
 
 export const actions = {
@@ -19,14 +22,16 @@ export const actions = {
     const {data} = await this.$axios.get('webinars2.json');
     commit('setItems', data);
   },
-  updateItem(vuexContext, item) {
-    return this.$axios.$post(`webinars2/${item.id}.json`, item.webinar)
-      .then(data => vuexContext.commit("updateItem", {item: item.webinar, id: item.id}))
-      .catch(error => console.error(error));
-  },
-  addItem(vuexContext, item) {
+  addItem(state, item) {
     return this.$axios.$post('webinars2.json', item)
-      .then(data => vuexContext.commit("addItem", {item, id: data.name}))
-      .catch(error => console.error(error));
+      .then(data => state.commit("addItem", {item, id: data.name}))
+  },
+  updateItem(state, item) {
+    return this.$axios.$post(`webinars2/${item.id}.json`, item.webinar)
+      .then(data => state.commit("updateItem", {item: item.webinar, id: item.id}))
+  },
+  deleteItem(state, id) {
+    return this.$axios.$delete(`webinars2/${id}.json`)
+      .then(() => state.commit('deleteItem', id))
   },
 };
