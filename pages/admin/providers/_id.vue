@@ -63,7 +63,15 @@
         </div>
       </template>
       <template slot="footer">
-        <button class="btn btn-success" @click="createItem">ذخیره اطلاعات</button>
+        <button @click="updateItem"
+                class="btn btn-success"
+                v-if="method === 'update'">
+          ویرایش اطلاعات
+        </button>
+        <button @click="createItem"
+                class="btn btn-success">
+          ذخیره اطلاعات
+        </button>
       </template>
     </portlet>
   </div>
