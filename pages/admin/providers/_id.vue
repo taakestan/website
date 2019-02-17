@@ -2,7 +2,15 @@
   <div class="container mt-3">
     <portlet>
       <template slot="title">
-        اضافه کردن ارائه دهنده
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            {{ method === 'create' ? 'افزودن' : 'ویرایش' }}
+            ارائه دهنده
+          </div>
+          <button @click="deleteItem"
+                  class="btn btn-outline-danger"
+                  v-if="method === 'update'">حذف ارائه دهنده</button>
+        </div>
       </template>
       <template slot="body">
         <h5>اطلاعات اولیه</h5>
@@ -69,7 +77,7 @@
           ویرایش اطلاعات
         </button>
         <button @click="createItem"
-                class="btn btn-success">
+                class="btn btn-success" v-else>
           ذخیره اطلاعات
         </button>
       </template>

@@ -9,9 +9,13 @@
       </nuxt-link>
     </div>
     <div class="row mt-3">
-      <div class="col-md-4 mb-3" v-for="provider in providers.all">
+      <nuxt-link
+        tag="div"
+        class="col-md-4 mb-3"
+        :to="'/admin/providers/' + id"
+        v-for="(provider, id) in providers.all">
         <provider :provider="provider"/>
-      </div>
+      </nuxt-link>
     </div>
   </div>
 </template>
