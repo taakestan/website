@@ -63,7 +63,7 @@
         </div>
       </template>
       <template slot="footer">
-        <button class="btn btn-success" @click="submit">ذخیره اطلاعات</button>
+        <button class="btn btn-success" @click="createItem">ذخیره اطلاعات</button>
       </template>
     </portlet>
   </div>
@@ -94,10 +94,26 @@
       }
     },
     methods: {
-		  submit() {
-        this.$store.dispatch("providers/addItem", this.provider).then(() => {
-          this.$router.push("/admin/providers");
-        });
+      // deleteItem() {
+      //   this.$store.dispatch("providers/deleteItem", this.$route.params.id)
+      //     .then(() => {
+      //       this.$toast.success('ارائه دهنده با موفقیت حذف شد.');
+      //       this.$router.push("/admin/providers");
+      //     });
+      // },
+      updateItem() {
+        const data = {id: this.$route.params.id, ...this.provider};
+        this.$store.dispatch("providers/updateItem", data)
+          .then(() => {
+            this.$toast.success('ارائه دهنده با موفقیت آپدیت شد.');
+            this.$router.push("/admin/providers");
+          });
+      },
+      createItem() {
+        this.$store.dispatch("providers/addItem", this.provider)
+          .then(() => {
+            this.$router.push("/admin/providers");
+          });
       }
     },
     asyncData({params, store}) {
