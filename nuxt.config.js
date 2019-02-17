@@ -7,9 +7,6 @@ const pkg = {
 module.exports = {
   mode: 'universal',
 
-  /*
-  ** Headers of the page
-  */
   head: {
     title: pkg.name,
     htmlAttrs: {
@@ -26,14 +23,8 @@ module.exports = {
     ]
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
   loading: {color: '#34bfa3'},
 
-  /*
-  ** Global CSS
-  */
   css: [
     {src: '@/assets/scss/app.scss', lang: 'scss'},
     'quill/dist/quill.snow.css',
@@ -41,30 +32,20 @@ module.exports = {
     'quill/dist/quill.core.css'
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
     {src: '~plugins/quill-plugin.js', ssr: false}
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/toast',
   ],
-  /*
-  ** Axios module configuration
-  */
+
   axios: {
     baseURL: 'https://taak-website.firebaseio.com/'
   },
 
-  /*
-  ** Build configuration
-  */
   build: {
     extend(config, ctx) {
     }

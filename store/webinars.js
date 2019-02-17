@@ -1,6 +1,4 @@
-export const state = () => ({
-  all: []
-});
+export const state = () => ({all: []});
 
 export const mutations = {
   setItems(state, items) {
