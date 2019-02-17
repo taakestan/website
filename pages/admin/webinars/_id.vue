@@ -7,7 +7,9 @@
             {{ method === 'create' ? 'ایجاد' : 'ویرایش' }}
             وبینار
           </div>
-          <button class="btn btn-outline-danger">حذف وبینار</button>
+          <button @click="deleteItem"
+                  class="btn btn-outline-danger"
+                  v-if="method === 'update'">حذف وبینار</button>
         </div>
       </template>
       <template slot="body">
@@ -80,8 +82,8 @@
         </form>
       </template>
       <template slot="footer">
-        <button class="btn btn-success" @click="submit" v-if="method === 'create'">ایجاد وبینار</button>
-        <button class="btn btn-primary" @click="update" v-else>به‌روز رسانی وبینار</button>
+        <button class="btn btn-success" @click="createItem" v-if="method === 'create'">ایجاد وبینار</button>
+        <button class="btn btn-primary" @click="updateItem" v-else>به‌روز رسانی وبینار</button>
       </template>
     </portlet>
   </div>
@@ -124,18 +126,27 @@
       removeLink(index) {
         this.webinar.links.splice(index, 1);
       },
-      update() {
-        const data = {id: this.$route.params.id, ...this.webinar};
-        this.$store.dispatch("webinars/updateItem", data).then(() => {
-          this.$toast.success('وبینار با موفقیت آپدیت شد.');
-          this.$router.push("/admin/webinars");
-        });
+      deleteItem() {
+        this.$store.dispatch("webinars/deleteItem", this.$route.params.id)
+          .then(() => {
+            this.$toast.success('وبینار با موفقیت حذف شد.');
+            this.$router.push("/admin/webinars");
+          });
       },
-      submit() {
-        this.$store.dispatch("webinars/addItem", this.webinar).then(() => {
-          this.$toast.success('وبینار با موفقیت ایجاد شد.');
-          this.$router.push("/admin/webinars");
-        });
+      updateItem() {
+        const data = {id: this.$route.params.id, ...this.webinar};
+        this.$store.dispatch("webinars/updateItem", data)
+          .then(() => {
+            this.$toast.success('وبینار با موفقیت آپدیت شد.');
+            this.$router.push("/admin/webinars");
+          });
+      },
+      createItem() {
+        this.$store.dispatch("webinars/addItem", this.webinar)
+          .then(() => {
+            this.$toast.success('وبینار با موفقیت ایجاد شد.');
+            this.$router.push("/admin/webinars");
+          });
       }
     },
     asyncData({params, store}) {
