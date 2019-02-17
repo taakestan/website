@@ -26,7 +26,7 @@ export const actions = {
   },
   updateItem(state, item) {
     return this.$axios.$patch(`webinars2/${item.id}.json`, item)
-      .then(data => state.commit("updateItem", item))
+      .then(() => state.commit("updateItem", item))
   },
   deleteItem(state, id) {
     return this.$axios.$delete(`webinars2/${id}.json`)

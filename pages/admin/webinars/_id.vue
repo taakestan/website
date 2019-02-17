@@ -2,7 +2,13 @@
   <div class="container my-3">
     <portlet>
       <template slot="title">
-        ایجاد وبینار
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            {{ method === 'create' ? 'ایجاد' : 'ویرایش' }}
+            وبینار
+          </div>
+          <button class="btn btn-outline-danger">حذف وبینار</button>
+        </div>
       </template>
       <template slot="body">
         <form class="mt-4">
@@ -121,11 +127,13 @@
       update() {
         const data = {id: this.$route.params.id, ...this.webinar};
         this.$store.dispatch("webinars/updateItem", data).then(() => {
+          this.$toast.success('وبینار با موفقیت آپدیت شد.');
           this.$router.push("/admin/webinars");
         });
       },
       submit() {
         this.$store.dispatch("webinars/addItem", this.webinar).then(() => {
+          this.$toast.success('وبینار با موفقیت ایجاد شد.');
           this.$router.push("/admin/webinars");
         });
       }

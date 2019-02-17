@@ -1,69 +1,79 @@
 <template>
   <div class="container mt-3">
-    <h3>اضافه کردن ارائه دهنده</h3>
-    <form class="mt-5 mb-3" @submit.prevent="submit">
-      <h5>اطلاعات اولیه</h5>
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label>نام</label>
-          <input class="form-control" v-model="provider.first_name" required>
+    <portlet>
+      <template slot="title">
+        اضافه کردن ارائه دهنده
+      </template>
+      <template slot="body">
+        <h5>اطلاعات اولیه</h5>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label>نام</label>
+            <input class="form-control" v-model="provider.first_name" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label>نام خانوادگی</label>
+            <input class="form-control" v-model="provider.last_name" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label>slug</label>
+            <input class="form-control" v-model="provider.slug" required>
+          </div>
         </div>
-        <div class="form-group col-md-4">
-          <label>نام خانوادگی</label>
-          <input class="form-control" v-model="provider.last_name" required>
+        <div class="form-group">
+          <label>آدرس تصویر</label>
+          <input class="form-control" v-model="provider.image" required>
         </div>
-        <div class="form-group col-md-4">
-          <label>slug</label>
-          <input class="form-control" v-model="provider.slug" required>
+        <div class="form-group">
+          <label>بیوگرافی</label>
+          <div class="quill-editor"
+               v-model="provider.biography"
+               v-quill:myQuillEditor="editorOption">
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label>آدرس تصویر</label>
-        <input class="form-control" v-model="provider.image" required>
-      </div>
-      <div class="form-group">
-        <label>بیوگرافی</label>
-        <textarea class="form-control" v-model="provider.biography" rows="5" required></textarea>
-      </div>
-      <hr>
-      <h5>اطلاعات شبکه های اجتماعی</h5>
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label>Facebook</label>
-          <input class="form-control" v-model="provider.profiles.facebook">
+        <hr>
+        <h5>اطلاعات شبکه های اجتماعی</h5>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label>Facebook</label>
+            <input class="form-control" v-model="provider.profiles.facebook">
+          </div>
+          <div class="form-group col-md-4">
+            <label>Github</label>
+            <input class="form-control" v-model="provider.profiles.github">
+          </div>
+          <div class="form-group col-md-4">
+            <label>Linkedin</label>
+            <input class="form-control" v-model="provider.profiles.linkedin">
+          </div>
         </div>
-        <div class="form-group col-md-4">
-          <label>Github</label>
-          <input class="form-control" v-model="provider.profiles.github">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label>Telegram</label>
+            <input class="form-control" v-model="provider.profiles.telegram">
+          </div>
+          <div class="form-group col-md-4">
+            <label>Twitter</label>
+            <input class="form-control" v-model="provider.profiles.twitter">
+          </div>
+          <div class="form-group col-md-4">
+            <label>StackOverflow</label>
+            <input class="form-control" v-model="provider.profiles.stackOverflow">
+          </div>
         </div>
-        <div class="form-group col-md-4">
-          <label>Linkedin</label>
-          <input class="form-control" v-model="provider.profiles.linkedin">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label>Telegram</label>
-          <input class="form-control" v-model="provider.profiles.telegram">
-        </div>
-        <div class="form-group col-md-4">
-          <label>Twitter</label>
-          <input class="form-control" v-model="provider.profiles.twitter">
-        </div>
-        <div class="form-group col-md-4">
-          <label>StackOverflow</label>
-          <input class="form-control" v-model="provider.profiles.stackOverflow">
-        </div>
-      </div>
-      <hr>
-      <button class="btn btn-success">ذخیره اطلاعات</button>
-    </form>
+      </template>
+      <template slot="footer">
+        <button class="btn btn-success" @click="submit">ذخیره اطلاعات</button>
+      </template>
+    </portlet>
   </div>
 </template>
 
 <script>
-	export default {
+	import Portlet from "../../../components/admin/Portlet";
+  export default {
 		name: "create",
+    components: {Portlet},
     layout: 'admin',
     data() {
 		  return {
@@ -80,6 +90,20 @@
             linkedin: '',
             telegram: '',
             stackOverflow: '',
+          }
+        },
+        editorOption: {
+          modules: {
+            toolbar: [
+              ['bold'],
+              ['blockquote'],
+              [{'list': 'ordered'}, {'list': 'bullet'}],
+              [{'indent': '-1'}, {'indent': '+1'}],
+              [{'direction': 'rtl'}],
+              [{'header': [1, 2, 3, 4, 5, 6, false]}],
+              [{'align': []}],
+              ['link', 'image', 'video'],
+            ]
           }
         }
       }

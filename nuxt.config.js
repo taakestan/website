@@ -46,6 +46,11 @@ module.exports = {
     baseURL: 'https://taak-website.firebaseio.com/'
   },
 
+  toast: {
+    position: 'bottom-left',
+    duration : 2000
+  },
+
   build: {
     extend(config, ctx) {
     }
