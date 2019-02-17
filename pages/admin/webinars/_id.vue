@@ -5,7 +5,7 @@
         ایجاد وبینار
       </template>
       <template slot="body">
-        <form class="mt-4" id="form" @submit.prevent="submit">
+        <form class="mt-4">
           <h5>اطلاعات وبینار</h5>
           <div class="form-row">
             <div class="form-group col-md-4">
@@ -74,7 +74,8 @@
         </form>
       </template>
       <template slot="footer">
-        <button form="form" class="btn btn-success">ایجاد وبینار</button>
+        <button class="btn btn-success" @click="submit" v-if="method === 'create'">ایجاد وبینار</button>
+        <button class="btn btn-primary" @click="update" v-else>به‌روز رسانی وبینار</button>
       </template>
     </portlet>
   </div>
@@ -132,12 +133,12 @@
     asyncData({params, store}) {
       if (params.id !== 'create') {
         return {
-          method: '$patch',
+          method: 'update',
           webinar: Object.assign({}, store.state.webinars.all[params.id])
         };
       }
       return {
-        method: '$post',
+        method: 'create',
         webinar: {
           title: '',
           slug: '',
