@@ -33,6 +33,7 @@ module.exports = {
   ],
 
   plugins: [
+    '~/plugins/axios',
     {src: '~plugins/quill-plugin.js', ssr: false}
   ],
 
