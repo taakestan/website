@@ -77,21 +77,6 @@
     layout: 'admin',
     data() {
 		  return {
-		    provider: {
-		      first_name: '',
-          last_name: '',
-          slug: '',
-          biography: '',
-          image: '',
-          profiles: {
-            github: '',
-            twitter: '',
-            facebook: '',
-            linkedin: '',
-            telegram: '',
-            stackOverflow: '',
-          }
-        },
         editorOption: {
           modules: {
             toolbar: [
@@ -113,6 +98,32 @@
         this.$store.dispatch("providers/addItem", this.provider).then(() => {
           this.$router.push("/admin/providers");
         });
+      }
+    },
+    asyncData({params, store}) {
+      if (params.id !== 'create') {
+        return {
+          method: 'update',
+          provider: Object.assign({}, store.state.providers.all[params.id])
+        };
+      }
+      return {
+        method: 'create',
+        provider: {
+          first_name: '',
+          last_name: '',
+          slug: '',
+          biography: '',
+          image: '',
+          profiles: {
+            github: '',
+            twitter: '',
+            facebook: '',
+            linkedin: '',
+            telegram: '',
+            stackOverflow: '',
+          }
+        },
       }
     }
 	}
