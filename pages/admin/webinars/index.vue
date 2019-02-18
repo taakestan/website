@@ -1,27 +1,29 @@
 <template>
   <div class="container mt-3">
-    <div class="row">
-      <div class="col-md-4 mb-3" v-for="(item, id) in items">
-        <card
-          :title="item.title" :provider="item.provider"
-          :image-path="item.baner" :href="'/admin/webinars/' + id">
-          {{ item.description }}
-        </card>
+    <div class="d-flex justify-content-between">
+      <h3>لیست وبینار ها</h3>
+      <nuxt-link
+        class="btn btn-success"
+        to="/admin/webinars/create">
+        ایجاد وبینار
+      </nuxt-link>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-4 col-md-6 mb-3" v-for="(webinar, id) in webinars.all">
+        <webinar :webinar="webinar" :href="'/admin/webinars/' + id"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-	import Card from "../../../components/Card";
+  import {mapState} from 'vuex';
+  import Webinar from "~/components/Webinar";
   export default {
 		name: "index",
-    components: {Card},
+    components: {Webinar},
     layout: 'admin',
-    async asyncData ({ params, app }) {
-      let { data } = await app.$axios.get('webinars.json');
-      return { items: data }
-    }
+    computed: mapState(['webinars']),
 	}
 </script>
 

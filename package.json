@@ -13,10 +13,12 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
+    "@nuxtjs/toast": "^3.0.2",
     "bootstrap": "^4.2.1",
     "cross-env": "^5.2.0",
     "nuxt": "^2.3.4",
-    "vazir-font": "^19.1.0"
+    "vazir-font": "^19.1.0",
+    "vue-quill-editor": "^3.0.6"
   },
   "devDependencies": {
     "node-sass": "^4.11.0",
