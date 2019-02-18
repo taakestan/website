@@ -110,13 +110,13 @@
       }
     },
     methods: {
-      // deleteItem() {
-      //   this.$store.dispatch("providers/deleteItem", this.$route.params.id)
-      //     .then(() => {
-      //       this.$toast.success('ارائه دهنده با موفقیت حذف شد.');
-      //       this.$router.push("/admin/providers");
-      //     });
-      // },
+      deleteItem() {
+        this.$store.dispatch("providers/deleteItem", this.$route.params.id)
+          .then(() => {
+            this.$toast.success('ارائه دهنده با موفقیت حذف شد.');
+            this.$router.push("/admin/providers");
+          });
+      },
       updateItem() {
         const data = {id: this.$route.params.id, ...this.provider};
         this.$store.dispatch("providers/updateItem", data)
@@ -126,7 +126,7 @@
           });
       },
       createItem() {
-        this.$store.dispatch("providers/addItem", this.provider)
+        this.$store.dispatch("providers/createItem", this.provider)
           .then(() => {
             this.$router.push("/admin/providers");
           });

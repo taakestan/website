@@ -20,7 +20,7 @@
       <div class="container flex-column">
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
-          <div class="col-md-4" v-for="key in Object.keys(webinars.all).slice(3)">
+          <div class="col-md-4" v-for="key in Object.keys(webinars.all).slice(0, 3)">
             <card
               :title="webinars.all[key].title" :provider="webinars.all[key].provider_id"
               :image-path="webinars.all[key].banner" :href="'webinars/' + webinars.all[key].slug">

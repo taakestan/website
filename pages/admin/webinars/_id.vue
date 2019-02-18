@@ -142,7 +142,7 @@
           });
       },
       createItem() {
-        this.$store.dispatch("webinars/addItem", this.webinar)
+        this.$store.dispatch("webinars/createItem", this.webinar)
           .then(() => {
             this.$toast.success('وبینار با موفقیت ایجاد شد.');
             this.$router.push("/admin/webinars");
