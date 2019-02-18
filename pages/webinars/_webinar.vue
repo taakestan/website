@@ -31,8 +31,8 @@
           </div>
           <div class="title">دانلود فایل ها</div>
         </div>
-        <div class="d-flex">
-          <div class="col" v-for="link in webinar.links">
+        <div class="d-flex justify-content-center">
+          <div class="mx-1" v-for="link in webinar.links">
             <a :href="link.value" class="btn btn-primary" v-text="link.title"></a>
           </div>
         </div>
