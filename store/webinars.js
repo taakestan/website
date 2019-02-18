@@ -4,14 +4,14 @@ export const mutations = {
   setItems(state, items) {
     state.all = items;
   },
-  addItem(state, item) {
+  createItem(state, item) {
     state.all[item.id] = item.item;
   },
   updateItem(state, item) {
     state.all[item.id] = item;
   },
   deleteItem(state, id) {
-    state.all = state.all.filter(item => item.id !== id);
+    delete state.all[id];
   },
 };
 
@@ -20,9 +20,9 @@ export const actions = {
     const {data} = await this.$axios.get('webinars2.json');
     commit('setItems', data);
   },
-  addItem(state, item) {
+  createItem(state, item) {
     return this.$axios.$post('webinars2.json', item)
-      .then(data => state.commit("addItem", {item, id: data.name}))
+      .then(data => state.commit("createItem", {item, id: data.name}))
   },
   updateItem(state, item) {
     return this.$axios.$patch(`webinars2/${item.id}.json`, item)

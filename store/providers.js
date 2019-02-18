@@ -1,6 +1,4 @@
-export const state = () => ({
-  all: []
-});
+export const state = () => ({all: []});
 
 export const mutations = {
   setItems(state, items) {
@@ -11,6 +9,9 @@ export const mutations = {
   },
   updateItem(state, item) {
     state.all[item.id] = item;
+  },
+  deleteItem(state, id) {
+    delete state.all[id];
   },
 };
 
@@ -27,5 +28,9 @@ export const actions = {
   updateItem(state, item) {
     return this.$axios.$patch(`providers/${item.id}.json`, item)
       .then(() => state.commit("updateItem", item))
+  },
+  deleteItem(state, id) {
+    return this.$axios.$delete(`providers/${id}.json`)
+      .then(() => state.commit('deleteItem', id))
   },
 };
