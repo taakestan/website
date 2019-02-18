@@ -126,7 +126,7 @@
           });
       },
       createItem() {
-        this.$store.dispatch("providers/addItem", this.provider)
+        this.$store.dispatch("providers/createItem", this.provider)
           .then(() => {
             this.$router.push("/admin/providers");
           });

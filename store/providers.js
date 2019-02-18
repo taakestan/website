@@ -6,9 +6,12 @@ export const mutations = {
   setItems(state, items) {
     state.all = items;
   },
-  addItem(state, item) {
+  createItem(state, item) {
     state.all[item.id] = item.item;
-  }
+  },
+  updateItem(state, item) {
+    state.all[item.id] = item;
+  },
 };
 
 export const actions = {
@@ -16,9 +19,13 @@ export const actions = {
     const {data} = await this.$axios.get('providers.json');
     commit('setItems', data);
   },
-  addItem(vuexContext, item) {
+  createItem(vuexContext, item) {
     return this.$axios.$post('providers.json', item)
-      .then(data => vuexContext.commit("addItem", {item, id: data.name}))
+      .then(data => vuexContext.commit("createItem", {item, id: data.name}))
       .catch(error => console.error(error));
+  },
+  updateItem(state, item) {
+    return this.$axios.$patch(`providers/${item.id}.json`, item)
+      .then(() => state.commit("updateItem", item))
   },
 };
