@@ -3,6 +3,7 @@ const pkg = {
   description: ''
 };
 
+const hostURL = 'https://api.cafimafi.dev';
 
 module.exports = {
   mode: 'universal',
@@ -27,28 +28,70 @@ module.exports = {
 
   css: [
     {src: '@/assets/scss/app.scss', lang: 'scss'},
-    'quill/dist/quill.snow.css',
-    'quill/dist/quill.bubble.css',
-    'quill/dist/quill.core.css'
   ],
 
   plugins: [
+    '~/plugins/axios',
     {src: '~plugins/quill-plugin.js', ssr: false}
   ],
 
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/auth',
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     '@nuxtjs/toast',
   ],
 
   axios: {
-    baseURL: 'https://taak-website.firebaseio.com/'
+    proxy: true
   },
 
   toast: {
-    position: 'bottom-left',
-    duration : 2000
+    duration : 2000,
+    position: 'bottom-left'
+  },
+
+  proxy: {
+    '/api/': {
+      target: hostURL,
+      pathRewrite: {'^/api/': ''},
+      secure: false
+    },
+    '/media/': {
+      target: hostURL,
+      secure: false
+    },
+    '/junk/': {
+      target: hostURL,
+      secure: false
+    }
+  },
+
+  auth: {
+    cookie: {
+      options: {
+        secure: true
+      }
+    },
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/'
+    },
+    token: {
+      prefix: '_token.'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          user: {url: '/api/user', method: 'get', propertyName: 'data'},
+          login: {url: '/api/login', method: 'post', propertyName: 'data'},
+          logout: {url: '/api/logout', method: 'post'},
+        }
+      }
+    }
   },
 
   build: {
