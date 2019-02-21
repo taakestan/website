@@ -3,7 +3,7 @@ const pkg = {
   description: ''
 };
 
-const hostURL = 'https://api.cafimafi.dev';
+const hostURL = 'https://api.taak-website.dev';
 
 module.exports = {
   mode: 'universal',
