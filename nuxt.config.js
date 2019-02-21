@@ -28,6 +28,9 @@ module.exports = {
 
   css: [
     {src: '@/assets/scss/app.scss', lang: 'scss'},
+    'quill/dist/quill.snow.css',
+    'quill/dist/quill.bubble.css',
+    'quill/dist/quill.core.css'
   ],
 
   plugins: [

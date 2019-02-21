@@ -97,7 +97,7 @@
     name: "show",
     components: {Portlet},
     layout: 'admin',
-    computed: mapState(['providers']),
+    computed: mapState(['providers', 'errors']),
     data() {
       return {
         editorOption: {
