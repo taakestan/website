@@ -18,41 +18,57 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label>عنوان وبینار</label>
-              <input class="form-control" v-model="webinar.title">
+              <input class="form-control" v-model="webinar.title"
+                     :class="{'is-invalid': !!errors.all.title}">
+              <form-control-feedback :errors="errors.all" field="title" />
             </div>
             <div class="form-group col-md-4">
-              <label>slug</label>
-              <input class="form-control" v-model="webinar.slug">
+              <label>برچسب</label>
+              <input class="form-control" v-model="webinar.label"
+                     :class="{'is-invalid': !!errors.all.label}">
+              <form-control-feedback :errors="errors.all" field="label" />
             </div>
             <div class="form-group col-md-4">
               <label>ارائه دهنده</label>
-              <select class="form-control" v-model="webinar.provider_id">
+              <select class="form-control" v-model="webinar.provider_id"
+                      :class="{'is-invalid': !!errors.all.provider_id}">
                 <option selected disabled>انتخاب کنید ...</option>
                 <option v-for="(provider, id) in providers.all" :value="id">
                   {{ provider.first_name + ' ' + provider.last_name }}
                 </option>
               </select>
+              <form-control-feedback :errors="errors.all" field="provider_id" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-4">
               <label>تاریخ برگزاری وبینار</label>
-              <input type="date" class="form-control" v-model="webinar.created_at">
+              <input type="date" class="form-control"
+                     v-model="webinar.created_at"
+                     :class="{'is-invalid': !!errors.all.created_at}">
+              <form-control-feedback :errors="errors.all" field="created_at" />
             </div>
             <div class="form-group col-md-4">
               <label>بنر وبینار</label>
-              <input class="form-control" v-model="webinar.banner">
+              <input class="form-control" v-model="webinar.banner"
+                     :class="{'is-invalid': !!errors.all.banner}">
+              <form-control-feedback :errors="errors.all" field="banner" />
             </div>
             <div class="form-group col-md-4">
               <label>تصویر وبینار</label>
-              <input class="form-control" v-model="webinar.image">
+              <input class="form-control" v-model="webinar.image"
+                     :class="{'is-invalid': !!errors.all.image}">
+              <form-control-feedback :errors="errors.all" field="image" />
             </div>
           </div>
           <hr>
           <h5>محتوای وبینار</h5>
           <div class="form-group">
             <label>توضیحات</label>
-            <textarea class="form-control" rows="3" v-model="webinar.description"></textarea>
+            <textarea class="form-control"
+                      rows="3" v-model="webinar.description"
+                      :class="{'is-invalid': !!errors.all.description}"></textarea>
+            <form-control-feedback :errors="errors.all" field="description" />
           </div>
           <div class="form-group">
             <label>متن وبینار</label>
@@ -60,6 +76,7 @@
                  v-model="webinar.content"
                  v-quill:myQuillEditor="editorOption">
             </div>
+            <form-control-feedback :errors="errors.all" field="content" />
           </div>
           <hr>
           <div class="d-flex justify-content-between">
@@ -92,10 +109,11 @@
 <script>
   import {mapState} from 'vuex'
   import Portlet from "../../../components/admin/Portlet";
+  import FormControlFeedback from "../../../components/Form/FormControlFeedback";
 
   export default {
     name: "show",
-    components: {Portlet},
+    components: {FormControlFeedback, Portlet},
     layout: 'admin',
     computed: mapState(['providers', 'errors']),
     data() {
@@ -160,7 +178,7 @@
         method: 'create',
         webinar: {
           title: '',
-          slug: '',
+          label: '',
           provider_id: '',
           created_at: '',
           image: '',
