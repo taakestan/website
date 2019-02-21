@@ -9,7 +9,8 @@
           </div>
           <button @click="deleteItem"
                   class="btn btn-outline-danger"
-                  v-if="method === 'update'">حذف ارائه دهنده</button>
+                  v-if="method === 'update'">حذف ارائه دهنده
+          </button>
         </div>
       </template>
       <template slot="body">
@@ -17,15 +18,21 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label>نام</label>
-            <input class="form-control" v-model="provider.first_name" required>
+            <input class="form-control" v-model="provider.first_name"
+                   :class="{'is-invalid': !!errors.all.first_name}">
+            <form-control-feedback :errors="errors.all" field="first_name"/>
           </div>
           <div class="form-group col-md-4">
             <label>نام خانوادگی</label>
-            <input class="form-control" v-model="provider.last_name" required>
+            <input class="form-control" v-model="provider.last_name"
+                   :class="{'is-invalid': !!errors.all.last_name}">
+            <form-control-feedback :errors="errors.all" field="last_name"/>
           </div>
           <div class="form-group col-md-4">
-            <label>slug</label>
-            <input class="form-control" v-model="provider.slug" required>
+            <label>نام کاربری</label>
+            <input class="form-control" v-model="provider.username"
+                   :class="{'is-invalid': !!errors.all.username}">
+            <form-control-feedback :errors="errors.all" field="username"/>
           </div>
         </div>
         <div class="form-group">
@@ -86,13 +93,16 @@
 </template>
 
 <script>
-	import Portlet from "../../../components/admin/Portlet";
+  import {mapState} from 'vuex';
+  import Portlet from "../../../components/admin/Portlet";
+  import FormControlFeedback from "../../../components/Form/FormControlFeedback";
+
   export default {
-		name: "create",
-    components: {Portlet},
+    name: "create",
+    components: {FormControlFeedback, Portlet},
     layout: 'admin',
     data() {
-		  return {
+      return {
         editorOption: {
           modules: {
             toolbar: [
@@ -109,6 +119,7 @@
         }
       }
     },
+    computed: mapState(['errors']),
     methods: {
       deleteItem() {
         this.$store.dispatch("providers/deleteItem", this.$route.params.id)
@@ -144,7 +155,7 @@
         provider: {
           first_name: '',
           last_name: '',
-          slug: '',
+          username: '',
           biography: '',
           image: '',
           profiles: {
@@ -158,5 +169,5 @@
         },
       }
     }
-	}
+  }
 </script>
