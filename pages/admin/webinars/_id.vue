@@ -33,7 +33,7 @@
               <select class="form-control" v-model="webinar.provider_id"
                       :class="{'is-invalid': !!errors.all.provider_id}">
                 <option selected disabled>انتخاب کنید ...</option>
-                <option v-for="(provider, id) in providers.all" :value="id">
+                <option v-for="provider in providers.all" :value="provider.id">
                   {{ provider.first_name + ' ' + provider.last_name }}
                 </option>
               </select>
