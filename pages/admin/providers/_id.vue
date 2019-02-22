@@ -7,10 +7,21 @@
             {{ method === 'create' ? 'افزودن' : 'ویرایش' }}
             ارائه دهنده
           </div>
-          <button @click="deleteItem"
-                  class="btn btn-outline-danger"
-                  v-if="method === 'update'">حذف ارائه دهنده
-          </button>
+          <div class="action">
+            <button @click="deleteItem"
+                    class="btn btn-outline-danger"
+                    v-if="method === 'update'">حذف ارائه دهنده
+            </button>
+            <button @click="updateItem"
+                    class="btn btn-success"
+                    v-if="method === 'update'">
+              ویرایش اطلاعات
+            </button>
+            <button @click="createItem"
+                    class="btn btn-success" v-else>
+              ذخیره اطلاعات
+            </button>
+          </div>
         </div>
       </template>
       <template slot="body">
@@ -94,17 +105,6 @@
         </div>
 
       </template>
-      <template slot="footer">
-        <button @click="updateItem"
-                class="btn btn-success"
-                v-if="method === 'update'">
-          ویرایش اطلاعات
-        </button>
-        <button @click="createItem"
-                class="btn btn-success" v-else>
-          ذخیره اطلاعات
-        </button>
-      </template>
     </portlet>
   </div>
 </template>
@@ -146,25 +146,15 @@
         reader.readAsDataURL(event.target.files[0]);
       },
       deleteItem() {
-        this.$store.dispatch("providers/deleteItem", this.$route.params.id)
-          .then(() => {
-            this.$toast.success('ارائه دهنده با موفقیت حذف شد.');
-            this.$router.push("/admin/providers");
-          });
+        if (confirm('آیا مایل به حذف هستید ؟'))
+          this.$store.dispatch("providers/deleteItem", this.provider.id)
+            .then(() => {this.$router.push("/admin/providers")});
       },
       updateItem() {
-        const data = {id: this.$route.params.id, ...this.provider};
-        this.$store.dispatch("providers/updateItem", data)
-          .then(() => {
-            this.$toast.success('ارائه دهنده با موفقیت آپدیت شد.');
-            this.$router.push("/admin/providers");
-          });
+        this.$store.dispatch("providers/updateItem", this.provider);
       },
       createItem() {
-        this.$store.dispatch("providers/createItem", this.provider)
-          .then(() => {
-            this.$router.push("/admin/providers");
-          });
+        this.$store.dispatch("providers/createItem", this.provider);
       },
     },
     asyncData({params, store}) {
