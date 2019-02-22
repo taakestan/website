@@ -20,11 +20,11 @@
       <div class="container flex-column">
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
-          <div class="col-md-4" v-for="key in webinars.all">
+          <div class="col-md-4" v-for="webinar in webinars.all">
             <card
-              :title="webinars.all[key].title" :provider="webinars.all[key].provider_id"
-              :image-path="webinars.all[key].banner" :href="'webinars/' + webinars.all[key].slug">
-              {{ webinars.all[key].description }}
+              :title="webinar.title" :provider="webinar.provider_id"
+              :image-path="webinar.banner" :href="'webinars/' + webinar.slug">
+              {{ webinar.description }}
             </card>
           </div>
         </div>
