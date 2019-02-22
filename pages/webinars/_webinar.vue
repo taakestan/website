@@ -48,15 +48,10 @@
   export default {
     name: "webinar",
     components: {Navbar},
-    data() {
-      return {
-        webinar: ''
-      }
-    },
     computed: mapState(['webinars', 'providers']),
     methods: {
       providerName(providerID) {
-        const provider = this.providers.all[providerID];
+        const provider = this.providers.all.find(item => item.id === providerID);
         return provider.first_name + ' ' + provider.last_name;
       }
     },
@@ -66,18 +61,10 @@
       }
     },
     validate ({ params, store }) {
-      let indexItem = null;
-      for (let index in store.state.webinars.all) {
-        if (store.state.webinars.all[index].slug === params.webinar)
-          indexItem = index;
-      }
-      return !!indexItem;
+      return store.state.webinars.all.some(item => item.slug === params.webinar);
     },
-    created() {
-      for (let index in this.webinars.all) {
-        if (this.webinars.all[index].slug === this.$route.params.webinar)
-          this.webinar = this.webinars.all[index];
-      }
+    asyncData({params, store}) {
+      return {webinar: store.state.webinars.all.find(item => item.slug === params.webinar)};
     }
   }
 </script>
