@@ -182,7 +182,7 @@
       if (params.id !== 'create') {
         return {
           method: 'update',
-          webinar: Object.assign({}, store.state.webinars.all[params.id])
+          webinar: Object.assign({}, store.state.webinars.all.find(item => item.id == params.id))
         };
       }
       return {
