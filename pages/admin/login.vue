@@ -61,6 +61,7 @@
     name: "login",
     components: {FormControlFeedback},
     layout: 'free',
+    middleware: 'guest',
     data() {
       return {
         form: {

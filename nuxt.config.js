@@ -79,10 +79,10 @@ module.exports = {
       }
     },
     redirect: {
-      home: '/',
+      home: '/admin',
       login: '/admin/login',
       logout: '/',
-      callback: '/login'
+      callback: '/admin'
     },
     token: {
       prefix: '_token.'
