@@ -14,76 +14,85 @@
         </div>
       </template>
       <template slot="body">
-        <h5>اطلاعات اولیه</h5>
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label>نام</label>
-            <input class="form-control" v-model="provider.first_name"
-                   :class="{'is-invalid': !!errors.all.first_name}">
-            <form-control-feedback :errors="errors.all" field="first_name"/>
+        <div class="row">
+          <div class="col-lg-9">
+            <h5>اطلاعات اولیه</h5>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label>نام</label>
+                <input class="form-control" v-model="provider.first_name"
+                       :class="{'is-invalid': !!errors.all.first_name}">
+                <form-control-feedback :errors="errors.all" field="first_name"/>
+              </div>
+              <div class="form-group col-md-4">
+                <label>نام خانوادگی</label>
+                <input class="form-control" v-model="provider.last_name"
+                       :class="{'is-invalid': !!errors.all.last_name}">
+                <form-control-feedback :errors="errors.all" field="last_name"/>
+              </div>
+              <div class="form-group col-md-4">
+                <label>نام کاربری</label>
+                <input class="form-control" v-model="provider.username"
+                       :class="{'is-invalid': !!errors.all.username}">
+                <form-control-feedback :errors="errors.all" field="username"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>بیوگرافی</label>
+              <input type="hidden" :class="{'is-invalid': !!errors.all.biography}">
+              <div class="quill-editor"
+                   v-model="provider.biography"
+                   v-quill:myQuillEditor="editorOption">
+              </div>
+              <form-control-feedback :errors="errors.all" field="biography"/>
+            </div>
+            <hr>
+            <h5>اطلاعات شبکه های اجتماعی</h5>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label>Facebook</label>
+                <input class="form-control" v-model="provider.profiles.facebook">
+              </div>
+              <div class="form-group col-md-4">
+                <label>Github</label>
+                <input class="form-control" v-model="provider.profiles.github">
+              </div>
+              <div class="form-group col-md-4">
+                <label>Linkedin</label>
+                <input class="form-control" v-model="provider.profiles.linkedin">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label>Telegram</label>
+                <input class="form-control" v-model="provider.profiles.telegram">
+              </div>
+              <div class="form-group col-md-4">
+                <label>Twitter</label>
+                <input class="form-control" v-model="provider.profiles.twitter">
+              </div>
+              <div class="form-group col-md-4">
+                <label>StackOverflow</label>
+                <input class="form-control" v-model="provider.profiles.stackOverflow">
+              </div>
+            </div>
           </div>
-          <div class="form-group col-md-4">
-            <label>نام خانوادگی</label>
-            <input class="form-control" v-model="provider.last_name"
-                   :class="{'is-invalid': !!errors.all.last_name}">
-            <form-control-feedback :errors="errors.all" field="last_name"/>
-          </div>
-          <div class="form-group col-md-4">
-            <label>نام کاربری</label>
-            <input class="form-control" v-model="provider.username"
-                   :class="{'is-invalid': !!errors.all.username}">
-            <form-control-feedback :errors="errors.all" field="username"/>
+          <div class="col-lg-3">
+            <div class="profile-image">
+              <img class="rounded-circle w-100" :src="provider.image" alt="">
+              <div class="form-group mt-3">
+                <div class="custom-file">
+                  <input class="custom-file-input"
+                         @change="processFile($event)" type="file"
+                         :class="{'is-invalid': !!errors.all.image}">
+                  <label class="custom-file-label">انتخاب کنید</label>
+                </div>
+                <form-control-feedback :errors="errors.all" field="image"/>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label>آدرس تصویر</label>
-          <div class="custom-file">
-            <input class="custom-file-input"
-                   @change="processFile($event)" type="file"
-                   :class="{'is-invalid': !!errors.all.image}">
-            <label class="custom-file-label">انتخاب کنید</label>
-          </div>
-          <form-control-feedback :errors="errors.all" field="image"/>
-        </div>
-        <div class="form-group">
-          <label>بیوگرافی</label>
-          <input type="hidden" :class="{'is-invalid': !!errors.all.biography}">
-          <div class="quill-editor"
-               v-model="provider.biography"
-               v-quill:myQuillEditor="editorOption">
-          </div>
-          <form-control-feedback :errors="errors.all" field="biography"/>
-        </div>
-        <hr>
-        <h5>اطلاعات شبکه های اجتماعی</h5>
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label>Facebook</label>
-            <input class="form-control" v-model="provider.profiles.facebook">
-          </div>
-          <div class="form-group col-md-4">
-            <label>Github</label>
-            <input class="form-control" v-model="provider.profiles.github">
-          </div>
-          <div class="form-group col-md-4">
-            <label>Linkedin</label>
-            <input class="form-control" v-model="provider.profiles.linkedin">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label>Telegram</label>
-            <input class="form-control" v-model="provider.profiles.telegram">
-          </div>
-          <div class="form-group col-md-4">
-            <label>Twitter</label>
-            <input class="form-control" v-model="provider.profiles.twitter">
-          </div>
-          <div class="form-group col-md-4">
-            <label>StackOverflow</label>
-            <input class="form-control" v-model="provider.profiles.stackOverflow">
-          </div>
-        </div>
+
       </template>
       <template slot="footer">
         <button @click="updateItem"
@@ -186,3 +195,36 @@
     }
   }
 </script>
+
+<style>
+  .custom-file-label::after {
+    left: 0;
+    width: 100%;
+    text-align: center;
+    content: "انتخاب فایل";
+    border-radius: .25rem 0 0 .25rem;
+  }
+
+  .ql-editor {
+    min-height: 300px;
+    max-height: 400px;
+    overflow: auto;
+    font-family: Vazir;
+  }
+
+  .ql-picker-label:before {
+    padding-right: 1.2rem;
+  }
+
+  .form-group > .ql-snow {
+    border-color: #ebedf2;
+  }
+
+  .ql-toolbar {
+    border-radius: .25rem .25rem 0 0;
+  }
+
+  .ql-container {
+    border-radius: 0 0 .25rem .25rem;
+  }
+</style>
