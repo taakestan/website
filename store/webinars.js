@@ -1,35 +1,38 @@
+const baseURL = 'api/webinars';
+
 export const state = () => ({all: []});
 
 export const mutations = {
-  setItems(state, items) {
-    state.all = items;
+  setItems(state, item) {
+    state.all = item;
   },
   createItem(state, item) {
-    state.all[item.id] = item.item;
+    state.all.push(item);
   },
   updateItem(state, item) {
-    state.all[item.id] = item;
+    const index = state.all.findIndex(value => value.id === item.id);
+    state.all[index] = item;
   },
   deleteItem(state, id) {
-    delete state.all[id];
+    state.all = state.all.filter(item => item.id != id);
   },
 };
 
 export const actions = {
-  async prepare({commit}) {
-    const {data} = await this.$axios.get('webinars2.json');
-    commit('setItems', data);
+  async prepare(state) {
+    const {data} = await this.$axios.$get(baseURL);
+    state.commit('setItems', data);
   },
   createItem(state, item) {
-    return this.$axios.$post('webinars2.json', item)
-      .then(data => state.commit("createItem", {item, id: data.name}))
+    return this.$axios.$post(baseURL, item)
+      .then(response => state.commit("createItem", response.data));
   },
   updateItem(state, item) {
-    return this.$axios.$patch(`webinars2/${item.id}.json`, item)
-      .then(() => state.commit("updateItem", item))
+    return this.$axios.$put(`${baseURL}/${item.id}`, item)
+      .then(() => state.commit("updateItem", item));
   },
   deleteItem(state, id) {
-    return this.$axios.$delete(`webinars2/${id}.json`)
+    return this.$axios.$delete(`${baseURL}/${id}`)
       .then(() => state.commit('deleteItem', id))
   },
 };

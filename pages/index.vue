@@ -20,12 +20,8 @@
       <div class="container flex-column">
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
-          <div class="col-md-4" v-for="key in Object.keys(webinars.all).slice(0, 3)">
-            <card
-              :title="webinars.all[key].title" :provider="webinars.all[key].provider_id"
-              :image-path="webinars.all[key].banner" :href="'webinars/' + webinars.all[key].slug">
-              {{ webinars.all[key].description }}
-            </card>
+          <div class="col-md-4" v-for="webinar in webinars.all">
+            <webinar :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
       </div>
@@ -92,12 +88,12 @@
 
 <script>
 
-  import Card from "../components/Card";
   import {mapState} from 'vuex';
   import Navbar from "../components/Navbar";
+  import Webinar from "../components/Webinar";
 
   export default {
-    components: {Navbar, Card},
+    components: {Webinar, Navbar},
     computed: mapState(['webinars'])
   }
 </script>

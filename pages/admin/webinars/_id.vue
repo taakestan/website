@@ -7,9 +7,13 @@
             {{ method === 'create' ? 'ایجاد' : 'ویرایش' }}
             وبینار
           </div>
-          <button @click="deleteItem"
-                  class="btn btn-outline-danger"
-                  v-if="method === 'update'">حذف وبینار</button>
+          <div class="actions">
+            <button @click="deleteItem"
+                    class="btn btn-outline-danger"
+                    v-if="method === 'update'">حذف وبینار</button>
+            <button class="btn btn-success" @click="createItem" v-if="method === 'create'">ایجاد وبینار</button>
+            <button class="btn btn-primary" @click="updateItem" v-else>به‌روز رسانی وبینار</button>
+          </div>
         </div>
       </template>
       <template slot="body">
@@ -18,47 +22,85 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label>عنوان وبینار</label>
-              <input class="form-control" v-model="webinar.title">
+              <input class="form-control" v-model="webinar.title"
+                     :class="{'is-invalid': !!errors.all.title}">
+              <form-control-feedback :errors="errors.all" field="title" />
             </div>
             <div class="form-group col-md-4">
-              <label>slug</label>
-              <input class="form-control" v-model="webinar.slug">
+              <label>برچسب</label>
+              <input class="form-control" v-model="webinar.label"
+                     :class="{'is-invalid': !!errors.all.label}">
+              <form-control-feedback :errors="errors.all" field="label" />
             </div>
             <div class="form-group col-md-4">
               <label>ارائه دهنده</label>
-              <select class="form-control" v-model="webinar.provider_id">
+              <select class="form-control" v-model="webinar.provider_id"
+                      :class="{'is-invalid': !!errors.all.provider_id}">
                 <option selected disabled>انتخاب کنید ...</option>
-                <option v-for="(provider, id) in providers.all" :value="id">
+                <option v-for="provider in providers.all" :value="provider.id">
                   {{ provider.first_name + ' ' + provider.last_name }}
                 </option>
               </select>
+              <form-control-feedback :errors="errors.all" field="provider_id" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-4">
               <label>تاریخ برگزاری وبینار</label>
-              <input type="date" class="form-control" v-model="webinar.created_at">
+              <input type="date" class="form-control"
+                     v-model="webinar.created_at"
+                     :class="{'is-invalid': !!errors.all.created_at}">
+              <form-control-feedback :errors="errors.all" field="created_at" />
             </div>
             <div class="form-group col-md-4">
               <label>بنر وبینار</label>
-              <input class="form-control" v-model="webinar.banner">
+              <div class="custom-file">
+                <input type="file"
+                       class="custom-file-input"
+                       @change="processFile('banner')"
+                       :class="{'is-invalid': !!errors.all.banner}">
+                <label class="custom-file-label">انتخاب فایل</label>
+              </div>
+              <form-control-feedback :errors="errors.all" field="banner" />
             </div>
             <div class="form-group col-md-4">
               <label>تصویر وبینار</label>
-              <input class="form-control" v-model="webinar.image">
+              <div class="custom-file">
+                <input type="file"
+                       class="custom-file-input"
+                       @change="processFile('image')"
+                       :class="{'is-invalid': !!errors.all.image}">
+                <label class="custom-file-label">انتخاب فایل</label>
+              </div>
+              <form-control-feedback :errors="errors.all" field="image" />
             </div>
           </div>
           <hr>
           <h5>محتوای وبینار</h5>
           <div class="form-group">
             <label>توضیحات</label>
-            <textarea class="form-control" rows="3" v-model="webinar.description"></textarea>
+            <textarea class="form-control"
+                      rows="3" v-model="webinar.description"
+                      :class="{'is-invalid': !!errors.all.description}"></textarea>
+            <form-control-feedback :errors="errors.all" field="description" />
           </div>
           <div class="form-group">
             <label>متن وبینار</label>
             <div class="quill-editor"
                  v-model="webinar.content"
                  v-quill:myQuillEditor="editorOption">
+            </div>
+            <form-control-feedback :errors="errors.all" field="content" />
+          </div>
+          <hr>
+          <h5>تصاویر وبینار</h5>
+          <div class="row">
+            <div class="col-lg-8">
+              <span>بنر وبینار</span>
+              <img class="img-fluid rounded" :src="webinar.banner" alt="">
+            </div>
+            <div class="col-lg-4">
+              <img class="img-fluid rounded" :src="webinar.image" alt="">
             </div>
           </div>
           <hr>
@@ -81,10 +123,6 @@
           </div>
         </form>
       </template>
-      <template slot="footer">
-        <button class="btn btn-success" @click="createItem" v-if="method === 'create'">ایجاد وبینار</button>
-        <button class="btn btn-primary" @click="updateItem" v-else>به‌روز رسانی وبینار</button>
-      </template>
     </portlet>
   </div>
 </template>
@@ -92,12 +130,13 @@
 <script>
   import {mapState} from 'vuex'
   import Portlet from "../../../components/admin/Portlet";
+  import FormControlFeedback from "../../../components/Form/FormControlFeedback";
 
   export default {
     name: "show",
-    components: {Portlet},
+    components: {FormControlFeedback, Portlet},
     layout: 'admin',
-    computed: mapState(['providers']),
+    computed: mapState(['providers', 'errors']),
     data() {
       return {
         editorOption: {
@@ -126,6 +165,13 @@
       removeLink(index) {
         this.webinar.links.splice(index, 1);
       },
+      processFile(field) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.webinar[field] = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      },
       deleteItem() {
         this.$store.dispatch("webinars/deleteItem", this.$route.params.id)
           .then(() => {
@@ -153,14 +199,14 @@
       if (params.id !== 'create') {
         return {
           method: 'update',
-          webinar: Object.assign({}, store.state.webinars.all[params.id])
+          webinar: Object.assign({}, store.state.webinars.all.find(item => item.id == params.id))
         };
       }
       return {
         method: 'create',
         webinar: {
           title: '',
-          slug: '',
+          label: '',
           provider_id: '',
           created_at: '',
           image: '',
