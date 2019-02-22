@@ -7,9 +7,13 @@
             {{ method === 'create' ? 'ایجاد' : 'ویرایش' }}
             وبینار
           </div>
-          <button @click="deleteItem"
-                  class="btn btn-outline-danger"
-                  v-if="method === 'update'">حذف وبینار</button>
+          <div class="actions">
+            <button @click="deleteItem"
+                    class="btn btn-outline-danger"
+                    v-if="method === 'update'">حذف وبینار</button>
+            <button class="btn btn-success" @click="createItem" v-if="method === 'create'">ایجاد وبینار</button>
+            <button class="btn btn-primary" @click="updateItem" v-else>به‌روز رسانی وبینار</button>
+          </div>
         </div>
       </template>
       <template slot="body">
@@ -79,6 +83,17 @@
             <form-control-feedback :errors="errors.all" field="content" />
           </div>
           <hr>
+          <h5>تصاویر وبینار</h5>
+          <div class="row">
+            <div class="col-lg-8">
+              <span>بنر وبینار</span>
+              <img class="img-fluid rounded" src="https://taak.cf/img/async-data-with-nuxtjs.png" alt="">
+            </div>
+            <div class="col-lg-4">
+              <img class="img-fluid rounded" src="https://vueschool.s3.amazonaws.com/ef4168160889918b9689e873e931472a/async-data-with-nuxtjs.png" alt="">
+            </div>
+          </div>
+          <hr>
           <div class="d-flex justify-content-between">
             <h5>لینک های وبینار</h5>
             <div class="btn btn-outline-success" @click="addLink">افزودن لینک</div>
@@ -97,10 +112,6 @@
             </div>
           </div>
         </form>
-      </template>
-      <template slot="footer">
-        <button class="btn btn-success" @click="createItem" v-if="method === 'create'">ایجاد وبینار</button>
-        <button class="btn btn-primary" @click="updateItem" v-else>به‌روز رسانی وبینار</button>
       </template>
     </portlet>
   </div>

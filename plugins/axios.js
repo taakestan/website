@@ -6,7 +6,8 @@ export default function ({ $axios, redirect, app, store }) {
   });
 
   $axios.onError(error => {
-    app.$toast.error(error.response.data.message);
+    if (error.response.data.message)
+      app.$toast.error(error.response.data.message);
     if (error.response.status === 422)
       store.dispatch('errors/record', error.response.data.errors)
   });
