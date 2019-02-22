@@ -21,11 +21,7 @@
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
           <div class="col-md-4" v-for="webinar in webinars.all">
-            <card
-              :title="webinar.title" :provider="webinar.provider_id"
-              :image-path="webinar.banner" :href="'webinars/' + webinar.slug">
-              {{ webinar.description }}
-            </card>
+            <webinar :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
       </div>
@@ -92,12 +88,12 @@
 
 <script>
 
-  import Card from "../components/Card";
   import {mapState} from 'vuex';
   import Navbar from "../components/Navbar";
+  import Webinar from "../components/Webinar";
 
   export default {
-    components: {Navbar, Card},
+    components: {Webinar, Navbar},
     computed: mapState(['webinars'])
   }
 </script>

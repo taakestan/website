@@ -97,10 +97,10 @@
           <div class="row">
             <div class="col-lg-8">
               <span>بنر وبینار</span>
-              <img class="img-fluid rounded" src="https://taak.cf/img/async-data-with-nuxtjs.png" alt="">
+              <img class="img-fluid rounded" :src="webinar.banner" alt="">
             </div>
             <div class="col-lg-4">
-              <img class="img-fluid rounded" src="https://vueschool.s3.amazonaws.com/ef4168160889918b9689e873e931472a/async-data-with-nuxtjs.png" alt="">
+              <img class="img-fluid rounded" :src="webinar.image" alt="">
             </div>
           </div>
           <hr>
