@@ -161,7 +161,7 @@
       if (params.id !== 'create') {
         return {
           method: 'update',
-          provider: Object.assign({}, store.state.providers.all[params.id])
+          provider: Object.assign({}, store.state.providers.all.find(item => item.id == params.id))
         };
       }
       return {

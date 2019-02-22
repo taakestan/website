@@ -12,8 +12,8 @@
       <nuxt-link
         tag="div"
         class="col-md-4 mb-3"
-        :to="'/admin/providers/' + id"
-        v-for="(provider, id) in providers.all">
+        :to="'/admin/providers/' + provider.id"
+        v-for="provider in providers.all">
         <provider :provider="provider" :key="provider.id"/>
       </nuxt-link>
     </div>
