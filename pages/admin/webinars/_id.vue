@@ -54,14 +54,24 @@
             </div>
             <div class="form-group col-md-4">
               <label>بنر وبینار</label>
-              <input class="form-control" v-model="webinar.banner"
-                     :class="{'is-invalid': !!errors.all.banner}">
+              <div class="custom-file">
+                <input type="file"
+                       class="custom-file-input"
+                       @change="processFile('banner')"
+                       :class="{'is-invalid': !!errors.all.banner}">
+                <label class="custom-file-label">انتخاب فایل</label>
+              </div>
               <form-control-feedback :errors="errors.all" field="banner" />
             </div>
             <div class="form-group col-md-4">
               <label>تصویر وبینار</label>
-              <input class="form-control" v-model="webinar.image"
-                     :class="{'is-invalid': !!errors.all.image}">
+              <div class="custom-file">
+                <input type="file"
+                       class="custom-file-input"
+                       @change="processFile('image')"
+                       :class="{'is-invalid': !!errors.all.image}">
+                <label class="custom-file-label">انتخاب فایل</label>
+              </div>
               <form-control-feedback :errors="errors.all" field="image" />
             </div>
           </div>
@@ -154,6 +164,13 @@
       },
       removeLink(index) {
         this.webinar.links.splice(index, 1);
+      },
+      processFile(field) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.webinar[field] = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
       },
       deleteItem() {
         this.$store.dispatch("webinars/deleteItem", this.$route.params.id)
