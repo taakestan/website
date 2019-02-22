@@ -14,7 +14,7 @@ export const mutations = {
     state.all[index] = item;
   },
   deleteItem(state, id) {
-    state.all = state.all.filter(item => item.id !== id);
+    state.all = state.all.filter(item => item.id != id);
   },
 };
 
