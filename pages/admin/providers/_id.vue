@@ -37,8 +37,12 @@
         </div>
         <div class="form-group">
           <label>آدرس تصویر</label>
-          <input class="form-control" v-model="provider.image"
-                 :class="{'is-invalid': !!errors.all.image}">
+          <div class="custom-file">
+            <input class="custom-file-input"
+                   @change="processFile($event)" type="file"
+                   :class="{'is-invalid': !!errors.all.image}">
+            <label class="custom-file-label">انتخاب کنید</label>
+          </div>
           <form-control-feedback :errors="errors.all" field="image"/>
         </div>
         <div class="form-group">
@@ -125,6 +129,13 @@
     },
     computed: mapState(['errors']),
     methods: {
+      processFile() {
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.provider.image = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      },
       deleteItem() {
         this.$store.dispatch("providers/deleteItem", this.$route.params.id)
           .then(() => {
@@ -145,7 +156,7 @@
           .then(() => {
             this.$router.push("/admin/providers");
           });
-      }
+      },
     },
     asyncData({params, store}) {
       if (params.id !== 'create') {
