@@ -1,9 +1,9 @@
+require('dotenv').config();
+
 const pkg = {
   name: 'پروژه دانش آزاد تاک',
   description: ''
 };
-
-const hostURL = 'https://api.taak-website.dev';
 
 module.exports = {
   mode: 'universal',
@@ -44,6 +44,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     '@nuxtjs/toast',
+    '@nuxtjs/dotenv'
   ],
 
   axios: {
@@ -51,22 +52,22 @@ module.exports = {
   },
 
   toast: {
-    duration : 2000,
+    duration: 2000,
     position: 'bottom-left'
   },
 
   proxy: {
     '/api/': {
-      target: hostURL,
+      target: process.env.hostURL,
       pathRewrite: {'^/api/': ''},
       secure: false
     },
     '/media/': {
-      target: hostURL,
+      target: process.env.hostURL,
       secure: false
     },
     '/junk/': {
-      target: hostURL,
+      target: process.env.hostURL,
       secure: false
     }
   },
@@ -78,10 +79,10 @@ module.exports = {
       }
     },
     redirect: {
+      home: '/',
       login: '/admin/login',
       logout: '/',
-      callback: '/login',
-      home: '/'
+      callback: '/login'
     },
     token: {
       prefix: '_token.'
