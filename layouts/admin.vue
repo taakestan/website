@@ -23,7 +23,8 @@
 
 <script>
   export default {
-    name: "admin"
+    name: "admin",
+    middleware: 'auth'
   }
 </script>
 

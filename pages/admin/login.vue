@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="w-50 login-pic">
+      <div class="w-50 login-pic text-center">
         <img src="/img/admin/servers.svg" alt="">
       </div>
     </div>
@@ -101,7 +101,7 @@
       margin-right: 5rem;
 
       img {
-        max-width: 500px;
+        max-width: 300px;
       }
     }
   }
