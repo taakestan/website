@@ -73,19 +73,11 @@ module.exports = {
   },
 
   auth: {
-    cookie: {
-      options: {
-        secure: true
-      }
-    },
     redirect: {
-      home: '/admin',
       login: '/admin/login',
       logout: '/',
-      callback: '/admin'
-    },
-    token: {
-      prefix: '_token.'
+      callback: '/admin/login',
+      home: '/admin'
     },
     strategies: {
       local: {

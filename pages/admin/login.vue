@@ -59,9 +59,9 @@
 
   export default {
     name: "login",
+    middleware: 'guest',
     components: {FormControlFeedback},
     layout: 'free',
-    middleware: 'guest',
     data() {
       return {
         form: {
@@ -75,6 +75,10 @@
       submit() {
         this.$auth.login({data: this.form});
       },
+    },
+    asyncData ({ app }) {
+      if (app.$auth.loggedIn)
+        app.$router.push('/admin');
     }
   }
 </script>

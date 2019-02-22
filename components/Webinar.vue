@@ -1,23 +1,24 @@
 <template>
   <card
-    :title="webinar.title" :provider="providerName(webinar.provider_id)"
-    :image-path="webinar.banner" :href="href">
+          :title="webinar.title" :provider="providerName(webinar.provider_id)"
+          :image-path="webinar.banner" :href="href">
     {{ webinar.description }}
   </card>
 </template>
 
 <script>
-	import Card from "./Card";
+  import Card from "./Card";
   import {mapState} from 'vuex';
+
   export default {
-		name: "Webinar",
+    name: "Webinar",
     props: {
-		  webinar: {
-		    required: true
+      webinar: {
+        required: true
       },
       href: {
         type: String,
-		    required: true
+        required: true
       }
     },
     components: {Card},

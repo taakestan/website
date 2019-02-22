@@ -9,8 +9,8 @@
       </nuxt-link>
     </div>
     <div class="row mt-3">
-      <div class="col-xl-4 col-lg-6 mb-3" v-for="(webinar, id) in webinars.all">
-        <webinar :webinar="webinar" :href="'/admin/webinars/' + id"/>
+      <div class="col-xl-4 col-lg-6 mb-3" v-for="webinar in webinars.all">
+        <webinar :webinar="webinar" :key="webinar.id" :href="'/admin/webinars/' + webinar.id"/>
       </div>
     </div>
   </div>

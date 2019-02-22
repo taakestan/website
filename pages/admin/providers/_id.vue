@@ -37,14 +37,18 @@
         </div>
         <div class="form-group">
           <label>آدرس تصویر</label>
-          <input class="form-control" v-model="provider.image" required>
+          <input class="form-control" v-model="provider.image"
+                 :class="{'is-invalid': !!errors.all.image}">
+          <form-control-feedback :errors="errors.all" field="image"/>
         </div>
         <div class="form-group">
           <label>بیوگرافی</label>
+          <input type="hidden" :class="{'is-invalid': !!errors.all.biography}">
           <div class="quill-editor"
                v-model="provider.biography"
                v-quill:myQuillEditor="editorOption">
           </div>
+          <form-control-feedback :errors="errors.all" field="biography"/>
         </div>
         <hr>
         <h5>اطلاعات شبکه های اجتماعی</h5>
