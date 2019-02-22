@@ -1,13 +1,13 @@
 <template>
   <div id="container"
-       class="d-flex flex-column bg-white p-5 justify-content-between">
+       class="d-flex flex-column bg-white px-5 py-3 justify-content-between">
 
     <div id="header"></div>
     <div id="wrapper"
          class="d-flex align-items-center">
       <div class="d-flex justify-content-end w-50">
         <div class="login-form__body w-100">
-          <h3 class="text-center mt-5">ورود به بخش مدیرت</h3>
+          <h3 class="text-center mt-3">ورود به بخش مدیرت</h3>
 
           <form class="login-form__body-form py-5" autocomplete="off" @keydown.enter="submit">
             <div class="form-group">
@@ -29,30 +29,24 @@
             <a href="#" class="m-link">
               رمز عبور خود را فراموش کرده اید ؟
             </a>
-            <div class="btn m-btn--pill btn-brand m-btn--wide" @click="submit">ورود</div>
+            <div class="btn btn-primary rounded-pill px-3" @click="submit">ورود</div>
           </div>
         </div>
       </div>
 
       <div class="w-50 login-pic">
-        <img src="/img/login.svg" alt="">
+        <img src="/img/admin/servers.svg" alt="">
       </div>
     </div>
     <div id="footer" class="d-flex justify-content-between">
       <div class="footer-link">
-        <a href="#" class="m-link mr-3">حریم خصوصی</a>
-        <a href="#" class="m-link mr-3">قوانین و مقررات</a>
         <a href="#" class="m-link mr-3">تماس با ما</a>
       </div>
 
       <div class="footer-info">
-                <span class="m-footer__copyright">
-					طراحی و ساخت توسط تیم برنامه نویسی طرحان
-                    <span class="px-2">|</span>
-                    <a href="https://www.tarhan.ir" class="m-link mt-code">
-                        <samp>TarHan 2013 - 2018©</samp>
-                    </a>
-				</span>
+        <div class="m-footer__copyright">
+          طراحی و ساخت توسط <a href="https://github.com/HamidNE" target="_blank">HamidNE</a> و <a href="https://github.com/hasanteymoori" target="_blank">Hasan Teymoori</a>
+        </div>
       </div>
     </div>
 
