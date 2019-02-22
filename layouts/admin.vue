@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="container" class="m-0">
     <header class="navbar navbar-dark bg-dark">
       <div class="container">
         <nuxt-link class="navbar-brand mr-0 mr-md-2" to="/admin">
@@ -17,7 +17,7 @@
         </div>
       </div>
     </header>
-    <nuxt/>
+    <nuxt class="py-3"/>
   </div>
 </template>
 
@@ -29,7 +29,8 @@
 </script>
 
 <style scoped>
-  body {
-    background: #f2f3f8;
+  #container {
+    min-height: 100vh;
+    background: #f8fafc;
   }
 </style>
