@@ -62,7 +62,7 @@
     computed: mapState(['errors']),
     methods: {
       createItem() {
-        this.$axios.$post('/api/register', this.admin);
+        this.$axios.$post('/register', this.admin);
       },
     },
   }
