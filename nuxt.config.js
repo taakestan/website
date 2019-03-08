@@ -42,34 +42,17 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
     '@nuxtjs/toast',
     '@nuxtjs/dotenv'
   ],
 
   axios: {
-    proxy: true
+    baseURL: process.env.hostURL
   },
 
   toast: {
     duration: 2000,
     position: 'bottom-left'
-  },
-
-  proxy: {
-    '/api/': {
-      target: process.env.hostURL,
-      pathRewrite: {'^/api/': ''},
-      secure: false
-    },
-    '/media/': {
-      target: process.env.hostURL,
-      secure: false
-    },
-    '/junk/': {
-      target: process.env.hostURL,
-      secure: false
-    }
   },
 
   auth: {
