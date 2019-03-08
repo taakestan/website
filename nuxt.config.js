@@ -48,8 +48,11 @@ module.exports = {
 
   axios: {
     baseURL: process.env.hostURL,
-    credentials: false,
-    headers: { 'Access-Control-Allow-Origin': '*'},
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+    },
+    withCredentials: false,
   },
 
   toast: {
