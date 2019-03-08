@@ -47,7 +47,9 @@ module.exports = {
   ],
 
   axios: {
-    baseURL: process.env.hostURL
+    baseURL: process.env.hostURL,
+    credentials: false,
+    proxyHeaders: false
   },
 
   toast: {
