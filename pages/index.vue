@@ -21,7 +21,7 @@
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
           <div class="col-md-4" v-for="webinar in webinars.all">
-            <webinar :webinar="webinar" :href="'/webinars/' + webinar.slug" />
+            <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
       </div>
@@ -90,10 +90,10 @@
 
   import {mapState} from 'vuex';
   import Navbar from "../components/Navbar";
-  import Webinar from "../components/Webinar";
+  import WebinarCard from "../components/WebinarCard";
 
   export default {
-    components: {Webinar, Navbar},
+    components: {WebinarCard, Navbar},
     computed: mapState(['webinars'])
   }
 </script>

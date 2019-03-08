@@ -18,7 +18,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4" v-for="webinar in webinars.all">
-            <webinar :webinar="webinar" :href="'/webinars/' + webinar.slug" />
+            <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
       </div>
@@ -29,11 +29,11 @@
 <script>
   import {mapState} from 'vuex';
   import Navbar from "~/components/Navbar";
-  import Webinar from "../../components/webinar";
+  import WebinarCard from "../../components/WebinarCard";
 
   export default {
     name: "index",
-    components: {Webinar, Navbar},
+    components: {WebinarCard, Navbar},
     computed: mapState(['webinars']),
     head () {
       return {
