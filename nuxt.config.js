@@ -49,7 +49,7 @@ module.exports = {
   axios: {
     baseURL: process.env.hostURL,
     credentials: false,
-    proxyHeaders: false
+    headers: { 'Access-Control-Allow-Origin': '*'},
   },
 
   toast: {
