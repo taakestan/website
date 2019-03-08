@@ -11,7 +11,7 @@
   import {mapState} from 'vuex';
 
   export default {
-    name: "Webinar",
+    name: "WebinarCard",
     props: {
       webinar: {
         required: true

@@ -13,8 +13,8 @@
         tag="div"
         class="col-md-4 mb-3"
         :to="'/admin/providers/' + provider.id"
-        v-for="provider in providers.all">
-        <provider :provider="provider" :key="provider.id"/>
+        v-for="provider in providers.all" :key="provider.id">
+        <provider :provider="provider"/>
       </nuxt-link>
     </div>
   </div>

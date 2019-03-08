@@ -9,8 +9,9 @@
       </nuxt-link>
     </div>
     <div class="row mt-3">
-      <div class="col-xl-4 col-lg-6 mb-3" v-for="webinar in webinars.all">
-        <webinar :webinar="webinar" :key="webinar.id" :href="'/admin/webinars/' + webinar.id"/>
+      <div class="col-xl-4 col-lg-6 mb-3"
+           v-for="webinar in webinars.all" :key="webinar.id">
+        <webinar-card :webinar="webinar" :href="'/admin/webinars/' + webinar.id"/>
       </div>
     </div>
   </div>
@@ -18,10 +19,10 @@
 
 <script>
   import {mapState} from 'vuex';
-  import Webinar from "~/components/Webinar";
+  import WebinarCard from "../../../components/WebinarCard";
   export default {
 		name: "index",
-    components: {Webinar},
+    components: {WebinarCard},
     layout: 'admin',
     computed: mapState(['webinars']),
 	}
