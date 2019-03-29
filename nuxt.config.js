@@ -1,4 +1,4 @@
-require('dotenv').config();
+const hostURL = 'https://api.taak-website.dev';
 
 const pkg = {
   name: 'پروژه دانش آزاد تاک',
@@ -47,12 +47,23 @@ module.exports = {
   ],
 
   axios: {
-    baseURL: process.env.hostURL,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json',
+    proxy: true
+  },
+
+  proxy: {
+    '/api/': {
+      target: hostURL,
+      pathRewrite: {'^/api/': ''},
+      secure: false
     },
-    withCredentials: false,
+    '/media/': {
+      target: hostURL,
+      secure: false
+    },
+    '/junk/': {
+      target: hostURL,
+      secure: false
+    }
   },
 
   toast: {
@@ -70,9 +81,9 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          user: {url: process.env.hostURL + '/user', method: 'get', propertyName: 'data'},
-          login: {url: process.env.hostURL + '/login', method: 'post', propertyName: 'data'},
-          logout: {url: process.env.hostURL + '/logout', method: 'post'},
+          user: {url: '/api/user', method: 'get', propertyName: 'data'},
+          login: {url: '/api/login', method: 'post', propertyName: 'data'},
+          logout: {url: '/api/logout', method: 'post'},
         }
       }
     }
