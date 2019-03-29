@@ -67,6 +67,10 @@ module.exports = {
     }
   },
 
+  router: {
+    base: '/'
+  },
+
   build: {
     extend(config, ctx) {
     }
