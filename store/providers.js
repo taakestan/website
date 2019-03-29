@@ -1,4 +1,4 @@
-const baseURL = '/api/providers';
+const baseURL = '/providers';
 
 export const state = () => ({all: []});
 
