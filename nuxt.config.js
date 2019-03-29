@@ -44,6 +44,10 @@ module.exports = {
     '@nuxtjs/dotenv'
   ],
 
+  axios: {
+    baseURL: '/api/'
+  },
+
   toast: {
     duration: 2000,
     position: 'bottom-left'
@@ -65,10 +69,6 @@ module.exports = {
         }
       }
     }
-  },
-
-  router: {
-    base: '/'
   },
 
   build: {
