@@ -1,5 +1,3 @@
-const hostURL = 'https://api.taak-website.dev';
-
 const pkg = {
   name: 'پروژه دانش آزاد تاک',
   description: ''
@@ -45,26 +43,6 @@ module.exports = {
     '@nuxtjs/toast',
     '@nuxtjs/dotenv'
   ],
-
-  axios: {
-    proxy: true
-  },
-
-  proxy: {
-    '/api/': {
-      target: hostURL,
-      pathRewrite: {'^/api/': ''},
-      secure: false
-    },
-    '/media/': {
-      target: hostURL,
-      secure: false
-    },
-    '/junk/': {
-      target: hostURL,
-      secure: false
-    }
-  },
 
   toast: {
     duration: 2000,
