@@ -1,5 +1,3 @@
-const hostURL = 'https://api.taak-website.dev';
-
 const pkg = {
   name: 'پروژه دانش آزاد تاک',
   description: ''
@@ -47,23 +45,7 @@ module.exports = {
   ],
 
   axios: {
-    proxy: true
-  },
-
-  proxy: {
-    '/api/': {
-      target: hostURL,
-      pathRewrite: {'^/api/': ''},
-      secure: false
-    },
-    '/media/': {
-      target: hostURL,
-      secure: false
-    },
-    '/junk/': {
-      target: hostURL,
-      secure: false
-    }
+    baseURL: '/api/'
   },
 
   toast: {
@@ -81,9 +63,9 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          user: {url: '/api/user', method: 'get', propertyName: 'data'},
-          login: {url: '/api/login', method: 'post', propertyName: 'data'},
-          logout: {url: '/api/logout', method: 'post'},
+          user: {url: '/user', method: 'get', propertyName: 'data'},
+          login: {url: '/login', method: 'post', propertyName: 'data'},
+          logout: {url: '/logout', method: 'post'},
         }
       }
     }
