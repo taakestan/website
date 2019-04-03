@@ -48,9 +48,9 @@
             <div class="form-group col-md-4">
               <label>تاریخ برگزاری وبینار</label>
               <input type="date" class="form-control"
-                     v-model="webinar.created_at"
-                     :class="{'is-invalid': !!errors.all.created_at}">
-              <form-control-feedback :errors="errors.all" field="created_at" />
+                     v-model="webinar.holding_at"
+                     :class="{'is-invalid': !!errors.all.holding_at}">
+              <form-control-feedback :errors="errors.all" field="holding_at" />
             </div>
             <div class="form-group col-md-4">
               <label>بنر وبینار</label>
@@ -208,7 +208,7 @@
           title: '',
           label: '',
           provider_id: '',
-          created_at: '',
+          holding_at: '',
           image: '',
           banner: '',
           description: '',
