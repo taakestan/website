@@ -195,12 +195,10 @@
           });
       }
     },
-    asyncData({params, store}) {
+    async asyncData({app, params}) {
       if (params.id !== 'create') {
-        return {
-          method: 'update',
-          webinar: Object.assign({}, store.state.webinars.all.find(item => item.id == params.id))
-        };
+        const {data} = await app.$axios.$get(`webinars/${params.slug}`);
+        return {webinar: data, method: 'update'};
       }
       return {
         method: 'create',

@@ -1,4 +1,4 @@
-const baseURL = '/webinars';
+const baseURL = 'webinars';
 
 export const state = () => ({all: []});
 

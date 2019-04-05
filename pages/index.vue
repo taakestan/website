@@ -5,7 +5,7 @@
       <div class="container">
         <div class="content text-white">
           <h1 class="display-2">تـــاکــــــــ</h1>
-          <h2>پروژه دانــش آزاد</h2>
+          <h2 class="font-weight-light">پروژه دانــش آزاد</h2>
           <p class="mt-4">
             پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته است. این پروژه قصد دارد تا پلی میان
             متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.
@@ -20,7 +20,7 @@
       <div class="container flex-column">
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
-          <div class="col-md-4" v-for="webinar in webinars">
+          <div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars">
             <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug"/>
           </div>
         </div>
@@ -49,7 +49,7 @@
             </ul>
           </div>
           <div class="col-md-6">
-            <div class="image">
+            <div class="image" id="plane-calender">
               <img class="img-fluid" src="/img/calender.png" alt="">
             </div>
           </div>
@@ -104,14 +104,13 @@
 <style lang="scss" scoped>
   .container {
     display: flex;
-    align-items: center;
     position: relative;
+    align-items: center;
   }
 
   #section1 {
     h2 {
       font-size: 3rem;
-      font-weight: 300;
     }
 
     p {
@@ -126,17 +125,8 @@
     }
   }
 
-  #section4 {
-    h2 {
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-  }
-
-  #section5 {
-    .button {
-      background: #231e6d;
-    }
+  #plane-calender {
+    width: 400px;
   }
 
 </style>

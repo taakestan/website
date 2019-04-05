@@ -17,28 +17,34 @@
     <section class="section section--white pt-0 section--pb-lg">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4" v-for="webinar in webinars.all">
+          <div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars">
             <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
+        <pagination :meta="meta"/>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-  import {mapState} from 'vuex';
   import Navbar from "~/components/Navbar";
+  import Pagination from "../../components/Pagination";
   import WebinarCard from "../../components/WebinarCard";
 
   export default {
     name: "index",
-    components: {WebinarCard, Navbar},
-    computed: mapState(['webinars']),
+    watchQuery: ['page'],
+    components: {Pagination, WebinarCard, Navbar},
     head () {
       return {
         title: 'وبینار ها | پروژه تاک',
       }
+    },
+    async asyncData({app, query}) {
+      const queryString = query.page ? `?page=${query.page}` : '';
+      const {data, links, meta} = await app.$axios.$get(`webinars${queryString}`);
+      return {webinars: data, links: links, meta: meta}
     }
   }
 </script>
