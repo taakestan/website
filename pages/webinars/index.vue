@@ -41,7 +41,7 @@
       }
     },
     async asyncData({app}) {
-      const {data, links, meta} = await app.$axios.$get(url);
+      const {data, links, meta} = await app.$axios.$get('webinars');
       return {webinars: data, links: links, meta: meta}
     }
   }
