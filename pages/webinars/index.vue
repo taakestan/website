@@ -21,19 +21,20 @@
             <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
+        <pagination :meta="meta"/>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-  import {mapState} from 'vuex';
   import Navbar from "~/components/Navbar";
+  import Pagination from "../../components/Pagination";
   import WebinarCard from "../../components/WebinarCard";
 
   export default {
     name: "index",
-    components: {WebinarCard, Navbar},
+    components: {Pagination, WebinarCard, Navbar},
     head () {
       return {
         title: 'وبینار ها | پروژه تاک',
