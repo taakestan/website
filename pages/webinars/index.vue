@@ -40,8 +40,8 @@
       }
     },
     async asyncData({app}) {
-      const {data} = await app.$axios.$get('webinars');
-      return {webinars: data};
+      const {data, links, meta} = await app.$axios.$get(url);
+      return {webinars: data, links: links, meta: meta}
     }
   }
 </script>
