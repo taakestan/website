@@ -1,6 +1,6 @@
 <template>
   <div class="shadow-sm rounded bg-white mt-3 d-flex justify-content-center">
-    <ul class="pagination py-2 px-0 m-0">
+    <ul class="pagination px-0 m-0">
       <li>
         <nuxt-link
                 class="pager-nav"
@@ -72,7 +72,7 @@
       display: inline-block;
 
       &.pager-nav {
-        color: #f44336;
+        color: #009688;
       }
 
       &:hover {

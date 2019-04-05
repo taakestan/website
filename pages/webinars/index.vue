@@ -34,7 +34,7 @@
 
   export default {
     name: "index",
-    watchQuery: 'page',
+    watchQuery: ['page'],
     components: {Pagination, WebinarCard, Navbar},
     head () {
       return {
