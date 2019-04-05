@@ -60,11 +60,9 @@
         title: this.webinar.title + ' | پروژه تاک'
       }
     },
-    validate ({ params, store }) {
-      return store.state.webinars.all.some(item => item.slug === params.webinar);
-    },
-    asyncData({params, store}) {
-      return {webinar: store.state.webinars.all.find(item => item.slug === params.webinar)};
+    async asyncData({params}) {
+      const {data} = await app.$axios.$get(`api/webinars/${params.slug}`);
+      return {webinar: data};
     }
   }
 </script>
