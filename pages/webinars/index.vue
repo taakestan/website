@@ -17,7 +17,7 @@
     <section class="section section--white pt-0 section--pb-lg">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4" v-for="webinar in webinars.all">
+          <div class="col-lg-4 col-md-6 mb-4" v-for="webinar in webinars">
             <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
@@ -34,11 +34,14 @@
   export default {
     name: "index",
     components: {WebinarCard, Navbar},
-    computed: mapState(['webinars']),
     head () {
       return {
         title: 'وبینار ها | پروژه تاک',
       }
+    },
+    async asyncData({app}) {
+      const {data} = await app.$axios.$get('webinars');
+      return {webinars: data};
     }
   }
 </script>
