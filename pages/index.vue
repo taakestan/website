@@ -49,7 +49,7 @@
             </ul>
           </div>
           <div class="col-md-6">
-            <div class="image">
+            <div class="image" id="plane-calender">
               <img class="img-fluid" src="/img/calender.png" alt="">
             </div>
           </div>
@@ -95,7 +95,7 @@
   export default {
     components: {WebinarCard, Navbar},
     async asyncData({app}) {
-      const {data} = await app.$axios.$get('webinars');
+      const {data} = await app.$axios.$get('api/webinars');
       return {webinars: data};
     }
   }
@@ -124,6 +124,10 @@
     h2 {
       color: #6c718b;
     }
+  }
+
+  #plane-calender {
+    width: 400px;
   }
 
   #section4 {
