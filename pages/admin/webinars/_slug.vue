@@ -197,7 +197,7 @@
     },
     async asyncData({app, params}) {
       if (params.id !== 'create') {
-        const {data} = await app.$axios.$get(`api/webinars/${params.slug}`);
+        const {data} = await app.$axios.$get(`webinars/${params.slug}`);
         return {webinar: data, method: 'update'};
       }
       return {
