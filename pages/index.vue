@@ -5,7 +5,7 @@
       <div class="container">
         <div class="content text-white">
           <h1 class="display-2">تـــاکــــــــ</h1>
-          <h2>پروژه دانــش آزاد</h2>
+          <h2 class="font-weight-light">پروژه دانــش آزاد</h2>
           <p class="mt-4">
             پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته است. این پروژه قصد دارد تا پلی میان
             متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.
@@ -104,14 +104,13 @@
 <style lang="scss" scoped>
   .container {
     display: flex;
-    align-items: center;
     position: relative;
+    align-items: center;
   }
 
   #section1 {
     h2 {
       font-size: 3rem;
-      font-weight: 300;
     }
 
     p {
@@ -128,19 +127,6 @@
 
   #plane-calender {
     width: 400px;
-  }
-
-  #section4 {
-    h2 {
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-  }
-
-  #section5 {
-    .button {
-      background: #231e6d;
-    }
   }
 
 </style>
