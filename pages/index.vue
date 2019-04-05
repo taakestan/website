@@ -20,8 +20,8 @@
       <div class="container flex-column">
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
-          <div class="col-md-4" v-for="webinar in webinars.all">
-            <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
+          <div class="col-md-4" v-for="webinar in webinars">
+            <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug"/>
           </div>
         </div>
       </div>
@@ -94,7 +94,10 @@
 
   export default {
     components: {WebinarCard, Navbar},
-    computed: mapState(['webinars'])
+    async asyncData({app}) {
+      const {data} = await app.$axios.$get('webinars');
+      return {webinars: data};
+    }
   }
 </script>
 
