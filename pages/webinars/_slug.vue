@@ -60,7 +60,7 @@
         title: this.webinar.title + ' | پروژه تاک'
       }
     },
-    async asyncData({params}) {
+    async asyncData({app, params}) {
       const {data} = await app.$axios.$get(`api/webinars/${params.slug}`);
       return {webinar: data};
     }
@@ -73,6 +73,7 @@
     h1 {
       font-size: 4rem;
     }
+
     p {
       color: #fffc;
       font-size: 1.3rem;
@@ -88,6 +89,7 @@
     padding: 0.2rem 1rem;
     border-radius: .5rem;
     background: #00000040;
+
     span {
       font-weight: 100;
     }
