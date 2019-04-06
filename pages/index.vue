@@ -95,7 +95,7 @@
   export default {
     components: {WebinarCard, Navbar},
     async asyncData({app}) {
-      const {data} = await app.$axios.$get('webinars');
+      const {data} = await app.$axios.$get('api/webinars');
       return {webinars: data};
     }
   }

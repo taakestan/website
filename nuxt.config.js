@@ -43,17 +43,35 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     '@nuxtjs/toast',
     '@nuxtjs/dotenv'
   ],
 
   axios: {
-    baseURL: '/api/'
+    proxy: true,
+    baseURL: '/'
   },
 
   toast: {
     duration: 2000,
     position: 'bottom-left'
+  },
+
+  proxy: {
+    '/api/': {
+      target: process.env.hostURL,
+      pathRewrite: {'^/api/': ''},
+      secure: false
+    },
+    '/media/': {
+      target: process.env.hostURL,
+      secure: false
+    },
+    '/junk/': {
+      target: process.env.hostURL,
+      secure: false
+    }
   },
 
   auth: {
@@ -66,9 +84,9 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          user: {url: '/user', method: 'get', propertyName: 'data'},
-          login: {url: '/login', method: 'post', propertyName: 'data'},
-          logout: {url: '/logout', method: 'post'},
+          user: {url: '/api/user', method: 'get', propertyName: 'data'},
+          login: {url: '/api/login', method: 'post', propertyName: 'data'},
+          logout: {url: '/api/logout', method: 'post'},
         }
       }
     }

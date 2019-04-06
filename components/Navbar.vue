@@ -10,10 +10,10 @@
             <nuxt-link class="nav-link " to="/webinars">وبینار های قبلی</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link " to="/contact-us">تماس با ما</nuxt-link>
+            <nuxt-link class="nav-link " to="/contact">تماس با ما</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link " to="/about-taak">درباره پروژه تاک</nuxt-link>
+            <nuxt-link class="nav-link " to="/about">درباره پروژه تاک</nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link " to="/providers">ارائه کنندگان</nuxt-link>

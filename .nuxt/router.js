@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _47fe8cb9 = () => interopDefault(import('../pages/about-taak.vue' /* webpackChunkName: "pages/about-taak" */))
+const _57564d5b = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
 const _2d51b8e0 = () => interopDefault(import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */))
-const _1494c08d = () => interopDefault(import('../pages/contact-us.vue' /* webpackChunkName: "pages/contact-us" */))
+const _45159224 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
 const _6a7d84f0 = () => interopDefault(import('../pages/providers.vue' /* webpackChunkName: "pages/providers" */))
 const _49efa1a4 = () => interopDefault(import('../pages/webinars/index.vue' /* webpackChunkName: "pages/webinars/index" */))
 const _6392b1e9 = () => interopDefault(import('../pages/admin/admins/index.vue' /* webpackChunkName: "pages/admin/admins/index" */))
@@ -92,17 +92,17 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
-      path: "/about-taak",
-      component: _47fe8cb9,
-      name: "about-taak"
+      path: "/about",
+      component: _57564d5b,
+      name: "about"
     }, {
       path: "/admin",
       component: _2d51b8e0,
       name: "admin"
     }, {
-      path: "/contact-us",
-      component: _1494c08d,
-      name: "contact-us"
+      path: "/contact",
+      component: _45159224,
+      name: "contact"
     }, {
       path: "/providers",
       component: _6a7d84f0,

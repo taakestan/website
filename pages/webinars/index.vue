@@ -43,7 +43,7 @@
     },
     async asyncData({app, query}) {
       const queryString = query.page ? `?page=${query.page}` : '';
-      const {data, links, meta} = await app.$axios.$get(`webinars${queryString}`);
+      const {data, links, meta} = await app.$axios.$get(`api/webinars${queryString}`);
       return {webinars: data, links: links, meta: meta}
     }
   }

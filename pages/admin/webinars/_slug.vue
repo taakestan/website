@@ -10,7 +10,8 @@
           <div class="actions">
             <button @click="deleteItem"
                     class="btn btn-outline-danger"
-                    v-if="method === 'update'">حذف وبینار</button>
+                    v-if="method === 'update'">حذف وبینار
+            </button>
             <button class="btn btn-success" @click="createItem" v-if="method === 'create'">ایجاد وبینار</button>
             <button class="btn btn-primary" @click="updateItem" v-else>به‌روز رسانی وبینار</button>
           </div>
@@ -24,13 +25,13 @@
               <label>عنوان وبینار</label>
               <input class="form-control" v-model="webinar.title"
                      :class="{'is-invalid': !!errors.all.title}">
-              <form-control-feedback :errors="errors.all" field="title" />
+              <form-control-feedback :errors="errors.all" field="title"/>
             </div>
             <div class="form-group col-md-4">
               <label>برچسب</label>
               <input class="form-control" v-model="webinar.label"
                      :class="{'is-invalid': !!errors.all.label}">
-              <form-control-feedback :errors="errors.all" field="label" />
+              <form-control-feedback :errors="errors.all" field="label"/>
             </div>
             <div class="form-group col-md-4">
               <label>ارائه دهنده</label>
@@ -41,7 +42,7 @@
                   {{ provider.first_name + ' ' + provider.last_name }}
                 </option>
               </select>
-              <form-control-feedback :errors="errors.all" field="provider_id" />
+              <form-control-feedback :errors="errors.all" field="provider_id"/>
             </div>
           </div>
           <div class="form-row">
@@ -50,7 +51,7 @@
               <input type="date" class="form-control"
                      v-model="webinar.holding_at"
                      :class="{'is-invalid': !!errors.all.holding_at}">
-              <form-control-feedback :errors="errors.all" field="holding_at" />
+              <form-control-feedback :errors="errors.all" field="holding_at"/>
             </div>
             <div class="form-group col-md-4">
               <label>بنر وبینار</label>
@@ -61,7 +62,7 @@
                        :class="{'is-invalid': !!errors.all.banner}">
                 <label class="custom-file-label">انتخاب فایل</label>
               </div>
-              <form-control-feedback :errors="errors.all" field="banner" />
+              <form-control-feedback :errors="errors.all" field="banner"/>
             </div>
             <div class="form-group col-md-4">
               <label>تصویر وبینار</label>
@@ -72,7 +73,7 @@
                        :class="{'is-invalid': !!errors.all.image}">
                 <label class="custom-file-label">انتخاب فایل</label>
               </div>
-              <form-control-feedback :errors="errors.all" field="image" />
+              <form-control-feedback :errors="errors.all" field="image"/>
             </div>
           </div>
           <hr>
@@ -82,7 +83,7 @@
             <textarea class="form-control"
                       rows="3" v-model="webinar.description"
                       :class="{'is-invalid': !!errors.all.description}"></textarea>
-            <form-control-feedback :errors="errors.all" field="description" />
+            <form-control-feedback :errors="errors.all" field="description"/>
           </div>
           <div class="form-group">
             <label>متن وبینار</label>
@@ -90,7 +91,7 @@
                  v-model="webinar.content"
                  v-quill:myQuillEditor="editorOption">
             </div>
-            <form-control-feedback :errors="errors.all" field="content" />
+            <form-control-feedback :errors="errors.all" field="content"/>
           </div>
           <hr>
           <h5>تصاویر وبینار</h5>
@@ -173,31 +174,19 @@
         reader.readAsDataURL(event.target.files[0]);
       },
       deleteItem() {
-        this.$store.dispatch("webinars/deleteItem", this.$route.params.id)
-          .then(() => {
-            this.$toast.success('وبینار با موفقیت حذف شد.');
-            this.$router.push("/admin/webinars");
-          });
+        this.$store.dispatch("webinars/deleteItem", this.$route.params.slug);
       },
       updateItem() {
-        const data = {id: this.$route.params.id, ...this.webinar};
-        this.$store.dispatch("webinars/updateItem", data)
-          .then(() => {
-            this.$toast.success('وبینار با موفقیت آپدیت شد.');
-            this.$router.push("/admin/webinars");
-          });
+        const data = {id: this.$route.params.slug, ...this.webinar};
+        this.$store.dispatch("webinars/updateItem", data);
       },
       createItem() {
-        this.$store.dispatch("webinars/createItem", this.webinar)
-          .then(() => {
-            this.$toast.success('وبینار با موفقیت ایجاد شد.');
-            this.$router.push("/admin/webinars");
-          });
+        this.$store.dispatch("webinars/createItem", this.webinar);
       }
     },
     async asyncData({app, params}) {
-      if (params.id !== 'create') {
-        const {data} = await app.$axios.$get(`webinars/${params.slug}`);
+      if (params.slug !== 'create') {
+        const {data} = await app.$axios.$get(`api/webinars/${params.slug}`);
         return {webinar: data, method: 'update'};
       }
       return {
