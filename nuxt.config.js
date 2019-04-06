@@ -49,29 +49,12 @@ module.exports = {
   ],
 
   axios: {
-    proxy: true,
     baseURL: '/'
   },
 
   toast: {
     duration: 2000,
     position: 'bottom-left'
-  },
-
-  proxy: {
-    '/api/': {
-      target: process.env.hostURL,
-      pathRewrite: {'^/api/': ''},
-      secure: false
-    },
-    '/media/': {
-      target: process.env.hostURL,
-      secure: false
-    },
-    '/junk/': {
-      target: process.env.hostURL,
-      secure: false
-    }
   },
 
   auth: {
