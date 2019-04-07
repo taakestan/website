@@ -1,15 +1,10 @@
 require('dotenv').config();
 
-const pkg = {
-  name: 'پروژه دانش آزاد تاک',
-  description: ''
-};
-
 module.exports = {
   mode: 'universal',
 
   head: {
-    title: pkg.name,
+    titleTemplate: '%s | پروژه دانش آزاد تاک',
     htmlAttrs: {
       dir: 'rtl',
       lang: 'fa'
@@ -17,7 +12,7 @@ module.exports = {
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: pkg.description}
+      {hid: 'description', name: 'description', content: 'پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته است. این پروژه قصد دارد تا پلی میان متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.'}
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
