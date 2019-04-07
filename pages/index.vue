@@ -2,7 +2,7 @@
   <div>
     <section class="section section--dark section--gradient section--gradient-one" id="section1">
       <navbar/>
-      <div class="container">
+      <div class="container my-5">
         <div class="content text-white">
           <h1 class="display-2">تـــاکــــــــ</h1>
           <h2 class="font-weight-light">پروژه دانــش آزاد</h2>
@@ -11,8 +11,8 @@
             متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.
           </p>
         </div>
-        <div class="image">
-          <img src="https://vueschool.s3.amazonaws.com/a742b7be73aca55734372e13785b603b/vuex-for-everyone.png" alt="">
+        <div class="image w-100">
+          <img src="/svg/code_review.svg" class="img-fluid" alt="code review">
         </div>
       </div>
     </section>
@@ -121,6 +121,11 @@
     p {
       font-size: 1.3rem;
       color: #fffc;
+    }
+
+    img {
+      margin-right: 4rem;
+      width: 40vw;
     }
   }
 
