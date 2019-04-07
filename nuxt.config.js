@@ -45,7 +45,8 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     '@nuxtjs/toast',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/sitemap'
   ],
 
   axios: {
@@ -95,6 +96,17 @@ module.exports = {
   transition: {
     name: 'fade',
     mode: 'out-in'
+  },
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: process.env.hostURL,
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    exclude: [
+      '/admin',
+      '/admin/**',
+    ],
   },
 
   build: {
