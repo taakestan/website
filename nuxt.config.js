@@ -1,4 +1,5 @@
 require('dotenv').config();
+const hostURL = process.env.hostURL || '';
 
 module.exports = {
   mode: 'universal',
@@ -56,16 +57,16 @@ module.exports = {
 
   proxy: {
     '/api/': {
-      target: process.env.hostURL,
+      target: hostURL,
       pathRewrite: {'^/api/': ''},
       secure: false
     },
     '/media/': {
-      target: process.env.hostURL,
+      target: hostURL,
       secure: false
     },
     '/junk/': {
-      target: process.env.hostURL,
+      target: hostURL,
       secure: false
     }
   },
@@ -95,7 +96,7 @@ module.exports = {
 
   sitemap: {
     path: '/sitemap.xml',
-    hostname: process.env.hostURL,
+    hostname: hostURL,
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     exclude: [
