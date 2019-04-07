@@ -30,7 +30,7 @@
       <div class="container">
         <div class="section--header-icon">
           <div class="image">
-            <img src="/img/icons/icon-plan.svg" alt="">
+            <img src="/img/icons/icon-plan.svg" alt="icon plan">
           </div>
           <div class="title">برنامه زمانی</div>
         </div>
@@ -50,7 +50,7 @@
           </div>
           <div class="col-md-6">
             <div class="image mr-auto" id="plane-calender">
-              <img class="img-fluid" src="/svg/cal.svg" alt="">
+              <img class="img-fluid" src="/svg/calender.svg" alt="plane calender">
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
       <div class="container has-text-centered">
         <div class="section--header-icon">
           <div class="image">
-            <img src="/img/icons/icon-visualize.svg" alt="">
+            <img src="/img/icons/icon-visualize.svg" alt="icon visualize">
           </div>
           <div class="title">همکاری با تاک</div>
           <p>برای همکاری با می توانید از طریق راه ارتباطی زیر با ما در تماس باشید.</p>
