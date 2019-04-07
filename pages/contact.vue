@@ -33,7 +33,7 @@
     components: {Navbar},
     head () {
       return {
-        title: 'تماس با ما | پروژه تاک',
+        title: 'تماس با ما',
       }
     }
   }

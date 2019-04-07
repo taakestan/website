@@ -60,7 +60,7 @@
     components: {Navbar},
     head () {
       return {
-        title: 'درباره ما | پروژه تاک',
+        title: 'درباره ما',
       }
     }
   }

@@ -57,7 +57,7 @@
     },
     head() {
       return {
-        title: this.webinar.title + ' | پروژه تاک'
+        title: this.webinar.title
       }
     },
     async asyncData({app, params}) {

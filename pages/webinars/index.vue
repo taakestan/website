@@ -38,7 +38,7 @@
     components: {Pagination, WebinarCard, Navbar},
     head () {
       return {
-        title: 'وبینار ها | پروژه تاک',
+        title: 'وبینار ها',
       }
     },
     async asyncData({app, query}) {

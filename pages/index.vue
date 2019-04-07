@@ -94,6 +94,11 @@
 
   export default {
     components: {WebinarCard, Navbar},
+    head () {
+      return {
+        title: 'تاک',
+      }
+    },
     async asyncData({app}) {
       const {data} = await app.$axios.$get('api/webinars');
       return {webinars: data};
