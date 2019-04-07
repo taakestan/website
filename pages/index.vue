@@ -36,7 +36,7 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <h3>برنامه زمانی بهمن ماه</h3>
+            <h3>برنامه زمانی رویداد های پیش رو</h3>
             <p>
               در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با
               آقای ناصری داریم:
@@ -49,8 +49,8 @@
             </ul>
           </div>
           <div class="col-md-6">
-            <div class="image" id="plane-calender">
-              <img class="img-fluid" src="/img/calender.png" alt="">
+            <div class="image mr-auto" id="plane-calender">
+              <img class="img-fluid" src="/svg/cal.svg" alt="">
             </div>
           </div>
         </div>
