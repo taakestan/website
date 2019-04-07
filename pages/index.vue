@@ -2,8 +2,8 @@
   <div>
     <section class="section section--dark section--gradient section--gradient-one" id="section1">
       <navbar/>
-      <div class="container my-5">
-        <div class="content text-white">
+      <div class="container row my-5 mx-auto flex-sm-column-reverse flex-md-row">
+        <div class="content text-white col-lg-7 col-md-6">
           <h1 class="display-2">تـــاکــــــــ</h1>
           <h2 class="font-weight-light">پروژه دانــش آزاد</h2>
           <p class="mt-4">
@@ -11,7 +11,7 @@
             متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.
           </p>
         </div>
-        <div class="image w-100">
+        <div class="image col-lg-5 col-md-6">
           <img src="/svg/code_review.svg" class="img-fluid" alt="code review">
         </div>
       </div>
@@ -122,21 +122,12 @@
       font-size: 1.3rem;
       color: #fffc;
     }
-
-    img {
-      margin-right: 4rem;
-      width: 40vw;
-    }
   }
 
   #section2 {
     h2 {
       color: #6c718b;
     }
-  }
-
-  #plane-calender {
-    width: 400px;
   }
 
 </style>
