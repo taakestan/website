@@ -26,6 +26,7 @@
     flex-direction: column;
     padding: 5rem 1rem 1rem;
     justify-content: center;
+    height: calc(100% - 11rem);
     box-shadow: 2px 2px 15px 0 rgba(36, 37, 38, 0.08);
 
     > img {

@@ -10,7 +10,7 @@
     <section class="section section--white pt-0 section--pb-lg">
       <div class="container">
         <div class="row">
-          <div class="col-md-4" v-for="provider in providers.all">
+          <div class="col-md-4" v-for="provider in providers">
             <provider :provider="provider"/>
           </div>
         </div>
@@ -27,13 +27,14 @@
   export default {
     name: "providers",
     components: {Provider, Navbar},
-    computed: {
-      ...mapState(['providers'])
-    },
     head () {
       return {
         title: 'ارائه کنندگان',
       }
+    },
+    async asyncData({app}) {
+      const {data} = await app.$axios.$get(`/api/providers`);
+      return {providers: data}
     }
   }
 </script>
