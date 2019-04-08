@@ -64,7 +64,7 @@ module.exports = {
   ],
 
   axios: {
-    proxy: true,
+    proxy: true
   },
 
   toast: {

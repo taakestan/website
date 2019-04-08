@@ -1,6 +1,6 @@
 <template>
   <card
-          :title="webinar.title" :provider="providerName(webinar.provider_id)"
+          :title="webinar.title" :provider="providerName(webinar.provider)"
           :image-path="webinar.banner" :href="href">
     {{ webinar.description }}
   </card>
@@ -24,9 +24,7 @@
     components: {Card},
     computed: mapState(['providers']),
     methods: {
-      providerName(providerID) {
-        return '';
-        const provider = this.providers.all.find(item => item.id == providerID);
+      providerName(provider) {
         return provider.first_name + ' ' + provider.last_name;
       }
     }
