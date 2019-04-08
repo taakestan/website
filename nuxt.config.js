@@ -65,7 +65,6 @@ module.exports = {
 
   axios: {
     proxy: true,
-    baseURL: '/'
   },
 
   toast: {
@@ -73,21 +72,21 @@ module.exports = {
     position: 'bottom-left'
   },
 
-  // proxy: {
-  //   '/api/': {
-  //     target: hostURL,
-  //     pathRewrite: {'^/api/': ''},
-  //     secure: false
-  //   },
-  //   '/media/': {
-  //     target: hostURL,
-  //     secure: false
-  //   },
-  //   '/junk/': {
-  //     target: hostURL,
-  //     secure: false
-  //   }
-  // },
+  proxy: {
+    '/api/': {
+      target: hostURL,
+      pathRewrite: {'^/api/': ''},
+      secure: false
+    },
+    '/media/': {
+      target: hostURL,
+      secure: false
+    },
+    '/junk/': {
+      target: hostURL,
+      secure: false
+    }
+  },
 
   auth: {
     redirect: {

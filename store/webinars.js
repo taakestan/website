@@ -1,4 +1,4 @@
-const baseURL = 'api/webinars';
+const baseURL = '/api/webinars';
 
 export const state = () => ({all: []});
 

@@ -61,7 +61,7 @@
       }
     },
     async asyncData({app, params}) {
-      const {data} = await app.$axios.$get(`api/webinars/${params.slug}`);
+      const {data} = await app.$axios.$get(`/api/webinars/${params.slug}`);
       return {webinar: data};
     }
   }
