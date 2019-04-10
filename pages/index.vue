@@ -100,7 +100,10 @@
       }
     },
     async asyncData({app}) {
-      const {data} = await app.$axios.$get('/api/webinars');
+      const data = [];
+      const response = await app.$fireStore.collection('webinars')
+          .orderBy("holding_at").limit(3).get();
+      await response.forEach(doc => data.push(doc.data()));
       return {webinars: data};
     }
   }
