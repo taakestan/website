@@ -21,7 +21,9 @@ export const mutations = {
 
 export const actions = {
   async prepare(state) {
-    const {data} = await this.$axios.$get(baseURL);
+    const data = [];
+    const response = await this.$fireStore.collection(collectionName).get();
+    await response.forEach(doc => data.push(doc.data()));
     state.commit('setItems', data);
   },
   createItem(state, item) {
