@@ -2,7 +2,7 @@
   <div class="provider-card bg-white">
     <img :src="provider.image" alt="">
     <h3 class="title" v-text="provider.first_name + ' ' + provider.last_name"></h3>
-    <p class="text-justify" v-html="provider.biography"></p>
+    <div class="text-justify" v-html="provider.biography"></div>
   </div>
 </template>
 <script>
