@@ -15,7 +15,11 @@ module.exports = {
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: 'پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته است. این پروژه قصد دارد تا پلی میان متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.'},
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته است. این پروژه قصد دارد تا پلی میان متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.'
+      },
       {name: 'referrer', content: 'unsafe-url'},
       {property: 'og:site_name', content: 'Taak Porject'},
 
@@ -62,7 +66,7 @@ module.exports = {
     useOnly: ['auth', 'firestore', 'functions', 'storage', 'realtimeDb'],
     config: {
       development: {
-        apiKey: process.env.API_KEY ,
+        apiKey: process.env.API_KEY,
         authDomain: process.env.AUTH_DOMAIN,
         databaseURL: process.env.DATABASE_URL,
         projectId: process.env.PROJECT_ID,
@@ -70,7 +74,7 @@ module.exports = {
         messagingSenderId: process.env.MESSAGING_SENDER_ID,
       },
       production: {
-        apiKey: process.env.API_KEY ,
+        apiKey: process.env.API_KEY,
         authDomain: process.env.AUTH_DOMAIN,
         databaseURL: process.env.DATABASE_URL,
         projectId: process.env.PROJECT_ID,
