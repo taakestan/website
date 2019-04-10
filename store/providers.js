@@ -1,4 +1,5 @@
 const baseURL = '/api/providers';
+const collectionName = 'providers';
 
 export const state = () => ({all: []});
 
@@ -24,15 +25,15 @@ export const actions = {
     state.commit('setItems', data);
   },
   createItem(state, item) {
-    return this.$axios.$post(baseURL, item)
-      .then(response => state.commit("createItem", response.data));
+    this.$fireStore.collection(collectionName).add(item)
+        .then(response => state.commit("createItem", {...item, id: response.id}));
   },
   updateItem(state, item) {
     return this.$axios.$put(`${baseURL}/${item.id}`, item)
-      .then(() => state.commit("updateItem", item));
+        .then(() => state.commit("updateItem", item));
   },
   deleteItem(state, id) {
     return this.$axios.$delete(`${baseURL}/${id}`)
-      .then(() => state.commit('deleteItem', id))
+        .then(() => state.commit('deleteItem', id))
   },
 };

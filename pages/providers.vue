@@ -27,14 +27,33 @@
   export default {
     name: "providers",
     components: {Provider, Navbar},
-    head () {
+    head() {
       return {
         title: 'ارائه کنندگان',
       }
     },
+    mounted() {
+      this.$fireStore.collection("providers").add({
+        "first_name": "رضا",
+        "last_name": "یوسف زاده",
+        "biography": "<ul><li class=\"ql-align-right ql-direction-rtl\"><span style=\"background-color: rgba(255, 255, 255, 0);\">فارغ التحصیل مهندسی نرم افزار. دانشگاه تهران</span></li><li class=\"ql-align-right ql-direction-rtl\"><span style=\"background-color: rgba(255, 255, 255, 0);\">مهندس نرم افزار. شرکت Genix Ventures، ملبورن، استرالیا</span></li></ul>",
+        "social_pages": {},
+        "image": "/media/providers/yousef-zadeh.jpeg"
+      }).then(function (docRef) {
+        console.log(docRef.id);
+        console.log("Document written with ID: ", docRef.id);
+      }).catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+      // this.$fireStore.collection('providers').get().then((querySnapshot) => {
+      //   querySnapshot.forEach((doc) => {
+      //     console.log(doc.data());
+      //   });
+      // });
+    },
     async asyncData({app}) {
-      const {data} = await app.$axios.$get(`/api/providers`);
-      return {providers: data}
+      // const {data} = await app.$axios.$get(`/api/providers`);
+      return {providers: []}
     }
   }
 </script>
@@ -45,6 +64,7 @@
     p {
       font-size: 1.2rem;
     }
+
     &:before {
       background-image: url(/img/backgrounds/waves-1.svg), linear-gradient(326deg, #ffb964 20%, #421a82 92%);
     }
