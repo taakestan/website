@@ -23,7 +23,7 @@ export const actions = {
   async prepare(state) {
     const data = [];
     const response = await this.$fireStore.collection(collectionName).get();
-    await response.forEach(doc => data.push(doc.data()));
+    await response.forEach(doc => data.push({id: doc.id, ...doc.data()}));
     state.commit('setItems', data);
   },
   createItem(state, item) {
