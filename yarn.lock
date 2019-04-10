@@ -5593,6 +5593,11 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
+nuxt-fire@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/nuxt-fire/-/nuxt-fire-1.3.0.tgz#ddf42b50472d6b8b977bd1dd6f04673417719d27"
+  integrity sha512-k+OxMo3w0uZaNi1UW9kSPvEjUOxRbmwP7fbsd8XxTpHd4zFtK7+laWefbTKUFhZCuwoEqCXRXBgQaMt/yH7JMA==
+
 nuxt@^2.5.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.6.1.tgz#9542bd7cab42ba41b4260172eab79fb3b1d30d86"

@@ -43,67 +43,23 @@ module.exports = {
 
   css: [
     {src: '@/assets/scss/app.scss', lang: 'scss'},
-    'quill/dist/quill.snow.css',
-    'quill/dist/quill.bubble.css',
-    'quill/dist/quill.core.css'
   ],
 
   plugins: [
     '~/plugins/axios',
-    {src: '~plugins/quill-plugin.js', ssr: false}
   ],
 
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/auth',
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
     '@nuxtjs/toast',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap'
   ],
 
-  axios: {
-    proxy: true
-  },
-
   toast: {
     duration: 2000,
     position: 'bottom-left'
-  },
-
-  proxy: {
-    '/api/': {
-      target: hostURL,
-      pathRewrite: {'^/api/': ''},
-      secure: false
-    },
-    '/media/': {
-      target: hostURL,
-      secure: false
-    },
-    '/junk/': {
-      target: hostURL,
-      secure: false
-    }
-  },
-
-  auth: {
-    redirect: {
-      login: '/admin/login',
-      logout: '/',
-      callback: '/admin/login',
-      home: '/admin'
-    },
-    strategies: {
-      local: {
-        endpoints: {
-          user: {url: '/api/user', method: 'get', propertyName: 'data'},
-          login: {url: '/api/login', method: 'post', propertyName: 'data'},
-          logout: {url: '/api/logout', method: 'post'},
-        }
-      }
-    }
   },
 
   transition: {
