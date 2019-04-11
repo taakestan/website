@@ -61,6 +61,10 @@
       }
     },
     async asyncData({app, params}) {
+      const messageDoc = await this.$fireStore.collection('providers').doc('kJjXzr9MYYuaDOy0kvMh').get();
+      console.log(messageDoc);
+      console.log(messageDoc.data());
+
       const {data} = await app.$axios.$get(`/api/webinars/${params.slug}`);
       return {webinar: data};
     }
