@@ -17,8 +17,8 @@
     <section class="section section--white pt-0 section--pb-lg">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars.all">
-            <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
+          <div class="col-lg-4 col-md-6 my-2" v-for="(webinar, slug) in webinars.all">
+            <webinar-card :webinar="webinar" :href="'/webinars/' + slug" />
           </div>
         </div>
 <!--        <pagination :meta="meta"/>-->

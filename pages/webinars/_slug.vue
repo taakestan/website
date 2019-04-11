@@ -2,19 +2,12 @@
   <div>
     <section id="section1" class="section section--dark section--gradient section--gradient-one">
       <navbar/>
-      <div class="container text-white pt-5">
-        <div class="row">
-          <div class="col-md-6">
-            <h1 v-text="webinar.title"></h1>
-            <div class="provider mb-4 d-inline-block">
-              <span>ارئه دهنده : </span><strong v-text="providerName(webinar.provider_id)"></strong>
-            </div>
-            <p v-text="webinar.description"></p>
-          </div>
-          <div class="col-md-6">
-            <img class="img-fluid" :src="webinar.image" alt="">
-          </div>
+      <div class="container flex-column align-items-start text-white pt-5">
+        <h1 v-text="webinar.title"></h1>
+        <div class="provider mb-4 d-inline-block">
+          <span>ارئه دهنده : </span><strong v-text="providerName(webinar.provider_id)"></strong>
         </div>
+        <p v-text="webinar.description"></p>
       </div>
     </section>
     <section class="section section--white pt-0 section--pb-3x">
@@ -51,7 +44,7 @@
     computed: mapState(['webinars', 'providers']),
     methods: {
       providerName(providerID) {
-        const provider = this.providers.all.find(item => item.id === providerID);
+        const provider = this.providers.all[providerID];
         return provider.first_name + ' ' + provider.last_name;
       }
     },
@@ -60,12 +53,8 @@
         title: this.webinar.title
       }
     },
-    async asyncData({app, params}) {
-      const messageDoc = await this.$fireStore.collection('providers').doc('kJjXzr9MYYuaDOy0kvMh').get();
-      console.log(messageDoc);
-      console.log(messageDoc.data());
-
-      const {data} = await app.$axios.$get(`/api/webinars/${params.slug}`);
+    async asyncData({store, params}) {
+      const data = store.state.webinars.all[params.slug];
       return {webinar: data};
     }
   }
