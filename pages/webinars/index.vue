@@ -17,7 +17,7 @@
     <section class="section section--white pt-0 section--pb-lg">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars">
+          <div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars.all">
             <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex';
   import Navbar from "~/components/Navbar";
   import Pagination from "../../components/Pagination";
   import WebinarCard from "../../components/WebinarCard";
@@ -41,17 +42,7 @@
         title: 'وبینار ها',
       }
     },
-    async asyncData({app, query}) {
-      const data = [];
-      const response = await app.$fireStore.collection('webinars')
-          .orderBy("holding_at").limit(6).get();
-      console.log(response.docs.length);
-      await response.forEach(doc => data.push(doc.data()));
-
-      // const queryString = query.page ? `?page=${query.page}` : '';
-      // const {data, links, meta} = await app.$axios.$get(`/api/webinars${queryString}`);
-      return {webinars: data}
-    }
+    computed: mapState(['webinars']),
   }
 </script>
 

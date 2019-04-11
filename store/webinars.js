@@ -1,4 +1,5 @@
 const baseURL = '/api/webinars';
+const collectionName = 'webinars';
 
 export const state = () => ({all: []});
 
@@ -19,9 +20,11 @@ export const mutations = {
 };
 
 export const actions = {
-  async prepare(state) {
-    const {data} = await this.$axios.$get(baseURL);
-    state.commit('setItems', data);
+  async prepare({commit}) {
+    const data = [];
+    const response = await this.$fireStore.collection(collectionName).get();
+    await response.forEach(doc => data.push({id: doc.id, ...doc.data()}));
+    commit('setItems', data);
   },
   createItem(state, item) {
     return this.$axios.$post(baseURL, item)
