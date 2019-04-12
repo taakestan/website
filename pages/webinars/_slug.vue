@@ -11,9 +11,6 @@
             </div>
             <p v-text="webinar.description"></p>
           </div>
-          <div class="col-md-6">
-            <img class="img-fluid" :src="webinar.image" alt="">
-          </div>
         </div>
       </div>
     </section>
@@ -48,20 +45,20 @@
   export default {
     name: "webinar",
     components: {Navbar},
-    computed: mapState(['webinars', 'providers']),
+    computed: mapState(['providers']),
     methods: {
       providerName(providerID) {
-        const provider = this.providers.all.find(item => item.id === providerID);
+        const provider = this.providers.all[providerID];
         return provider.first_name + ' ' + provider.last_name;
       }
     },
     head() {
       return {
-        title: this.webinar.title + ' | پروژه تاک'
+        title: this.webinar.title
       }
     },
-    async asyncData({app, params}) {
-      const {data} = await app.$axios.$get(`webinars/${params.slug}`);
+    async asyncData({store, params}) {
+      const data = store.state.webinars.all.find(item => item.slug == params.slug);
       return {webinar: data};
     }
   }

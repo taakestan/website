@@ -28,9 +28,24 @@
 </template>
 
 <script>
+  import _ from 'lodash';
   import Navbar from "~/components/Navbar";
   import Pagination from "../../components/Pagination";
   import WebinarCard from "../../components/WebinarCard";
+
+  function getPaginatedItems(items, page = 1, pageSize = 6) {
+    const offset = (page - 1) * pageSize;
+    const pagedItems = _.drop(items, offset).slice(0, pageSize);
+    return {
+      data: pagedItems,
+      meta: {
+        total: items.length,
+        per_page: pageSize,
+        current_page: page,
+        last_page: Math.ceil(items.length / pageSize),
+      }
+    };
+  }
 
   export default {
     name: "index",
@@ -38,14 +53,16 @@
     components: {Pagination, WebinarCard, Navbar},
     head () {
       return {
-        title: 'وبینار ها | پروژه تاک',
+        title: 'وبینار ها',
       }
     },
-    async asyncData({app, query}) {
-      const queryString = query.page ? `?page=${query.page}` : '';
-      const {data, links, meta} = await app.$axios.$get(`webinars${queryString}`);
-      return {webinars: data, links: links, meta: meta}
-    }
+    asyncData({store, query}) {
+      const data = getPaginatedItems(store.state.webinars.all, query.page || 1);
+      return {
+        meta: data.meta,
+        webinars: data.data
+      }
+    },
   }
 </script>
 

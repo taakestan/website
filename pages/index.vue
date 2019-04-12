@@ -2,8 +2,8 @@
   <div>
     <section class="section section--dark section--gradient section--gradient-one" id="section1">
       <navbar/>
-      <div class="container">
-        <div class="content text-white">
+      <div class="container row my-5 mx-auto flex-sm-column-reverse flex-md-row">
+        <div class="content text-white col-lg-7 col-md-6">
           <h1 class="display-2">تـــاکــــــــ</h1>
           <h2 class="font-weight-light">پروژه دانــش آزاد</h2>
           <p class="mt-4">
@@ -11,8 +11,8 @@
             متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.
           </p>
         </div>
-        <div class="image">
-          <img src="https://vueschool.s3.amazonaws.com/a742b7be73aca55734372e13785b603b/vuex-for-everyone.png" alt="">
+        <div class="image col-lg-5 col-md-6">
+          <img src="/svg/code_review.svg" class="img-fluid" alt="code review">
         </div>
       </div>
     </section>
@@ -20,7 +20,7 @@
       <div class="container flex-column">
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
-          <div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars">
+          <div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars.all.slice(0, 3)">
             <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug"/>
           </div>
         </div>
@@ -30,13 +30,13 @@
       <div class="container">
         <div class="section--header-icon">
           <div class="image">
-            <img src="/img/icons/icon-plan.svg" alt="">
+            <img src="/img/icons/icon-plan.svg" alt="icon plan">
           </div>
           <div class="title">برنامه زمانی</div>
         </div>
         <div class="row">
           <div class="col-md-6">
-            <h3>برنامه زمانی بهمن ماه</h3>
+            <h3>برنامه زمانی رویداد های پیش رو</h3>
             <p>
               در ماه بهمن دو وبینار در تاریخ های ۲۱ و ۲۹ ام برگزار می شود و همچنین در تاریخ ۱۷ بهمن ماه یک مصاحبه با
               آقای ناصری داریم:
@@ -49,8 +49,8 @@
             </ul>
           </div>
           <div class="col-md-6">
-            <div class="image" id="plane-calender">
-              <img class="img-fluid" src="/img/calender.png" alt="">
+            <div class="image mr-auto" id="plane-calender">
+              <img class="img-fluid" src="/svg/calender.svg" alt="plane calender">
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
       <div class="container has-text-centered">
         <div class="section--header-icon">
           <div class="image">
-            <img src="/img/icons/icon-visualize.svg" alt="">
+            <img src="/img/icons/icon-visualize.svg" alt="icon visualize">
           </div>
           <div class="title">همکاری با تاک</div>
           <p>برای همکاری با می توانید از طریق راه ارتباطی زیر با ما در تماس باشید.</p>
@@ -87,17 +87,19 @@
 </template>
 
 <script>
-
+  import _ from 'lodash';
   import {mapState} from 'vuex';
   import Navbar from "../components/Navbar";
   import WebinarCard from "../components/WebinarCard";
 
   export default {
     components: {WebinarCard, Navbar},
-    async asyncData({app}) {
-      const {data} = await app.$axios.$get('webinars');
-      return {webinars: data};
-    }
+    head () {
+      return {
+        title: 'تاک',
+      }
+    },
+    computed: mapState(['webinars']),
   }
 </script>
 
@@ -123,10 +125,6 @@
     h2 {
       color: #6c718b;
     }
-  }
-
-  #plane-calender {
-    width: 400px;
   }
 
 </style>

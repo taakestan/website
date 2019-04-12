@@ -27,14 +27,12 @@
   export default {
     name: "providers",
     components: {Provider, Navbar},
-    computed: {
-      ...mapState(['providers'])
-    },
-    head () {
+    computed: mapState(['providers']),
+    head() {
       return {
-        title: 'ارائه کنندگان | پروژه تاک',
+        title: 'ارائه کنندگان',
       }
-    }
+    },
   }
 </script>
 
@@ -44,6 +42,7 @@
     p {
       font-size: 1.2rem;
     }
+
     &:before {
       background-image: url(/img/backgrounds/waves-1.svg), linear-gradient(326deg, #ffb964 20%, #421a82 92%);
     }

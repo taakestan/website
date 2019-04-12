@@ -71,10 +71,6 @@
       line-height: 2.7rem;
       display: inline-block;
 
-      &.pager-nav {
-        color: #009688;
-      }
-
       &:hover {
         background: #eee;
       }
