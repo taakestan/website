@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="card" tag="div" :to="href">
-    <img :src="imagePath" :srcset="`${imagePath}?nf_resize=fit&w=300 500w, ${imagePath}?nf_resize=fit&w=500 700w, ${imagePath} 1000w`" class="card-img-top" :alt="title">
+    <img :src="imagePath" :srcset="`${imagePath}?nf_resize=fit&w=300 450w, ${imagePath}?nf_resize=fit&w=500 800w, ${imagePath} 1200w`" class="card-img-top" :alt="title">
     <div class="card-body">
       <h4 class="card-title" v-text="title"></h4>
       <h6 class="subtitle is-6" v-text="provider"></h6>
