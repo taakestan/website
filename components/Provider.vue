@@ -1,6 +1,6 @@
 <template>
   <div class="provider-card bg-white">
-    <img :src="provider.image" alt="">
+    <img :src="imagePath" :alt="username">
     <h3 class="title" v-text="provider.first_name + ' ' + provider.last_name"></h3>
     <div class="text-justify" v-html="provider.biography"></div>
   </div>
@@ -11,6 +11,12 @@
     props: {
       provider: {
         required: true
+      },
+      username: String
+    },
+    computed: {
+      imagePath() {
+        return `/img/providers/${this.username}.jpg`;
       }
     }
   }

@@ -1,6 +1,3 @@
 # Headers for that path:
 /img/*, /svg/*, *.js, *.css
    Cache-Control: public, max-age=360000
-
-/_nuxt/*
-   Cache-Control: public, max-age=360000
