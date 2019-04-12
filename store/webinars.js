@@ -11,7 +11,8 @@ export const mutations = {
 export const actions = {
   async prepare({commit}) {
     const data = [];
-    const response = await this.$fireStore.collection(collectionName).get();
+    const response = await this.$fireStore.collection(collectionName)
+        .orderBy("holding_at", "desc").get();
     await response.forEach(doc => data.push({slug: doc.id, ...doc.data()}));
     commit('setItems', data);
   },
