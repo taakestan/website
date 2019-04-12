@@ -1,0 +1,7 @@
+# A path:
+/img/*
+   Cache-Control: public, max-age=360000
+
+*.js, *.css
+  # Headers for that path:
+  Cache-Control: public, max-age=360000
