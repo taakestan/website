@@ -1,7 +1,7 @@
 <template>
   <card
           :title="webinar.title" :provider="providerName(webinar.provider_id)"
-          :image-path="webinar.image" :href="href">
+          :image-path="imagePath" :href="href">
     {{ webinar.description }}
   </card>
 </template>
@@ -22,7 +22,12 @@
       }
     },
     components: {Card},
-    computed: mapState(['providers']),
+    computed: {
+      ...mapState(['providers']),
+      imagePath() {
+        return `/img/webinars/${this.webinar.slug}.jpg`;
+      }
+    },
     methods: {
       providerName(providerID) {
         const provider = this.providers.all[providerID];
