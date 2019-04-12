@@ -49,8 +49,6 @@
     methods: {
       providerName(providerID) {
         const provider = this.providers.all[providerID];
-        console.log(provider);
-        return providerID;
         return provider.first_name + ' ' + provider.last_name;
       }
     },
