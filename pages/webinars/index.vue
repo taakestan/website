@@ -17,21 +17,35 @@
     <section class="section section--white pt-0 section--pb-lg">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 my-2" v-for="(webinar, slug) in webinars.all">
-            <webinar-card :webinar="webinar" :href="'/webinars/' + slug" />
+          <div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars">
+            <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
           </div>
         </div>
-<!--        <pagination :meta="meta"/>-->
+        <pagination :meta="meta"/>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-  import {mapState} from 'vuex';
+  import _ from 'lodash';
   import Navbar from "~/components/Navbar";
   import Pagination from "../../components/Pagination";
   import WebinarCard from "../../components/WebinarCard";
+
+  function getPaginatedItems(items, page = 1, pageSize = 6) {
+    const offset = (page - 1) * pageSize;
+    const pagedItems = _.drop(items, offset).slice(0, pageSize);
+    return {
+      data: pagedItems,
+      meta: {
+        total: items.length,
+        per_page: pageSize,
+        current_page: page,
+        last_page: Math.ceil(items.length / pageSize),
+      }
+    };
+  }
 
   export default {
     name: "index",
@@ -42,7 +56,13 @@
         title: 'وبینار ها',
       }
     },
-    computed: mapState(['webinars']),
+    asyncData({store, query}) {
+      const data = getPaginatedItems(store.state.webinars.all, query.page || 1);
+      return {
+        meta: data.meta,
+        webinars: data.data
+      }
+    },
   }
 </script>
 

@@ -100,24 +100,6 @@
       }
     },
     computed: mapState(['webinars']),
-    methods:{
-      getPaginatedItems(items, page, pageSize) {
-        var pg = page || 1,
-            pgSize = pageSize || 6,
-            offset = (pg - 1) * pgSize,
-            pagedItems = _.drop(items, offset).slice(0, pgSize);
-        return {
-          page: pg,
-          pageSize: pgSize,
-          total: items.length,
-          total_pages: Math.ceil(items.length / pgSize),
-          data: pagedItems
-        };
-      }
-    },
-    mounted() {
-      console.log(this.getPaginatedItems([...this.$store.state.webinars.all]))
-    },
   }
 </script>
 
