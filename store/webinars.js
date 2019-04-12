@@ -1,6 +1,6 @@
 const collectionName = 'webinars';
 
-export const state = () => ({all: Object});
+export const state = () => ({all: []});
 
 export const mutations = {
   setItems(state, item) {
@@ -9,10 +9,10 @@ export const mutations = {
 };
 
 export const actions = {
-  async prepare(state) {
-    const data = Object();
+  async prepare({commit}) {
+    const data = [];
     const response = await this.$fireStore.collection(collectionName).get();
-    await response.forEach(doc => data[doc.id] = doc.data());
-    state.commit('setItems', data);
+    await response.forEach(doc => data.push({slug: doc.id, ...doc.data()}));
+    commit('setItems', data);
   },
 };
