@@ -45,10 +45,12 @@
   export default {
     name: "webinar",
     components: {Navbar},
-    computed: mapState(['webinars', 'providers']),
+    computed: mapState(['providers']),
     methods: {
       providerName(providerID) {
         const provider = this.providers.all[providerID];
+        console.log(provider);
+        return providerID;
         return provider.first_name + ' ' + provider.last_name;
       }
     },
@@ -58,7 +60,7 @@
       }
     },
     async asyncData({store, params}) {
-      const data = store.state.webinars.all[params.slug];
+      const data = store.state.webinars.all.find(item => item.slug == params.slug);
       return {webinar: data};
     }
   }
