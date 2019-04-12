@@ -20,8 +20,8 @@
       <div class="container flex-column">
         <h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
         <div class="row">
-          <div class="col-lg-4 col-md-6 my-2" v-for="(webinar, slug) in webinars.all">
-            <webinar-card :webinar="webinar" :href="'/webinars/' + slug"/>
+          <div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars.all.slice(0, 3)">
+            <webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug"/>
           </div>
         </div>
       </div>
@@ -87,6 +87,7 @@
 </template>
 
 <script>
+  import _ from 'lodash';
   import {mapState} from 'vuex';
   import Navbar from "../components/Navbar";
   import WebinarCard from "../components/WebinarCard";
@@ -98,7 +99,25 @@
         title: 'تاک',
       }
     },
-    computed: mapState(['webinars'])
+    computed: mapState(['webinars']),
+    methods:{
+      getPaginatedItems(items, page, pageSize) {
+        var pg = page || 1,
+            pgSize = pageSize || 6,
+            offset = (pg - 1) * pgSize,
+            pagedItems = _.drop(items, offset).slice(0, pgSize);
+        return {
+          page: pg,
+          pageSize: pgSize,
+          total: items.length,
+          total_pages: Math.ceil(items.length / pgSize),
+          data: pagedItems
+        };
+      }
+    },
+    mounted() {
+      console.log(this.getPaginatedItems([...this.$store.state.webinars.all]))
+    },
   }
 </script>
 

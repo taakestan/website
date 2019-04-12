@@ -25,6 +25,7 @@
     computed: mapState(['providers']),
     methods: {
       providerName(providerID) {
+        return '';
         const provider = this.providers.all[providerID];
         return provider.first_name + ' ' + provider.last_name;
       }
