@@ -31,7 +31,7 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (https://nodejs.org/addons.html)
+# Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
 # Dependency directories
@@ -77,12 +77,14 @@ dist
 # Serverless directories
 .serverless
 
-# IDE
+# IDE / Editor
 .idea
 
 # Service worker
 sw.*
 
-
-# Mac OS DS_Store Files
+# Mac OSX
 .DS_Store
+
+# Vim swap files
+*.swp
