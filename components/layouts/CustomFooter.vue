@@ -1,26 +1,32 @@
 <template>
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col">
+	<footer class="p-4">
+		<b-container class="container">
+			<b-row>
+				<b-col>
 					<div class="title">ارتباط بیشتر</div>
-					<div class="item">تماس با ما</div>
-					<div class="item">قوانین و مقررات</div>
-					<div class="item">حریم‌خصوصی</div>
-				</div>
-				<div class="col">
-					<div class="title">آشنایی با نرم افزار</div>
-					<div class="item">درباره ما</div>
-					<div class="item">سوالات متداول</div>
-					<div class="item">آموزش</div>
-				</div>
-			</div>
-			<div class="row">
+					<div class="item">
+						<nuxt-link :to="{name: 'contact'}">تماس با ما</nuxt-link>
+					</div>
+					<div class="item">
+						<nuxt-link :to="{name: 'about'}">درباره ما</nuxt-link>
+					</div>
+				</b-col>
+				<b-col>
+					<div class="title">آشنایی بیشتر</div>
+					<div class="item">
+						<nuxt-link :to="{name: 'webinars'}">وبینار های برگزار شده</nuxt-link>
+					</div>
+					<div class="item">
+						<nuxt-link :to="{name: 'providers'}">ارائه کنندگان</nuxt-link>
+					</div>
+				</b-col>
+			</b-row>
+			<b-row class="mt-5 justify-content-between">
 				<div class="description">
 					<span class="ml-3" dir="ltr">©TaakProject.ir 2012 - 2019</span>
 					<span>کلیه حقوق مربوط به پروژه دانش آزاد تاک می باشد</span>
 				</div>
-				<div class="socials">
+				<div class="socials d-flex">
 					<div class="social">
 						<a
 							class="SocialIcon js-social-media"
@@ -71,8 +77,8 @@
 						</a>
 					</div>
 				</div>
-			</div>
-		</div>
+			</b-row>
+		</b-container>
 	</footer>
 </template>
 
@@ -83,46 +89,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-footer {
-	padding: 3rem 2rem 2rem;
-	.row {
-		display: flex;
-		> .col {
-			flex: 1;
-			> .title {
-				font-weight: 500;
-				font-size: 1.1rem;
-				margin-bottom: 1rem;
-			}
-			> .item {
-				color: #6c718b;
-				line-height: 2rem;
-			}
-			+ .col {
-				margin-right: 0.5rem;
-			}
+.row {
+	> .col {
+		> .title {
+			font-weight: 500;
+			font-size: 1.1rem;
+			margin-bottom: 1rem;
 		}
-		> .description {
+		> .item {
+			color: #6c718b;
+			line-height: 2rem;
+		}
+		+ .col {
+			margin-right: 0.5rem;
+		}
+	}
+	> .description {
+		color: #a4a7c5;
+		a {
 			color: #a4a7c5;
-			max-width: 40rem;
-			a {
-				color: #a4a7c5;
-				margin-right: 1rem;
-				text-decoration: none;
-			}
+			margin-right: 1rem;
+			text-decoration: none;
 		}
-		> .socials {
-			display: flex;
-			> .social {
-				width: 2.2rem;
-				+ .social {
-					margin-right: 2rem;
-				}
+	}
+	> .socials {
+		> .social {
+			width: 2.2rem;
+			+ .social {
+				margin-right: 2rem;
 			}
-		}
-		&:nth-child(2) {
-			margin-top: 3rem;
-			justify-content: space-between;
 		}
 	}
 }
