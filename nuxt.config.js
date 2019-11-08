@@ -1,5 +1,6 @@
 import fire from "./config/fire";
 import head from "./config/head";
+import toast from "./config/toast";
 import modules from "./config/modules";
 import sitemap from "./config/sitemap";
 import plugins from "./config/plugins";
@@ -11,6 +12,7 @@ export default {
 
   head,
   fire,
+  toast,
 	plugins,
   modules,
   sitemap,
@@ -20,11 +22,6 @@ export default {
 	loading: { color: "#34bfa3" },
 
 	css: [{ src: "@/assets/scss/app.scss", lang: "scss" }],
-
-	toast: {
-		duration: 2000,
-		position: "bottom-left"
-	},
 
 	build: {
 		extend(config, ctx) {}
