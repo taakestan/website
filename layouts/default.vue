@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <nuxt/>
-    <custom-footer/>
-  </div>
+	<div>
+		<nuxt />
+		<custom-footer />
+	</div>
 </template>
 
 <script>
-  import CustomFooter from "../components/CustomFooter";
+import CustomFooter from "~/components/layouts/CustomFooter";
 
-  export default {
-    components: {CustomFooter}
-  }
+export default {
+	components: { CustomFooter }
+};
 </script>
 
-<style lang="scss">
-  @import "~/node_modules/vazir-font/dist/font-face.css";
-</style>
+<style src="shabnam-font/dist/font-face.css"></style>

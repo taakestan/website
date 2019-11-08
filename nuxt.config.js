@@ -1,112 +1,29 @@
-require('dotenv').config();
-const hostURL = process.env.hostURL || '';
+import fire from "./config/fire";
+import head from "./config/head";
+import toast from "./config/toast";
+import modules from "./config/modules";
+import sitemap from "./config/sitemap";
+import plugins from "./config/plugins";
+import bootstrapVue from "./config/bootstrapVue";
+import pageTransition from "./config/pageTransition";
 
-module.exports = {
-  mode: 'universal',
+export default {
+	mode: "universal",
 
-  meta: {},
+  head,
+  fire,
+  toast,
+	plugins,
+  modules,
+  sitemap,
+  bootstrapVue,
+  pageTransition,
 
-  head: {
-    titleTemplate: '%s | پروژه دانش آزاد تاک',
-    htmlAttrs: {
-      dir: 'rtl',
-      lang: 'fa'
-    },
-    meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته است. این پروژه قصد دارد تا پلی میان متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.'
-      },
-      {name: 'referrer', content: 'unsafe-url'},
-      {property: 'og:site_name', content: 'Taak Porject'},
+	loading: { color: "#34bfa3" },
 
-      // Opengraph
-      {hid: 'og:type', property: 'og:type', content: 'website'},
-      {hid: 'og:title', property: 'og:title', content: 'Taak Porject'},
-      {hid: 'og:image', property: 'og:image', content: '/img/taak.jpg'},
-      {hid: 'og:image:type', property: 'og:image:type', content: 'image/jpg'},
-      {hid: 'og:image:height', property: 'og:image:height', content: '640'},
-      {hid: 'og:image:width', property: 'og:image:width', content: '640'},
+	css: [{ src: "@/assets/scss/app.scss", lang: "scss" }],
 
-      // Twitter
-      {hid: 'twitter:card', name: 'twitter:card', content: 'summary'},
-      {hid: 'twitter:site', name: 'twitter:site', content: '@taakproject'},
-      {hid: 'twitter:creator', name: 'twitter:creator', content: '@taakproject'},
-      {hid: 'twitter:image:src', name: 'twitter:image:src', content: '/img/taak.jpg'}
-    ],
-    link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'}
-    ]
-  },
-
-  loading: {color: '#34bfa3'},
-
-  css: [
-    {src: '@/assets/scss/app.scss', lang: 'scss'},
-  ],
-
-  plugins: [
-    '~/plugins/axios',
-  ],
-
-  modules: [
-    'nuxt-fire',
-    '@nuxtjs/pwa',
-    '@nuxtjs/axios',
-    '@nuxtjs/toast',
-    '@nuxtjs/dotenv',
-    '@nuxtjs/sitemap'
-  ],
-
-  fire: {
-    useOnly: ['auth', 'firestore', 'functions', 'storage', 'realtimeDb'],
-    config: {
-      development: {
-        apiKey: process.env.API_KEY,
-        authDomain: process.env.AUTH_DOMAIN,
-        databaseURL: process.env.DATABASE_URL,
-        projectId: process.env.PROJECT_ID,
-        storageBucket: process.env.STORAGE_BUCKET,
-        messagingSenderId: process.env.MESSAGING_SENDER_ID,
-      },
-      production: {
-        apiKey: process.env.API_KEY,
-        authDomain: process.env.AUTH_DOMAIN,
-        databaseURL: process.env.DATABASE_URL,
-        projectId: process.env.PROJECT_ID,
-        storageBucket: process.env.STORAGE_BUCKET,
-        messagingSenderId: process.env.MESSAGING_SENDER_ID,
-      }
-    }
-  },
-
-  toast: {
-    duration: 2000,
-    position: 'bottom-left'
-  },
-
-  transition: {
-    name: 'fade',
-    mode: 'out-in'
-  },
-
-  sitemap: {
-    path: '/sitemap.xml',
-    hostname: hostURL,
-    cacheTime: 1000 * 60 * 15,
-    gzip: true,
-    exclude: [
-      '/admin',
-      '/admin/**',
-    ],
-  },
-
-  build: {
-    extend(config, ctx) {
-    }
-  }
+	build: {
+		extend(config, ctx) {}
+	}
 };
