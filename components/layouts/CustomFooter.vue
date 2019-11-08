@@ -14,29 +14,11 @@
 					<div class="item">سوالات متداول</div>
 					<div class="item">آموزش</div>
 				</div>
-				<div class="col">
-					<div class="title">منابع</div>
-					<div class="item">توسعه دهندگان</div>
-					<div class="item">طراحان</div>
-				</div>
-				<div class="col">
-					<div class="title">برگزاری وبینار ها</div>
-					<div class="item">ویژگی ها</div>
-					<div class="item">تفییرات نسخه ها</div>
-					<div class="item">درباره نرم افزار</div>
-				</div>
-				<div class="col">
-					<div class="title">مرکز پشتیبانی</div>
-					<div class="item">پشتیبانی و آموزش</div>
-					<div class="item">مرکز دانلود</div>
-				</div>
 			</div>
 			<div class="row">
 				<div class="description">
-					<p>کلیه حقوق مربوط به پروژه دانش آزاد تاک می باشد</p>
-					<span dir="ltr">© TaakProject.com 2012</span>
-					<a href title="حریم خصوصی">حریم خصوصی</a>
-					<a href title="قوانین و مقررات">قوانین و مقررات</a>
+					<span class="ml-3" dir="ltr">©TaakProject.ir 2012 - 2019</span>
+					<span>کلیه حقوق مربوط به پروژه دانش آزاد تاک می باشد</span>
 				</div>
 				<div class="socials">
 					<div class="social">
