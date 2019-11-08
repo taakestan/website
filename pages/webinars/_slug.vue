@@ -77,7 +77,7 @@
     }
 
     &:before {
-      background-image: url(/img/waves-2.svg), linear-gradient(326deg, #007396 20%, #201a82 92%)
+      background-image: url(~assets/svg/backgrounds/waves-2.svg), linear-gradient(326deg, #007396 20%, #201a82 92%)
     }
   }
 

@@ -54,7 +54,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="image mr-auto" id="plane-calender">
-							<img class="img-fluid" src="/svg/calender.svg" alt="plane calender" />
+							<img class="img-fluid" src="~/assets/svg/calender.svg" alt="plane calender" />
 						</div>
 					</div>
 				</div>
