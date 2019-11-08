@@ -4,5 +4,6 @@ export default [
 	"@nuxtjs/axios",
 	"@nuxtjs/toast",
 	"@nuxtjs/dotenv",
-	"@nuxtjs/sitemap"
+	"@nuxtjs/sitemap",
+	"bootstrap-vue/nuxt"
 ];
