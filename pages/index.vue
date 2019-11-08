@@ -34,7 +34,7 @@
 			<div class="container">
 				<div class="section--header-icon">
 					<div class="image">
-						<img src="/img/icons/icon-plan.svg" alt="icon plan" />
+						<img src="~/assets/svg/icons/icon-plan.svg" alt="icon plan" />
 					</div>
 					<div class="title">برنامه زمانی</div>
 				</div>
@@ -64,7 +64,7 @@
 			<div class="container has-text-centered">
 				<div class="section--header-icon">
 					<div class="image">
-						<img src="/img/icons/icon-visualize.svg" alt="icon visualize" />
+						<img src="~/assets/svg/icons/icon-visualize.svg" alt="icon visualize" />
 					</div>
 					<div class="title">همکاری با تاک</div>
 					<p>برای همکاری با می توانید از طریق راه ارتباطی زیر با ما در تماس باشید.</p>

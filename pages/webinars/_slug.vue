@@ -24,7 +24,7 @@
       <div class="container flex-column">
         <div class="section--header-icon">
           <div class="image">
-            <img src="/img/icons/icon-download.svg" alt="">
+            <img src="~/assets/svg/icons/icon-download.svg" alt="">
           </div>
           <div class="title">دانلود فایل ها</div>
         </div>
