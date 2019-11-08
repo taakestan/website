@@ -7658,6 +7658,11 @@ sha.js@^2.4.0, sha.js@^2.4.8:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+shabnam-font@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/shabnam-font/-/shabnam-font-5.0.0.tgz#4ffd04f23f7145c7c6e1597d61e255c3bc5360d2"
+  integrity sha512-ngRcvlyoq7Ka42uXmy+YjKQBaspOZSRBvGbN6mKeBM2oBj7DgdAWVvxHetvZPyxHS4fsD91Wap5uccg1MwquCQ==
+
 shallow-clone@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/shallow-clone/-/shallow-clone-3.0.1.tgz#8f2981ad92531f55035b01fb230769a40e02efa3"
@@ -8638,11 +8643,6 @@ vary@^1.1.2, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
-
-vazir-font@^19.2.0:
-  version "19.2.0"
-  resolved "https://registry.yarnpkg.com/vazir-font/-/vazir-font-19.2.0.tgz#33b11bf29664afebea1b208ef38160ad71f02fe3"
-  integrity sha512-Wyncyjb/3GicdsAslgrfMlzKVVYJQ8p+pxe3mDIfAbSGrnujov4NOfYxiyn8nxiKORrqT80fUHo0Ir+KyNzTPw==
 
 vendors@^1.0.0:
   version "1.0.3"

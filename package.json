@@ -23,7 +23,7 @@
     "lodash": "^4.17.11",
     "nuxt": "^2.10.1",
     "nuxt-fire": "^2.3.0",
-    "vazir-font": "^19.2.0"
+    "shabnam-font": "^5.0.0"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",
