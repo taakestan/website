@@ -1,6 +1,5 @@
-require('dotenv').config();
-const hostURL = process.env.hostURL || '';
 import modules from './config/modules';
+import sitemap from './config/sitemap';
 import fire from './config/fire';
 import head from './config/head';
 
@@ -35,12 +34,7 @@ export default {
     mode: 'out-in'
   },
 
-  sitemap: {
-    path: '/sitemap.xml',
-    hostname: hostURL,
-    cacheTime: 1000 * 60 * 15,
-    gzip: true,
-  },
+  sitemap,
 
   build: {
     extend(config, ctx) {
