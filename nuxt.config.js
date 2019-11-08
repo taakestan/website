@@ -4,6 +4,7 @@ import modules from "./config/modules";
 import sitemap from "./config/sitemap";
 import plugins from "./config/plugins";
 import bootstrapVue from "./config/bootstrapVue";
+import pageTransition from "./config/pageTransition";
 
 export default {
 	mode: "universal",
@@ -14,6 +15,7 @@ export default {
   modules,
   sitemap,
   bootstrapVue,
+  pageTransition,
 
 	loading: { color: "#34bfa3" },
 
@@ -22,11 +24,6 @@ export default {
 	toast: {
 		duration: 2000,
 		position: "bottom-left"
-	},
-
-	pageTransition: {
-		name: "fade",
-		mode: "out-in"
 	},
 
 	build: {
