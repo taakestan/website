@@ -12,7 +12,7 @@
 					</p>
 				</div>
 				<div class="image col-lg-5 col-md-6">
-					<img src="/svg/code_review.svg" class="img-fluid" alt="code review" />
+					<img src="~/assets/svg/code_review.svg" class="img-fluid" alt="code review" />
 				</div>
 			</div>
 		</section>
@@ -20,7 +20,11 @@
 			<div class="container flex-column">
 				<h2 class="mb-4">آخرین وبینار های برگزار شده</h2>
 				<div class="row">
-					<div class="col-lg-4 col-md-6 my-2" v-for="webinar in webinars.all.slice(0, 3)">
+					<div
+						class="col-lg-4 col-md-6 my-2"
+						v-for="(webinar, index) in webinars.all.slice(0, 3)"
+						:key="index"
+					>
 						<webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
 					</div>
 				</div>
