@@ -21,7 +21,7 @@
 
 <script>
   import {mapState} from 'vuex';
-  import Navbar from "~/components/Navbar";
+  import Navbar from "~/components/layouts/Navbar";
   import Provider from "~/components/Provider";
 
   export default {

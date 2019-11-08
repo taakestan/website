@@ -29,7 +29,7 @@
 
 <script>
   import _ from 'lodash';
-  import Navbar from "~/components/Navbar";
+  import Navbar from "~/components/layouts/Navbar";
   import Pagination from "../../components/Pagination";
   import WebinarCard from "../../components/WebinarCard";
 
