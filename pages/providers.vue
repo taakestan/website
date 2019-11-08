@@ -2,19 +2,19 @@
 	<div>
 		<section class="section section--dark section--gradient section--gradient-one" id="section1">
 			<navbar />
-			<div class="container text-center text-white pt-5">
+			<b-container class="text-center text-white pt-5">
 				<h1 class="display-3 mb-3">ارائه کنندگان</h1>
 				<p>شما هم می توانید به افراد ارائه کننده در تاک بپیوندید تنها کافی است با ما تماس بگیرید.</p>
-			</div>
+			</b-container>
 		</section>
 		<section class="section section--white pt-0 section--pb-lg">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4" v-for="(provider, username) in providers.all" :key="username">
+			<b-container>
+				<b-row>
+					<b-col md="4" v-for="(provider, username) in providers.all" :key="username">
 						<provider :username="username" :provider="provider" />
-					</div>
-				</div>
-			</div>
+					</b-col>
+				</b-row>
+			</b-container>
 		</section>
 	</div>
 </template>
