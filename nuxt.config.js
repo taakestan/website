@@ -1,5 +1,6 @@
 require('dotenv').config();
 const hostURL = process.env.hostURL || '';
+import modules from './config/modules';
 import fire from './config/fire';
 import head from './config/head';
 
@@ -20,14 +21,7 @@ export default {
     '~/plugins/axios',
   ],
 
-  modules: [
-    'nuxt-fire',
-    '@nuxtjs/pwa',
-    '@nuxtjs/axios',
-    '@nuxtjs/toast',
-    '@nuxtjs/dotenv',
-    '@nuxtjs/sitemap'
-  ],
+  modules,
 
   fire,
 
