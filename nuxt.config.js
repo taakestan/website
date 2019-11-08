@@ -1,8 +1,9 @@
+import fire from "./config/fire";
+import head from "./config/head";
 import modules from "./config/modules";
 import sitemap from "./config/sitemap";
 import plugins from "./config/plugins";
-import fire from "./config/fire";
-import head from "./config/head";
+import bootstrapVue from "./config/bootstrapVue";
 
 export default {
 	mode: "universal",
@@ -12,6 +13,7 @@ export default {
 	plugins,
   modules,
   sitemap,
+  bootstrapVue,
 
 	loading: { color: "#34bfa3" },
 
