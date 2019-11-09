@@ -4,6 +4,7 @@ import toast from "./config/toast";
 import modules from "./config/modules";
 import sitemap from "./config/sitemap";
 import plugins from "./config/plugins";
+import generate from "./config/generate";
 import bootstrapVue from "./config/bootstrapVue";
 import pageTransition from "./config/pageTransition";
 
@@ -16,6 +17,7 @@ export default {
 	plugins,
   modules,
   sitemap,
+  generate,
   bootstrapVue,
   pageTransition,
 
