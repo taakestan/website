@@ -23,6 +23,6 @@ export default {
 		"/webinars/seamrest",
 		"/webinars/selenium",
 		"/webinars/software-arch-panel",
-		"/webinars/test-automationtest-automation"
+		"/webinars/test-automation"
 	]
 };
