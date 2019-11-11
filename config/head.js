@@ -6,7 +6,14 @@ export default {
 	},
 	meta: [
 		{ charset: "utf-8" },
+		{ name: "google", content: "notranslate" },
 		{ name: "viewport", content: "width=device-width, initial-scale=1" },
+
+		{ name: "theme-color", content: "#ccdde7" },
+		{ name: "msapplication-navbutton-color", content: "#ccdde7" },
+		{ name: "apple-mobile-web-app-status-bar-style", content: "#ccdde7" },
+
+		{ name: "robots", content: "index, follow" },
 		{
 			hid: "description",
 			name: "description",
@@ -39,7 +46,8 @@ export default {
 		}
 	],
 	link: [
-		{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+    { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+    { rel: "alternate", hreflang: "fa-ir", href: "https://cafimafi.com" },
 		{
 			rel: "stylesheet",
 			href: "https://use.fontawesome.com/releases/v5.8.1/css/all.css"

@@ -5,6 +5,7 @@ import modules from "./config/modules";
 import sitemap from "./config/sitemap";
 import plugins from "./config/plugins";
 import generate from "./config/generate";
+import manifest from './config/manifest';
 import bootstrapVue from "./config/bootstrapVue";
 import pageTransition from "./config/pageTransition";
 
@@ -18,6 +19,7 @@ export default {
   modules,
   sitemap,
   generate,
+  manifest,
   bootstrapVue,
   pageTransition,
 
