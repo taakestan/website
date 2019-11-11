@@ -34,7 +34,7 @@
 			<div class="container">
 				<div class="section--header-icon">
 					<div class="image">
-						<img src="~/assets/svg/icons/icon-plan.svg" alt="icon plan" />
+						<img class="img-fluid" src="~/assets/svg/icons/icon-plan.svg" alt="icon plan" />
 					</div>
 					<div class="title">برنامه زمانی</div>
 				</div>
@@ -60,24 +60,12 @@
 				</div>
 			</div>
 		</section>
-		<section class="section section--white section--pt-4x section--pb-4x">
-			<div class="container has-text-centered">
-				<div class="section--header-icon">
-					<div class="image">
-						<img src="~/assets/svg/icons/icon-visualize.svg" alt="icon visualize" />
-					</div>
-					<div class="title">همکاری با تاک</div>
-					<p>برای همکاری با می توانید از طریق راه ارتباطی زیر با ما در تماس باشید.</p>
-					<div class="columns"></div>
-				</div>
-			</div>
-		</section>
 		<section class="section section--gradient section--gradient-one section--pb-sm">
 			<div class="container text-center justify-content-center pb-5">
 				<div class="content text-white">
 					<h3 class="mt-2">اطلاع از جدید ترین اطلاعیه ها</h3>
 					<form class="form-inline mb-2 mt-3" name="email-marketing" data-netlify="true">
-						<div class="form-group mr-1 flex-fill">
+						<div class="form-group ml-1 mb-0 flex-fill">
 							<input
 								type="email"
 								name="email"
