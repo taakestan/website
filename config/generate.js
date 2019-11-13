@@ -1,8 +1,5 @@
 export default {
 	routes: [
-		"/webinars?page=2",
-		"/webinars?page=3",
-		"/webinars?page=4",
 		"/webinars/amazon-dynamodb",
 		"/webinars/aws",
 		"/webinars/ceylon",
