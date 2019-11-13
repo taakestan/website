@@ -32,7 +32,7 @@
 			<b-container class="position-relative">
 				<div class="section--header-icon">
 					<div class="image">
-						<!-- <img src="~/assets/svg/icons/icon-faq.svg" alt /> -->
+						<img src="~/assets/svg/icons/icon-faq.svg" alt />
 					</div>
 					<div class="title">نحوه شرکت در وبینار ها</div>
 				</div>

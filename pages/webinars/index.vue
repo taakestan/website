@@ -1,14 +1,19 @@
 <template>
 	<div>
-		<section class="section section--dark section--gradient section--gradient-one" id="section1">
+		<section
+			class="section section--dark section--gradient section--gradient-one"
+			id="section1"
+		>
 			<navbar />
 			<b-container class="text-white pt-5">
 				<b-row>
 					<b-col md="6">
 						<h1 class="display-3 mb-5">وبینار های برگزار شده</h1>
 						<p>
-							پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته است. این پروژه قصد دارد تا پلی میان
-							متخصصان و "دانش جو" های فارسی زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و دانش بپردازند.
+							پروژه دانش آزاد تاک با هدف انتقال دانش میان فارسی زبانان شکل گرفته
+							است. این پروژه قصد دارد تا پلی میان متخصصان و "دانش جو" های فارسی
+							زبان ایجاد کند تا با استفاده از این بستر مجازی به تبادل تجربه و
+							دانش بپردازند.
 						</p>
 					</b-col>
 				</b-row>
@@ -17,8 +22,17 @@
 		<section class="section section--white pt-0 section--pb-lg">
 			<b-container>
 				<b-row>
-					<b-col md="6" lg="4" class="my-2" v-for="(webinar, index) in webinars" :key="index">
-						<webinar-card :webinar="webinar" :href="'/webinars/' + webinar.slug" />
+					<b-col
+						md="6"
+						lg="4"
+						class="my-2"
+						v-for="(webinar, index) in webinars"
+						:key="index"
+					>
+						<webinar-card
+							:webinar="webinar"
+							:href="'/webinars/' + webinar.slug"
+						/>
 					</b-col>
 				</b-row>
 				<pagination :meta="meta" />
@@ -74,7 +88,7 @@ export default {
 	}
 
 	&:before {
-		background-image: url(~assets/svg/backgrounds/waves-2.svg),
+		background-image: url(/svg/backgrounds/waves-2.svg),
 			linear-gradient(326deg, #009688 20%, #1a1c82 92%);
 	}
 }

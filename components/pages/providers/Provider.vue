@@ -1,6 +1,6 @@
 <template>
 	<div class="provider-card d-flex flex-column justify-content-center bg-white">
-		<!-- <img :src="imagePath" :alt="username" /> -->
+		<img :src="imagePath" :alt="username" />
 		<h3 class="title" v-text="provider.first_name + ' ' + provider.last_name"></h3>
 		<div class="text-justify" v-html="provider.biography"></div>
 	</div>

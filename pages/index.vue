@@ -12,7 +12,7 @@
 					</p>
 				</div>
 				<div class="image col-lg-5 col-md-6">
-					<!-- <img src="~/assets/svg/code_review.svg" class="img-fluid" alt="code review" /> -->
+					<img src="~/assets/svg/code_review.svg" class="img-fluid" alt="code review" />
 				</div>
 			</div>
 		</section>
@@ -54,7 +54,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="image mr-auto" id="plane-calender">
-							<!-- <img class="img-fluid" src="~/assets/svg/calender.svg" alt="plane calender" /> -->
+							<img class="img-fluid" src="~/assets/svg/calender.svg" alt="plane calender" />
 						</div>
 					</div>
 				</div>
