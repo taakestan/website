@@ -158,8 +158,7 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
 		background-image: $color-gradient-one;
 
 		@include break(xl) {
-			background-image: url(~assets/svg/backgrounds/waves-1.svg),
-				$color-gradient-one;
+			background-image: url(/svg/backgrounds/waves-1.svg), $color-gradient-one;
 		}
 	}
 }
@@ -197,8 +196,7 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
 		background-image: $color-gradient-two;
 
 		@include break(xl) {
-			background-image: url(~assets/svg/backgrounds/waves-2.svg),
-				$color-gradient-two;
+			background-image: url(/svg/backgrounds/waves-2.svg), $color-gradient-two;
 		}
 	}
 }
@@ -210,14 +208,13 @@ $color-gradient-three: linear-gradient(36deg, #17ead9, #2196f3 52%, #0d12e8);
 		background-image: $color-gradient-three;
 
 		@include break(xl) {
-			background-image: url(~assets/svg/backgrounds/waves.svg),
-				$color-gradient-three;
+			background-image: url(/svg/backgrounds/waves.svg), $color-gradient-three;
 		}
 	}
 }
 
 .section--bg-waves {
-	background-image: url(~assets/svg/backgrounds/waves.svg);
+	background-image: url(/svg/backgrounds/waves.svg);
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
