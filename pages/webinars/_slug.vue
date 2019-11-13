@@ -24,7 +24,7 @@
       <div class="container flex-column">
         <div class="section--header-icon">
           <div class="image">
-            <img src="/img/icons/icon-download.svg" alt="">
+            <img src="~/assets/svg/icons/icon-download.svg" alt="">
           </div>
           <div class="title">دانلود فایل ها</div>
         </div>
@@ -40,7 +40,7 @@
 
 <script>
   import {mapState} from 'vuex';
-  import Navbar from "../../components/Navbar";
+  import Navbar from "../../components/layouts/Navbar";
 
   export default {
     name: "webinar",
@@ -77,7 +77,7 @@
     }
 
     &:before {
-      background-image: url(/img/waves-2.svg), linear-gradient(326deg, #007396 20%, #201a82 92%)
+      background-image: url(~assets/svg/backgrounds/waves-2.svg), linear-gradient(326deg, #007396 20%, #201a82 92%)
     }
   }
 
