@@ -20,7 +20,7 @@
     "bootstrap-vue": "^2.0.4",
     "cross-env": "^6.0.3",
     "firebase": "^7.2.3",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "nuxt": "^2.10.1",
     "nuxt-fire": "^2.3.0",
     "shabnam-font": "^5.0.0"
